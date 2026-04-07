@@ -1,18 +1,23 @@
-app = 'clawhost'
-primary_region = 'lax'
+# fly.toml app configuration file generated for clawhost-api on 2026-04-07T19:59:42Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'clawhost-api'
+primary_region = 'ams'
 
 [build]
 
 [http_service]
-  internal_port = 2222
+  internal_port = 8080
   force_https = true
   auto_stop_machines = 'stop'
   auto_start_machines = true
-  min_machines_running = 1
+  min_machines_running = 0
   processes = ['app']
 
 [[vm]]
-  memory = '2gb'
+  memory = '1gb'
   cpu_kind = 'shared'
-  cpus = 2
-  memory_mb = 2048
+  cpus = 1
+  memory_mb = 256
