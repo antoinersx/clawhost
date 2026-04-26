@@ -24,6 +24,7 @@ import {
 import { t } from '@openclaw/i18n'
 import { auth, AUTH_STORAGE_KEY, PROFILE_CACHE_KEY } from '@/lib/firebase'
 import { api } from '@/lib'
+import { ApiError } from '@openclaw/shared'
 import AuthContext from '@/lib/auth/AuthContext'
 import STORAGE_KEYS from '@/lib/storageKeys'
 import {
@@ -166,8 +167,10 @@ const AuthProvider: FC<AuthProviderProps> = ({ children }): ReactNode => {
                             queryFn: api.getUserStats
                         })
                     ])
-                } catch {
-                    await firebaseSignOut(auth)
+                } catch (error) {
+                    const isAuthError =
+                        error instanceof ApiError ? error.code === 401 : false
+                    if (isAuthError) await firebaseSignOut(auth)
                 }
             } else {
                 fetchedRef.current = false

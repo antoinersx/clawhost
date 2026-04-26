@@ -41,12 +41,16 @@
             "@types/react": "18.3.28"
         },
         "onlyBuiltDependencies": [
-            "node-pty",
+            "@firebase/util",
+            "cpu-features",
+            "electron",
             "esbuild",
-            "ssh2",
+            "fs-xattr",
+            "macos-alias",
+            "node-pty",
             "protobufjs",
             "sharp",
-            "cpu-features"
+            "ssh2"
         ]
     },
     "packageManager": "pnpm@10.29.3",

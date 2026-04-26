@@ -4,7 +4,7 @@ import Envs from '@/lib/Envs'
 
 const firebaseConfig = {
     apiKey: Envs.VITE_FIREBASE_API_KEY,
-    authDomain: window.location.host,
+    authDomain: Envs.VITE_FIREBASE_AUTH_DOMAIN,
     projectId: Envs.VITE_FIREBASE_PROJECT_ID,
     storageBucket: Envs.VITE_FIREBASE_STORAGE_BUCKET,
     messagingSenderId: Envs.VITE_FIREBASE_MESSAGING_SENDER_ID,

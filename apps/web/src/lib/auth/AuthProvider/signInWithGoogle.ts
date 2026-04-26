@@ -8,7 +8,7 @@ import type { ElectronOAuthFn, ResolveConflictFn } from '@/ts/Types'
 import {
     GoogleAuthProvider,
     signInWithCredential,
-    signInWithRedirect
+    signInWithPopup
 } from 'firebase/auth'
 import { auth } from '@/lib/firebase'
 import { Envs } from '@/lib'
@@ -59,7 +59,30 @@ const signInWithGoogle = async (
         return null
     }
 
-    await signInWithRedirect(auth, new GoogleAuthProvider())
+    try {
+        await signInWithPopup(auth, new GoogleAuthProvider())
+    } catch (error) {
+        const firebaseError = error as FirebaseErrorLike
+        if (
+            firebaseError.code ===
+            'auth/account-exists-with-different-credential'
+        ) {
+            const conflictEmail = firebaseError.customData?.email as
+                | string
+                | undefined
+            const pending = resolveConflict(
+                GoogleAuthProvider.credentialFromError(
+                    error as Parameters<
+                        typeof GoogleAuthProvider.credentialFromError
+                    >[0]
+                ),
+                'google.com',
+                conflictEmail
+            )
+            if (pending) return pending
+        }
+        throw error
+    }
     return null
 }
 

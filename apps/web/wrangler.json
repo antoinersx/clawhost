@@ -3,10 +3,10 @@
     "pages_build_output_dir": "dist",
     "vars": {
         "VITE_API_URL": "https://api.clawhost.cloud",
-        "VITE_FIREBASE_API_KEY": "AIzaSyDsBtUiX7c7SLKAR1mmH0SZrDoqbnJDwL8",
-        "VITE_FIREBASE_PROJECT_ID": "clawhost-prod",
-        "VITE_FIREBASE_STORAGE_BUCKET": "clawhost-prod.firebasestorage.app",
-        "VITE_FIREBASE_MESSAGING_SENDER_ID": "413543198584",
-        "VITE_FIREBASE_APP_ID": "1:413543198584:web:6f8e3c230f8dd12e0e628d"
+        "VITE_FIREBASE_API_KEY": "AIzaSyCo9Q_SrN7Xqjt9lqlCxVCX1x_YfEzcDjY",
+        "VITE_FIREBASE_PROJECT_ID": "maiclaw",
+        "VITE_FIREBASE_STORAGE_BUCKET": "maiclaw.firebasestorage.app",
+        "VITE_FIREBASE_MESSAGING_SENDER_ID": "834916745731",
+        "VITE_FIREBASE_APP_ID": "1:834916745731:web:fa52f86ca0747b6cc30436"
     }
 }

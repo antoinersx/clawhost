@@ -29,3 +29,4 @@ github_app_auth.js
 trigger-deployment.js
 get-next-article.js
 clawhost-articles.json
+.claude/settings.json
