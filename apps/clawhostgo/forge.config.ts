@@ -30,6 +30,7 @@ const copyNodePty = (
 const APP_NAME = 'ClawHostGo'
 const ENTITLEMENTS_PATH = './resources/entitlements.mac.plist'
 const ICON_PATH = './resources/icon'
+const WINDOWS_ICON_PATH = './resources/icon.ico'
 const EXTRA_RESOURCES = ['./resources/node']
 const NODE_PTY_PACKAGE = 'node-pty'
 const NODE_PTY_ASAR_UNPACK = '**/node_modules/node-pty/**'
@@ -82,7 +83,12 @@ const config: ForgeConfig = {
     },
     makers: [
         new MakerDMG({ format: DMG_FORMAT }, DARWIN_PLATFORMS),
-        new MakerSquirrel({ name: APP_NAME }),
+        new MakerSquirrel({
+            name: APP_NAME,
+            setupIcon: WINDOWS_ICON_PATH,
+            iconUrl:
+                'https://cdn.clawhost.cloud/go/icon.ico'
+        }),
         new MakerDeb({})
     ],
     plugins: [

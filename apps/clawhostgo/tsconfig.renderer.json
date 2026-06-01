@@ -24,5 +24,9 @@
         "types": ["vite/client"]
     },
     "include": ["src/renderer", "../web/src"],
-    "exclude": ["../web/src/**/*.test.ts", "../web/src/**/*.test.tsx"]
+    "exclude": [
+        "../web/src/**/*.test.ts",
+        "../web/src/**/*.test.tsx",
+        "../web/src/pages/SSHKeys.tsx"
+    ]
 }

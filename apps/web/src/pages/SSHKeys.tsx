@@ -1,4 +1,5 @@
 import type { FC, ReactNode } from 'react'
+import type { SSHKey } from '@/ts/Interfaces'
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
@@ -39,7 +40,9 @@ const SSHKeys: FC = (): ReactNode => {
     const localDisplayName =
         profile?.name || cachedProfile?.name || t('account.noNameSet')
 
-    const { data: sshKeys, isLoading, isError, refetch } = useSSHKeys()
+    const queryResult = useSSHKeys()
+    const sshKeys = queryResult.data as SSHKey[] | undefined
+    const { isLoading, isError, refetch } = queryResult
     const { data: userStats, isLoading: isStatsLoading } = useUserStats()
     const skeletonCount = userStats?.sshKeyCount ?? 0
     const knowsCount = !isStatsLoading && userStats !== undefined

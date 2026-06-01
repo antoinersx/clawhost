@@ -7,7 +7,6 @@ import sshKeys from '@/db/schema/sshKeys'
 import rateLimits from '@/db/schema/rateLimits'
 import otpCodes from '@/db/schema/otpCodes'
 import emails from '@/db/schema/emails'
-import waitlist from '@/db/schema/waitlist'
 import volumes from '@/db/schema/volumes'
 
 export {
@@ -20,6 +19,5 @@ export {
     rateLimits,
     otpCodes,
     emails,
-    waitlist,
     volumes
 }

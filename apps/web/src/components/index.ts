@@ -43,11 +43,7 @@ import {
     LegalSection
 } from '@/components/legal'
 
-import {
-    GoDownloadButton,
-    GoPricingCard,
-    GoWaitlistForm
-} from '@/components/go'
+import { GoDownloadButton, GoPricingCard } from '@/components/go'
 
 import { LicenseRequired, ProtectedRoute } from '@/components/auth'
 
@@ -84,7 +80,6 @@ export {
     FeaturesGrid,
     GoDownloadButton,
     GoPricingCard,
-    GoWaitlistForm,
     Header,
     HermesBanner,
     HeroBadge,

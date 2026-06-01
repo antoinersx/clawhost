@@ -679,21 +679,6 @@ export interface GeneratedKeyPair {
     privateKey: string
 }
 
-export interface GoWaitlistFormProps {
-    user: User | null
-    authLoading: boolean
-    hasJoined: boolean
-    isJoining: boolean
-    isCheckingStatus: boolean
-    waitlistEmail: string
-    isValidEmail: boolean
-    onWaitlistEmailChange: (value: string) => void
-    onJoinWaitlist: (email: string) => void
-    onEmailSubmit: (e: React.FormEvent) => void
-    loggedInClassName?: string
-    guestClassName?: string
-}
-
 export interface GoDownloadButtonProps {
     className?: string
 }
@@ -1726,15 +1711,6 @@ export interface ComparisonRow {
     others: string
 }
 
-export interface WaitlistStatusResponse {
-    joined: boolean
-}
-
-export interface JoinWaitlistResponse {
-    joined: boolean
-    alreadyJoined: boolean
-}
-
 export interface ComparisonTableProps {
     badge: string
     heading: string
@@ -1959,7 +1935,6 @@ export interface AdminAnalyticsResponse {
     sshKeys: AdminAnalyticsDataPoint[]
     volumes: AdminAnalyticsDataPoint[]
     referrals: AdminAnalyticsDataPoint[]
-    waitlist: AdminAnalyticsDataPoint[]
     emails: AdminAnalyticsDataPoint[]
 }
 
@@ -1977,7 +1952,6 @@ export interface AdminStats {
     sshKeys: number
     volumes: number
     referrals: number
-    waitlist: number
     emails: number
     billing: number
 }
@@ -2004,13 +1978,6 @@ export interface AdminPendingAgentListItem {
     expiresAt: string
     userId: string
     ownerEmail: string | null
-}
-
-export interface AdminWaitlistListItem {
-    id: string
-    email: string
-    userId: string | null
-    createdAt: string
 }
 
 export interface AdminEmailListItem {
@@ -2127,7 +2094,6 @@ export interface AdminEntitySelection {
         | 'volume'
         | 'pending-agent'
         | 'referral'
-        | 'waitlist'
         | 'email'
         | 'billing'
     id: string

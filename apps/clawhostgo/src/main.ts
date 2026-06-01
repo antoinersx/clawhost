@@ -11,6 +11,7 @@ import {
     appUpdater
 } from '@/main/services'
 import { registerAllHandlers } from '@/main/ipc'
+import registerHooks from '@/main/ipc/hooks'
 
 declare const MAIN_WINDOW_VITE_DEV_SERVER_URL: string
 declare const MAIN_WINDOW_VITE_NAME: string
@@ -73,6 +74,7 @@ if (!gotLock) {
     app.whenReady().then(() => {
         configStore.ensureDirectories()
         processManager.cleanOrphanedProcesses()
+        registerHooks()
         registerAllHandlers()
         createWindow()
         certManager.ensureCerts()

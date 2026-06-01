@@ -10,7 +10,6 @@ import AdminSSHKeysTab from '@/components/admin/AdminSSHKeysTab'
 import AdminUserFilters from '@/components/admin/AdminUserFilters'
 import AdminUserRow from '@/components/admin/AdminUserRow'
 import AdminVolumesTab from '@/components/admin/AdminVolumesTab'
-import AdminWaitlistTab from '@/components/admin/AdminWaitlistTab'
 
 export {
     AdminAnalyticsTab,
@@ -24,6 +23,5 @@ export {
     AdminSSHKeysTab,
     AdminUserFilters,
     AdminUserRow,
-    AdminVolumesTab,
-    AdminWaitlistTab
+    AdminVolumesTab
 }

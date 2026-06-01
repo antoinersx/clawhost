@@ -42,8 +42,12 @@ const KEY_PREFIX = {
 const STABLE_KEY = {
     MAC_ARM64: 'go/clawhost-mac-arm64.dmg',
     MAC_INTEL: 'go/clawhost-mac-intel.dmg',
-    WINDOWS: 'go/clawhost-windows.exe'
+    WINDOWS: 'go/clawhost-windows.exe',
+    ICON: 'go/icon.ico'
 } as const
+
+const ICON_SOURCE_PATH = join(__dirname, '../resources/icon.ico')
+const CONTENT_TYPE_ICON = 'image/vnd.microsoft.icon'
 
 const STABLE_MAC_KEY: Record<MacArch, string> = {
     arm64: STABLE_KEY.MAC_ARM64,
@@ -205,11 +209,21 @@ const publishWindows = async (): Promise<void> => {
     }
 }
 
+const publishIcon = async (): Promise<void> => {
+    if (!existsSync(ICON_SOURCE_PATH)) {
+        console.log('skip icon — no icon.ico found')
+        return
+    }
+    const buffer = readFileSync(ICON_SOURCE_PATH)
+    await upload(STABLE_KEY.ICON, buffer, CONTENT_TYPE_ICON)
+}
+
 const main = async (): Promise<void> => {
     console.log(`publishing version ${version} to R2`)
     await publishMac('x64')
     await publishMac('arm64')
     await publishWindows()
+    await publishIcon()
     console.log('done')
 }
 

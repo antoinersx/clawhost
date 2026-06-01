@@ -11,7 +11,6 @@ import type {
     AdminUserDetail,
     AdminUsersResponse,
     AdminVolumesResponse,
-    AdminWaitlistListItem,
     UpdateAdminUserData
 } from '@/ts/Interfaces'
 import type { AdminAnalyticsRange } from '@/ts/Types'
@@ -80,15 +79,6 @@ const admin = {
     listAdminReferrals: (page: number = 1, limit: number = 20, sort?: string) =>
         client.get<AdminPaginatedResponse<AdminReferralListItem>>(
             `${API_PATHS.ADMIN.REFERRALS}?${buildAdminPaginatedQuery({ page, limit, sort })}`
-        ),
-    listAdminWaitlist: (
-        page: number = 1,
-        limit: number = 20,
-        search?: string,
-        sort?: string
-    ) =>
-        client.get<AdminPaginatedResponse<AdminWaitlistListItem>>(
-            `${API_PATHS.ADMIN.WAITLIST}?${buildAdminPaginatedQuery({ page, limit, search, sort })}`
         ),
     listAdminEmails: (page: number = 1, limit: number = 20, sort?: string) =>
         client.get<AdminPaginatedResponse<AdminEmailListItem>>(

@@ -30,7 +30,6 @@ import {
     plansRoutes,
     sshKeysRoutes,
     usersRoutes,
-    waitlistRoutes,
     webhooksRoutes
 } from '@/routes'
 
@@ -84,7 +83,6 @@ app.get('/', (c) => ok(c, null, t('api.healthOk')))
 app.route('/auth', authRoutes)
 app.route('/cron', cronRoutes)
 app.route('/plans', plansRoutes)
-app.route('/waitlist', waitlistRoutes)
 app.route('/webhooks', webhooksRoutes)
 
 const AUTH_CACHE_TTL = 5 * 60 * 1000

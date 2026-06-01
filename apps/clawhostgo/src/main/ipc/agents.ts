@@ -1,7 +1,7 @@
 import type { IpcMainInvokeEvent } from 'electron'
 import type { CreateAgentData, RenameAgentData } from '@/ts/Interfaces'
 
-import { ipcMain, dialog, BrowserWindow, net as electronNet } from 'electron'
+import { dialog, BrowserWindow, net as electronNet } from 'electron'
 import fs from 'fs'
 import path from 'path'
 import crypto from 'crypto'
@@ -12,10 +12,11 @@ import {
     configStore,
     processManager,
     versionManager,
-    certManager,
-    reverseProxy,
     agentSpec
 } from '@/main/services'
+import domainEvents from '@/main/ipc/domainEvents'
+import DOMAIN_EVENT from '@/main/ipc/domainEventNames'
+import ipcPipeline from '@/main/ipc/pipeline'
 
 const adjectives = [
     'cozy',
@@ -201,17 +202,17 @@ const mapAgentToResponse = (
 }
 
 const registerAgentHandlers = (): void => {
-    ipcMain.handle('getAgents', () => {
+    ipcPipeline.handle('getAgents', () => {
         const config = configStore.readConfig()
         return config.agents.map((agent) => mapAgentToResponse(agent))
     })
 
-    ipcMain.handle('getAgent', (_event: IpcMainInvokeEvent, id: string) => {
+    ipcPipeline.handle('getAgent', (_event: IpcMainInvokeEvent, id: string) => {
         const agent = configStore.findAgent(id)
         return mapAgentToResponse(agent)
     })
 
-    ipcMain.handle(
+    ipcPipeline.handle(
         'createAgent',
         async (_event: IpcMainInvokeEvent, data: CreateAgentData) => {
             const config = configStore.readConfig()
@@ -324,16 +325,17 @@ const registerAgentHandlers = (): void => {
             }
 
             configStore.addAgent(newAgent)
-            try {
-                certManager.regenerateServerCert()
-                reverseProxy.reloadCerts()
-            } catch {}
+            domainEvents.emit(DOMAIN_EVENT.AGENT_CREATED, {
+                id: newAgent.id,
+                name: newAgent.name,
+                subdomain: newAgent.subdomain
+            })
 
             return mapAgentToResponse(newAgent)
         }
     )
 
-    ipcMain.handle(
+    ipcPipeline.handle(
         'deleteAgent',
         (_event: IpcMainInvokeEvent, id: string) => {
             const agent = configStore.findAgent(id)
@@ -341,10 +343,11 @@ const registerAgentHandlers = (): void => {
 
             const agentDir = configStore.getAgentDir(agent.name)
             configStore.removeAgent(id)
-            try {
-                certManager.regenerateServerCert()
-                reverseProxy.reloadCerts()
-            } catch {}
+            domainEvents.emit(DOMAIN_EVENT.AGENT_DELETED, {
+                id: agent.id,
+                name: agent.name,
+                subdomain: agent.subdomain
+            })
 
             ;(async () => {
                 try {
@@ -366,7 +369,7 @@ const registerAgentHandlers = (): void => {
         }
     )
 
-    ipcMain.handle(
+    ipcPipeline.handle(
         'renameAgent',
         (_event: IpcMainInvokeEvent, id: string, data: RenameAgentData) => {
             const agent = configStore.findAgent(id)
@@ -400,7 +403,7 @@ const registerAgentHandlers = (): void => {
         }
     )
 
-    ipcMain.handle(
+    ipcPipeline.handle(
         'updateAgentSubdomain',
         (
             _event: IpcMainInvokeEvent,
@@ -423,23 +426,30 @@ const registerAgentHandlers = (): void => {
                 throw new Error(t('go.subdomainAlreadyInUse'))
             }
 
+            const oldSubdomain = agent.subdomain
             configStore.updateAgent(id, { subdomain: data.subdomain })
-            try {
-                certManager.regenerateServerCert()
-                reverseProxy.reloadCerts()
-            } catch {}
+            domainEvents.emit(DOMAIN_EVENT.AGENT_DELETED, {
+                id: agent.id,
+                name: agent.name,
+                subdomain: oldSubdomain
+            })
+            domainEvents.emit(DOMAIN_EVENT.AGENT_CREATED, {
+                id: agent.id,
+                name: agent.name,
+                subdomain: data.subdomain
+            })
             const updated = configStore.findAgent(id)
             return mapAgentToResponse(updated)
         }
     )
 
-    ipcMain.handle('syncAgent', (_event: IpcMainInvokeEvent, id: string) => {
+    ipcPipeline.handle('syncAgent', (_event: IpcMainInvokeEvent, id: string) => {
         const agent = configStore.findAgent(id)
         if (!agent) throw new Error(t('go.clawNotFound'))
         return mapAgentToResponse(agent)
     })
 
-    ipcMain.handle(
+    ipcPipeline.handle(
         'cancelDeletion',
         (_event: IpcMainInvokeEvent, id: string) => {
             const agent = configStore.findAgent(id)
@@ -448,7 +458,7 @@ const registerAgentHandlers = (): void => {
         }
     )
 
-    ipcMain.handle(
+    ipcPipeline.handle(
         'hardDeleteAgent',
         (_event: IpcMainInvokeEvent, id: string) => {
             const agent = configStore.findAgent(id)
@@ -456,10 +466,11 @@ const registerAgentHandlers = (): void => {
 
             const agentDir = configStore.getAgentDir(agent.name)
             configStore.removeAgent(id)
-            try {
-                certManager.regenerateServerCert()
-                reverseProxy.reloadCerts()
-            } catch {}
+            domainEvents.emit(DOMAIN_EVENT.AGENT_DELETED, {
+                id: agent.id,
+                name: agent.name,
+                subdomain: agent.subdomain
+            })
 
             ;(async () => {
                 try {
@@ -481,11 +492,11 @@ const registerAgentHandlers = (): void => {
         }
     )
 
-    ipcMain.handle('getNextAvailablePort', () => {
+    ipcPipeline.handle('getNextAvailablePort', () => {
         return configStore.getNextAvailablePort()
     })
 
-    ipcMain.handle(
+    ipcPipeline.handle(
         'exportAgent',
         async (_event: IpcMainInvokeEvent, id: string, filename: string) => {
             const agent = configStore.findAgent(id)

@@ -24,7 +24,6 @@ import {
     DatabaseIcon,
     HourglassIcon,
     HandshakeIcon,
-    ClockCountdownIcon,
     EnvelopeIcon,
     ChartLineUpIcon,
     FunnelIcon
@@ -87,12 +86,6 @@ const RESOURCES = [
         label: 'admin.referralsTab' as const,
         icon: HandshakeIcon,
         color: '#ec4899'
-    },
-    {
-        key: 'waitlist' as keyof AdminAnalyticsResponse,
-        label: 'admin.waitlistTab' as const,
-        icon: ClockCountdownIcon,
-        color: '#06b6d4'
     },
     {
         key: 'emails' as keyof AdminAnalyticsResponse,

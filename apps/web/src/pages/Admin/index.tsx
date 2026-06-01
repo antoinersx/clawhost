@@ -26,8 +26,7 @@ import {
     AdminSSHKeysTab,
     AdminDetailModal,
     AdminSettingsTab,
-    AdminVolumesTab,
-    AdminWaitlistTab
+    AdminVolumesTab
 } from '@/components/admin'
 import {
     Skeleton,
@@ -43,7 +42,6 @@ import {
     DatabaseIcon,
     HandshakeIcon,
     HourglassIcon,
-    ClockCountdownIcon,
     EnvelopeIcon,
     ChartLineUpIcon,
     CreditCardIcon,
@@ -60,7 +58,6 @@ const ADMIN_TABS = {
     SSH_KEYS: 'ssh-keys',
     VOLUMES: 'volumes',
     REFERRALS: 'referrals',
-    WAITLIST: 'waitlist',
     EMAILS: 'emails',
     BILLING: 'billing',
     SETTINGS: 'settings'
@@ -179,12 +176,6 @@ const Admin: FC = (): ReactNode => {
                                         count: stats?.referrals
                                     },
                                     {
-                                        key: ADMIN_TABS.WAITLIST,
-                                        icon: ClockCountdownIcon,
-                                        label: t('admin.waitlistTab'),
-                                        count: stats?.waitlist
-                                    },
-                                    {
                                         key: ADMIN_TABS.EMAILS,
                                         icon: EnvelopeIcon,
                                         label: t('admin.emailsTab'),
@@ -266,11 +257,6 @@ const Admin: FC = (): ReactNode => {
                             )}
                             {activeTab === ADMIN_TABS.REFERRALS && (
                                 <AdminReferralsTab
-                                    onSelectEntity={setSelectedEntity}
-                                />
-                            )}
-                            {activeTab === ADMIN_TABS.WAITLIST && (
-                                <AdminWaitlistTab
                                     onSelectEntity={setSelectedEntity}
                                 />
                             )}
