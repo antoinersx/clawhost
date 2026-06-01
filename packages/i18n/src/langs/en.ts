@@ -679,6 +679,11 @@ const en = {
         appVersion: 'App version',
         operatingSystem: 'Operating system',
         architecture: 'Architecture',
+        checkForUpdates: 'Check for updates',
+        checkNow: 'Check now',
+        updatesUpToDate: 'You\'re on the latest version.',
+        updateReady: 'Version {{version}} ready to install.',
+        restartToInstall: 'Restart to install',
         connectedAccounts: 'Connected Accounts',
         connectedAccountsDescription:
             'Manage the sign-in methods linked to your account.',

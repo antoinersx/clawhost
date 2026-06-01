@@ -689,6 +689,11 @@ const ru: Translations = {
         appVersion: 'Версия приложения',
         operatingSystem: 'Операционная система',
         architecture: 'Архитектура',
+        checkForUpdates: 'Проверить обновления',
+        checkNow: 'Проверить',
+        updatesUpToDate: 'У вас последняя версия.',
+        updateReady: 'Версия {{version}} готова к установке.',
+        restartToInstall: 'Перезапустить для установки',
         connectedAccounts: 'Подключённые аккаунты',
         connectedAccountsDescription:
             'Управляйте способами входа, привязанными к вашему аккаунту.',

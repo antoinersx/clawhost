@@ -727,6 +727,11 @@ const fr: Translations = {
         appVersion: 'Version de l\'application',
         operatingSystem: 'Système d\'exploitation',
         architecture: 'Architecture',
+        checkForUpdates: 'Vérifier les mises à jour',
+        checkNow: 'Vérifier',
+        updatesUpToDate: 'Vous avez la dernière version.',
+        updateReady: 'Version {{version}} prête à installer.',
+        restartToInstall: 'Redémarrer pour installer',
         connectedAccounts: 'Comptes connectés',
         connectedAccountsDescription:
             'Gérez les méthodes de connexion liées à votre compte.',

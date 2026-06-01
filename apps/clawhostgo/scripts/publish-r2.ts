@@ -1,21 +1,15 @@
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3'
-import { readFileSync, readdirSync, statSync, existsSync } from 'fs'
+import { readFileSync, readdirSync, statSync, existsSync, unlinkSync } from 'fs'
 import { join, basename } from 'path'
+import { execSync } from 'child_process'
 
 type MacArch = 'arm64' | 'x64'
 
-interface ReleaseManifest {
-    currentRelease: string
-    releases: Array<{
-        version: string
-        updateTo: {
-            version: string
-            pub_date: string
-            name: string
-            notes: string
-            url: string
-        }
-    }>
+interface SquirrelMacManifest {
+    url: string
+    name: string
+    notes: string
+    pub_date: string
 }
 
 const DEFAULT_PUBLIC_BASE_URL = 'https://cdn.clawhost.cloud/go'
@@ -32,9 +26,13 @@ const CONTENT_TYPE = {
 
 const EXT = {
     DMG: '.dmg',
+    ZIP: '.zip',
     NUPKG: '.nupkg',
     EXE: '.exe'
 } as const
+
+const APP_BUNDLE = 'ClawHostGo.app'
+const APP_BUNDLE_NAME = 'ClawHostGo'
 
 const KEY_PREFIX = {
     MAC: (arch: MacArch): string => `go/darwin/${arch}`,
@@ -52,10 +50,13 @@ const STABLE_MAC_KEY: Record<MacArch, string> = {
     x64: STABLE_KEY.MAC_INTEL
 }
 
-const MAKE_DIR = join(__dirname, '../out/make')
+const OUT_DIR = join(__dirname, '../out')
+const MAKE_DIR = join(OUT_DIR, 'make')
 const SQUIRREL_DIR = join(MAKE_DIR, 'squirrel.windows/x64')
 const RELEASES_MANIFEST = 'RELEASES.json'
 const SETUP_EXE_PATTERN = /Setup\.exe$/i
+const APP_OUTPUT_DIR = (arch: MacArch): string =>
+    join(OUT_DIR, `${APP_BUNDLE_NAME}-darwin-${arch}`)
 
 const {
     R2_ACCOUNT_ID,
@@ -124,21 +125,26 @@ const findFiles = (dir: string, ext: string): string[] => {
     return out
 }
 
-const buildManifest = (url: string): ReleaseManifest => ({
-    currentRelease: version,
-    releases: [
-        {
-            version,
-            updateTo: {
-                version,
-                pub_date: new Date().toISOString(),
-                name: version,
-                notes: '',
-                url
-            }
-        }
-    ]
+const buildSquirrelMacManifest = (url: string): SquirrelMacManifest => ({
+    url,
+    name: version,
+    notes: '',
+    pub_date: new Date().toISOString()
 })
+
+const zipApp = (arch: MacArch): string | null => {
+    const appPath = join(APP_OUTPUT_DIR(arch), APP_BUNDLE)
+    if (!existsSync(appPath)) return null
+    const zipPath = join(
+        MAKE_DIR,
+        `${APP_BUNDLE_NAME}-${version}-${arch}${EXT.ZIP}`
+    )
+    if (existsSync(zipPath)) unlinkSync(zipPath)
+    execSync(
+        `ditto -c -k --sequesterRsrc --keepParent "${appPath}" "${zipPath}"`
+    )
+    return zipPath
+}
 
 const windowsContentType = (entry: string): string => {
     if (entry.endsWith(EXT.NUPKG)) return CONTENT_TYPE.ZIP
@@ -157,15 +163,24 @@ const publishMac = async (arch: MacArch): Promise<void> => {
     const dmgPath = archDmgs[0]
     const dmgName = basename(dmgPath)
     const prefix = KEY_PREFIX.MAC(arch)
-    const dmgUrl = `${PUBLIC_BASE_URL}/darwin/${arch}/${dmgName}`
     const dmgBuffer = readFileSync(dmgPath)
 
     await upload(`${prefix}/${dmgName}`, dmgBuffer, CONTENT_TYPE.DMG)
     await upload(STABLE_MAC_KEY[arch], dmgBuffer, CONTENT_TYPE.DMG)
 
+    const zipPath = zipApp(arch)
+    if (!zipPath) {
+        console.log(`skip darwin/${arch} auto-update — no .app found`)
+        return
+    }
+    const zipName = basename(zipPath)
+    const zipUrl = `${PUBLIC_BASE_URL}/darwin/${arch}/${zipName}`
+    const zipBuffer = readFileSync(zipPath)
+    await upload(`${prefix}/${zipName}`, zipBuffer, CONTENT_TYPE.ZIP)
+
     await upload(
         `${prefix}/${RELEASES_MANIFEST}`,
-        JSON.stringify(buildManifest(dmgUrl), null, 2),
+        JSON.stringify(buildSquirrelMacManifest(zipUrl), null, 2),
         CONTENT_TYPE.JSON
     )
 }

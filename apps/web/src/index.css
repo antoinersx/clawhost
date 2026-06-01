@@ -223,6 +223,33 @@
         );
 }
 
+.local-gradient {
+    background:
+        radial-gradient(
+            ellipse 90% 60% at 50% 15%,
+            rgba(239, 83, 80, 0.12),
+            transparent 70%
+        ),
+        radial-gradient(
+            ellipse 70% 50% at 70% 35%,
+            rgba(198, 40, 40, 0.06),
+            transparent 70%
+        );
+}
+.dark .local-gradient {
+    background:
+        radial-gradient(
+            ellipse 90% 60% at 50% 15%,
+            rgba(239, 83, 80, 0.18),
+            transparent 70%
+        ),
+        radial-gradient(
+            ellipse 70% 50% at 70% 35%,
+            rgba(198, 40, 40, 0.1),
+            transparent 70%
+        );
+}
+
 .landing-grid {
     background-image:
         linear-gradient(rgba(239, 83, 80, 0.05) 1px, transparent 1px),

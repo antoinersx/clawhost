@@ -698,6 +698,11 @@ const nl: Translations = {
         appVersion: 'App-versie',
         operatingSystem: 'Besturingssysteem',
         architecture: 'Architectuur',
+        checkForUpdates: 'Controleer op updates',
+        checkNow: 'Controleren',
+        updatesUpToDate: 'Je hebt de nieuwste versie.',
+        updateReady: 'Versie {{version}} klaar om te installeren.',
+        restartToInstall: 'Herstart om te installeren',
         connectedAccounts: 'Verbonden accounts',
         connectedAccountsDescription:
             'Beheer de inlogmethoden die aan je account zijn gekoppeld.',

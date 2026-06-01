@@ -716,6 +716,11 @@ const it: Translations = {
         appVersion: 'Versione dell\'app',
         operatingSystem: 'Sistema operativo',
         architecture: 'Architettura',
+        checkForUpdates: 'Controlla aggiornamenti',
+        checkNow: 'Controlla',
+        updatesUpToDate: 'Hai la versione più recente.',
+        updateReady: 'Versione {{version}} pronta da installare.',
+        restartToInstall: 'Riavvia per installare',
         connectedAccounts: 'Account Collegati',
         connectedAccountsDescription:
             'Gestisci i metodi di accesso collegati al tuo account.',

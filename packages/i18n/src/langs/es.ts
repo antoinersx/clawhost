@@ -709,6 +709,11 @@ const es: Translations = {
         appVersion: 'Versión de la aplicación',
         operatingSystem: 'Sistema operativo',
         architecture: 'Arquitectura',
+        checkForUpdates: 'Buscar actualizaciones',
+        checkNow: 'Buscar',
+        updatesUpToDate: 'Tienes la última versión.',
+        updateReady: 'Versión {{version}} lista para instalar.',
+        restartToInstall: 'Reiniciar para instalar',
         connectedAccounts: 'Cuentas conectadas',
         connectedAccountsDescription:
             'Administra los métodos de inicio de sesión vinculados a tu cuenta.',

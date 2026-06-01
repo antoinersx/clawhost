@@ -698,6 +698,11 @@ const pl: Translations = {
         appVersion: 'Wersja aplikacji',
         operatingSystem: 'System operacyjny',
         architecture: 'Architektura',
+        checkForUpdates: 'Sprawdź aktualizacje',
+        checkNow: 'Sprawdź',
+        updatesUpToDate: 'Masz najnowszą wersję.',
+        updateReady: 'Wersja {{version}} gotowa do zainstalowania.',
+        restartToInstall: 'Uruchom ponownie, aby zainstalować',
         connectedAccounts: 'Połączone konta',
         connectedAccountsDescription:
             'Zarządzaj metodami logowania połączonymi z Twoim kontem.',

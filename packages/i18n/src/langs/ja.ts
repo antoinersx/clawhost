@@ -689,6 +689,11 @@ const ja: Translations = {
         appVersion: 'アプリのバージョン',
         operatingSystem: 'オペレーティングシステム',
         architecture: 'アーキテクチャ',
+        checkForUpdates: 'アップデートを確認',
+        checkNow: '今すぐ確認',
+        updatesUpToDate: '最新バージョンです。',
+        updateReady: 'バージョン {{version}} のインストール準備完了。',
+        restartToInstall: '再起動してインストール',
         connectedAccounts: '連携アカウント',
         connectedAccountsDescription:
             'アカウントに紐付けられたサインイン方法を管理。',

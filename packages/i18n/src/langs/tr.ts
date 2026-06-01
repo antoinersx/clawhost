@@ -688,6 +688,11 @@ const tr: Translations = {
         appVersion: 'Uygulama sürümü',
         operatingSystem: 'İşletim sistemi',
         architecture: 'Mimari',
+        checkForUpdates: 'Güncellemeleri denetle',
+        checkNow: 'Denetle',
+        updatesUpToDate: 'En son sürüm yüklü.',
+        updateReady: 'Sürüm {{version}} yüklemeye hazır.',
+        restartToInstall: 'Kurmak için yeniden başlat',
         connectedAccounts: 'Bağlı Hesaplar',
         connectedAccountsDescription:
             'Hesabınıza bağlı giriş yöntemlerini yönetin.',

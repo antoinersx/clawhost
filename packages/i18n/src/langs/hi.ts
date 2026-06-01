@@ -694,6 +694,11 @@ const hi: Translations = {
         appVersion: 'ऐप संस्करण',
         operatingSystem: 'ऑपरेटिंग सिस्टम',
         architecture: 'आर्किटेक्चर',
+        checkForUpdates: 'अपडेट जांचें',
+        checkNow: 'अभी जांचें',
+        updatesUpToDate: 'आप नवीनतम संस्करण पर हैं।',
+        updateReady: 'संस्करण {{version}} इंस्टॉल के लिए तैयार।',
+        restartToInstall: 'इंस्टॉल करने के लिए पुनः आरंभ करें',
         connectedAccounts: 'कनेक्टेड खाते',
         connectedAccountsDescription:
             'अपने खाते से जुड़ी साइन-इन विधियाँ प्रबंधित करें.',

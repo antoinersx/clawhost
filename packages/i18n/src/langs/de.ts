@@ -712,6 +712,11 @@ const de: Translations = {
         appVersion: 'App-Version',
         operatingSystem: 'Betriebssystem',
         architecture: 'Architektur',
+        checkForUpdates: 'Nach Updates suchen',
+        checkNow: 'Jetzt prüfen',
+        updatesUpToDate: 'Sie haben die neueste Version.',
+        updateReady: 'Version {{version}} bereit zur Installation.',
+        restartToInstall: 'Neu starten zur Installation',
         connectedAccounts: 'Verbundene Konten',
         connectedAccountsDescription:
             'Verwalte die mit deinem Konto verknüpften Anmeldemethoden.',

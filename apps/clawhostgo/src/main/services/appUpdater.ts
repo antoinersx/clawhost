@@ -41,6 +41,58 @@ const quitAndInstall = (): void => {
     autoUpdater.quitAndInstall()
 }
 
-const appUpdater = { start, getPendingUpdate, quitAndInstall }
+const CHECK_TIMEOUT_MS = 30000
+
+const UPDATE_EVENTS = [
+    'update-downloaded',
+    'update-not-available',
+    'error'
+] as const
+
+const checkForUpdatesNow = (): Promise<AppUpdateInfo> =>
+    new Promise((resolve) => {
+        if (!app.isPackaged) {
+            resolve({ hasUpdate: false, currentVersion: app.getVersion() })
+            return
+        }
+        let timer: NodeJS.Timeout | null = null
+        const finish = (info: AppUpdateInfo): void => {
+            for (const event of UPDATE_EVENTS) {
+                autoUpdater.removeAllListeners(event)
+            }
+            if (timer) clearTimeout(timer)
+            resolve(info)
+        }
+        autoUpdater.once(
+            'update-downloaded',
+            (_event, _notes, releaseName: string) => {
+                pendingUpdate = {
+                    hasUpdate: true,
+                    currentVersion: app.getVersion(),
+                    latestVersion: releaseName
+                }
+                finish(pendingUpdate)
+            }
+        )
+        autoUpdater.once('update-not-available', () => {
+            finish({ hasUpdate: false, currentVersion: app.getVersion() })
+        })
+        autoUpdater.once('error', (error: Error) => {
+            console.error('checkForUpdatesNow', error)
+            finish({ hasUpdate: false, currentVersion: app.getVersion() })
+        })
+        timer = setTimeout(
+            () => finish({ hasUpdate: false, currentVersion: app.getVersion() }),
+            CHECK_TIMEOUT_MS
+        )
+        autoUpdater.checkForUpdates()
+    })
+
+const appUpdater = {
+    start,
+    getPendingUpdate,
+    quitAndInstall,
+    checkForUpdatesNow
+}
 
 export default appUpdater

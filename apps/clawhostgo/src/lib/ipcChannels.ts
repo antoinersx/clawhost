@@ -10,6 +10,7 @@ const IPC_CHANNEL = {
     TERMINAL_DATA: 'terminal:data',
     TERMINAL_EXIT: 'terminal:exit',
     CHECK_APP_UPDATE: 'check-app-update',
+    CHECK_FOR_UPDATES_NOW: 'check-for-updates-now',
     QUIT_AND_INSTALL: 'quit-and-install',
     UPDATE_DOWNLOADED: 'update-downloaded',
     OAUTH_WINDOW: 'oauth-window',

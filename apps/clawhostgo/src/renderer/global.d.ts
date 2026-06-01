@@ -17,8 +17,10 @@ interface ElectronAPI {
     onTerminalData: (callback: (id: string, data: string) => void) => () => void
     onTerminalExit: (callback: (id: string) => void) => () => void
     checkAppUpdate: () => Promise<AppUpdateInfo>
+    checkForUpdatesNow: () => Promise<AppUpdateInfo>
     quitAndInstall: () => Promise<void>
     onUpdateDownloaded: (callback: (info: AppUpdateInfo) => void) => () => void
+    getDeviceInfo?: () => Promise<{ platform: string; arch: string }>
 }
 
 interface Window {

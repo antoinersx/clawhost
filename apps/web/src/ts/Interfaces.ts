@@ -1588,6 +1588,12 @@ export interface DeviceInfo {
     arch: string
 }
 
+export interface AppUpdateInfo {
+    hasUpdate: boolean
+    currentVersion: string
+    latestVersion?: string
+}
+
 export interface ElectronAPI {
     isDesktop?: boolean
     getAppVersion: () => Promise<string>
@@ -1600,6 +1606,10 @@ export interface ElectronAPI {
     invoke: (channel: string, ...args: unknown[]) => Promise<unknown>
     onTerminalData: (cb: (id: string, data: string) => void) => () => void
     onTerminalExit: (cb: (id: string) => void) => () => void
+    checkAppUpdate?: () => Promise<AppUpdateInfo>
+    checkForUpdatesNow?: () => Promise<AppUpdateInfo>
+    quitAndInstall?: () => Promise<void>
+    onUpdateDownloaded?: (cb: (info: AppUpdateInfo) => void) => () => void
 }
 
 export interface WebVitalsMetric {
