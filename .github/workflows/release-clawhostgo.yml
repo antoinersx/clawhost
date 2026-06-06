@@ -21,6 +21,7 @@ jobs:
         with:
           bun-version: 1.3.2
       - run: bun install
+      - run: cd node_modules/macos-alias && npx --yes node-gyp rebuild
       - run: node -e "const fs=require('fs'),p=require('path');const t=p.resolve('node_modules/electron');if(!fs.existsSync(t)){fs.mkdirSync('node_modules',{recursive:true});fs.symlinkSync(p.resolve('../../node_modules/electron'),t,'junction')}"
         working-directory: apps/clawhostgo
       - run: bun scripts/fetch-bundled-node.ts darwin arm64
