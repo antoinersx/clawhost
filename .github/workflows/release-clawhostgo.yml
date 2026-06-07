@@ -52,9 +52,12 @@ jobs:
         working-directory: apps/clawhostgo
       - run: bun scripts/fetch-bundled-node.ts win32 x64
         working-directory: apps/clawhostgo
-      - name: Debug vendor dir
+      - name: Alias 7z.exe for Squirrel
         shell: pwsh
-        run: Get-ChildItem -Recurse node_modules/electron-winstaller/vendor | Select-Object FullName, Length | Format-Table -AutoSize
+        run: |
+          $vendor = "node_modules/electron-winstaller/vendor"
+          Copy-Item "$vendor/7z-x64.exe" "$vendor/7z.exe" -Force
+          Copy-Item "$vendor/7z-x64.dll" "$vendor/7z.dll" -Force
       - run: bunx electron-forge make --platform win32 --arch x64
         working-directory: apps/clawhostgo
       - uses: actions/upload-artifact@v4
