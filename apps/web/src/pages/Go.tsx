@@ -19,7 +19,8 @@ import {
     MacosDesktopPreview,
     GoPricingCard,
     LandingCTA,
-    GoDownloadButton
+    GoDownloadButton,
+    SelfHostButton
 } from '@/components'
 import { usePreferencesStore } from '@/lib/store'
 import { PRODUCT } from '@/lib/constants'
@@ -187,6 +188,9 @@ const Go: FC = (): ReactNode => {
 
                             <div className='mb-16 flex flex-col items-center gap-4 sm:flex-row'>
                                 <GoDownloadButton />
+                                <SelfHostButton
+                                    label={t('landing.selfHostInstead')}
+                                />
                             </div>
 
                             <StatsRow

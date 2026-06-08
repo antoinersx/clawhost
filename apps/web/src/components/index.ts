@@ -23,6 +23,7 @@ import {
     LocalBackground,
     MacosDesktopPreview,
     PricingSection,
+    SelfHostButton,
     StatsRow,
     VideoModal
 } from '@/components/landing'
@@ -103,6 +104,7 @@ export {
     LicenseRequired,
     ProtectedRoute,
     ScrollToTop,
+    SelfHostButton,
     StatsRow,
     SupportButton,
     ThemeToggle,

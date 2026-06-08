@@ -10,6 +10,7 @@ import LandingCTA from '@/components/landing/LandingCTA'
 import LocalBackground from '@/components/landing/LocalBackground'
 import MacosDesktopPreview from '@/components/landing/MacosDesktopPreview'
 import PricingSection from '@/components/landing/PricingSection'
+import SelfHostButton from '@/components/landing/SelfHostButton'
 import SimplePlanCard from '@/components/landing/SimplePlanCard'
 import buildSimplePlans from '@/components/landing/buildSimplePlans'
 import StatsRow from '@/components/landing/StatsRow'
@@ -29,6 +30,7 @@ export {
     LocalBackground,
     MacosDesktopPreview,
     PricingSection,
+    SelfHostButton,
     StatsRow,
     TrustMrrBadge,
     VideoModal,
