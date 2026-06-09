@@ -6,6 +6,7 @@ import { useScroll, useTransform } from 'framer-motion'
 import { t } from '@openclaw/i18n'
 import { goLicense } from '@openclaw/shared'
 import { SCROLL_SECTIONS, PATHS, getBaseDomain } from '@/lib'
+import { TUTORIAL_GO_URL } from '@/lib/links'
 import {
     PageTitle,
     Header,
@@ -178,7 +179,11 @@ const Go: FC = (): ReactNode => {
 
                     <div className='animate-hero-fade-in relative mx-auto max-w-6xl'>
                         <div className='flex flex-col items-center text-center'>
-                            <HeroBadge label={t('go.badge')} />
+                            <HeroBadge
+                                tutorialBadge
+                                tutorialLabel={t('go.tutorialBadge')}
+                                tutorialHref={TUTORIAL_GO_URL}
+                            />
 
                             <HeroTitle
                                 line1={t('go.heroTitle1')}

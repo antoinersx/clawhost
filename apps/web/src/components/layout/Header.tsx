@@ -9,8 +9,8 @@ import { useAuth } from '@/lib/auth'
 import { useProfile, useRoutePrefetch } from '@/hooks'
 import { Button, Skeleton } from '@/components/ui'
 import {
+    BannerCarousel,
     BetaBadge,
-    HermesBanner,
     Logo,
     ProductSwitcher
 } from '@/components/layout'
@@ -85,7 +85,7 @@ const Header: FC<HeaderProps> = ({
                           : 'border-b border-transparent bg-transparent'
                 }`}
             >
-                <HermesBanner />
+                <BannerCarousel />
                 <div className='mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4'>
                     <div className='flex items-center gap-3'>
                         <Logo />

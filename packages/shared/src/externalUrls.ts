@@ -63,6 +63,7 @@ const EXTERNAL_URLS = {
         TIKTOK: `${LINKS}/tiktok`,
         GITHUB: `${LINKS}/github`,
         TUTORIAL: `${LINKS}/tutorial`,
+        TUTORIAL_GO: `${LINKS}/tutorial-go`,
         SUPPORT_EMAIL: `support@${DOMAIN}`
     }
 }

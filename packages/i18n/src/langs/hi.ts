@@ -86,6 +86,7 @@ const hi: Translations = {
         heroTitle1: 'OpenClaw डिप्लॉय करें.',
         heroTitle2: 'स्थानीय रूप से. तुरंत.',
         badge: 'OpenClaw और Hermes स्थानीय रूप से',
+        tutorialBadge: 'Go पर शुरुआत कैसे करें',
         description:
             'अपने OpenClaw इंस्टेंस प्रबंधित करने के लिए एक हल्का डेस्कटॉप क्लाइंट. अपनी मशीन से ही डिप्लॉय, मॉनिटर और नियंत्रित करें.',
         features: 'विशेषताएँ',
@@ -1081,7 +1082,7 @@ const hi: Translations = {
         description:
             'एक क्लिक में अपने VPS पर OpenClaw डिप्लॉय करें. पूर्ण रूट एक्सेस, वैश्विक स्थान और पारदर्शी मूल्य निर्धारण के साथ सेल्फ-होस्टेबल क्लाउड होस्टिंग.',
         badge: 'OpenClaw और Hermes क्लाउड पर',
-        tutorialBadge: 'देखें. डिप्लॉय करें.',
+        tutorialBadge: 'Cloud पर शुरुआत कैसे करें',
         tutorialVideoThumbnail: 'ClawHost ट्यूटोरियल वीडियो थंबनेल',
         clawhostGoLogoAlt: 'ClawHost Go',
         trustMrrBadgeAlt: 'TrustMRR verified revenue badge',
@@ -1844,6 +1845,14 @@ const hi: Translations = {
         contactTitle: '12. संपर्क जानकारी',
         contactText:
             'यदि इन शर्तों के बारे में आपके कोई प्रश्न हैं, तो कृपया हमसे संपर्क करें'
+    },
+    productHunt: {
+        liveOn: 'लाइव है',
+        productHunt: 'Product Hunt',
+        celebrate: 'हमें समर्थन दें और पाएँ',
+        discount: '10% की छूट',
+        yourFirstMonth: 'आपके पहले ऑर्डर पर',
+        upvoteNow: 'हमें अपवोट करें'
     },
     hermesBanner: {
         title: 'Hermes Agent',

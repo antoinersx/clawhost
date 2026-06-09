@@ -86,6 +86,7 @@ const ru: Translations = {
         heroTitle1: 'Разверните OpenClaw.',
         heroTitle2: 'Локально. Мгновенно.',
         badge: 'OpenClaw и Hermes локально',
+        tutorialBadge: 'Как начать работу в Go',
         description:
             'Лёгкий настольный клиент для управления вашими экземплярами OpenClaw. Разворачивайте, отслеживайте и управляйте claws — прямо с вашего компьютера.',
         features: 'Возможности',
@@ -1078,7 +1079,7 @@ const ru: Translations = {
         description:
             'Разверните OpenClaw на собственном VPS в один клик. Самостоятельный облачный хостинг с полным root-доступом, глобальными локациями и прозрачными ценами.',
         badge: 'OpenClaw и Hermes в облаке',
-        tutorialBadge: 'Смотрите. Разворачивайте.',
+        tutorialBadge: 'Как начать работу в Cloud',
         tutorialVideoThumbnail: 'Миниатюра обучающего видео ClawHost',
         clawhostGoLogoAlt: 'ClawHost Go',
         trustMrrBadgeAlt: 'TrustMRR verified revenue badge',
@@ -1853,6 +1854,14 @@ const ru: Translations = {
         contactTitle: '12. Контактная информация',
         contactText:
             'Если у вас есть вопросы об этих Условиях, свяжитесь с нами по адресу'
+    },
+    productHunt: {
+        liveOn: 'Мы на',
+        productHunt: 'Product Hunt',
+        celebrate: 'Поддержите нас и получите',
+        discount: 'скидку 10%',
+        yourFirstMonth: 'на ваш первый заказ',
+        upvoteNow: 'Проголосуйте за нас'
     },
     hermesBanner: {
         title: 'Hermes Agent',

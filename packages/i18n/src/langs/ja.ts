@@ -86,6 +86,7 @@ const ja: Translations = {
         heroTitle1: 'OpenClawをデプロイ.',
         heroTitle2: 'ローカルで. 即座に.',
         badge: 'OpenClawとHermesをローカルで',
+        tutorialBadge: 'Goで始める方法',
         description:
             'OpenClawインスタンスを管理する軽量デスクトップクライアント。デプロイ、監視、制御をお手元のマシンから.',
         features: '機能',
@@ -1074,7 +1075,7 @@ const ja: Translations = {
         description:
             'ワンクリックで自分のVPSにOpenClawをデプロイ。フルルートアクセス、グローバルロケーション、透明な料金のセルフホスト型クラウドホスティング。',
         badge: 'OpenClawとHermesをクラウドで',
-        tutorialBadge: '見て。デプロイ。',
+        tutorialBadge: 'クラウドで始める方法',
         tutorialVideoThumbnail: 'ClawHostチュートリアル動画サムネイル',
         clawhostGoLogoAlt: 'ClawHost Go',
         trustMrrBadgeAlt: 'TrustMRR verified revenue badge',
@@ -1832,6 +1833,14 @@ const ja: Translations = {
         contactTitle: '12. お問い合わせ',
         contactText:
             'これらの規約に関するご質問がある場合は、以下までお問い合わせください'
+    },
+    productHunt: {
+        liveOn: '公開中',
+        productHunt: 'Product Hunt',
+        celebrate: '応援して楽しもう',
+        discount: '10%オフ',
+        yourFirstMonth: '初回注文',
+        upvoteNow: '応援する'
     },
     hermesBanner: {
         title: 'Hermes Agent',

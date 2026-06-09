@@ -86,6 +86,7 @@ const zh: Translations = {
         heroTitle1: '部署 OpenClaw.',
         heroTitle2: '本地. 即时.',
         badge: '本地运行 OpenClaw 与 Hermes',
+        tutorialBadge: '如何在 Go 上开始',
         description:
             '一款轻量级桌面客户端，用于管理您的 OpenClaw 实例。部署、监控和控制您的 claws — 直接在您的设备上完成.',
         features: '功能',
@@ -1014,7 +1015,7 @@ const zh: Translations = {
         description:
             '一键在您自己的 VPS 上部署 OpenClaw。自托管云托管，拥有完整 root 访问权限、全球位置和透明定价。',
         badge: '云端运行 OpenClaw 与 Hermes',
-        tutorialBadge: '观看。部署。',
+        tutorialBadge: '如何在 Cloud 上开始',
         tutorialVideoThumbnail: 'ClawHost 教程视频缩略图',
         clawhostGoLogoAlt: 'ClawHost Go',
         trustMrrBadgeAlt: 'TrustMRR verified revenue badge',
@@ -1700,6 +1701,14 @@ const zh: Translations = {
             '我们保留随时修改这些条款的权利。我们将通过电子邮件或通过服务通知用户任何重大变更。在此类修改后继续使用服务即构成对更新条款的接受。',
         contactTitle: '12. 联系信息',
         contactText: '如果您对这些条款有任何疑问，请通过以下方式联系我们'
+    },
+    productHunt: {
+        liveOn: '已上线',
+        productHunt: 'Product Hunt',
+        celebrate: '支持我们并享受',
+        discount: '9折优惠',
+        yourFirstMonth: '您的首单',
+        upvoteNow: '为我们投票'
     },
     hermesBanner: {
         title: 'Hermes Agent',

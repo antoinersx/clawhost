@@ -86,6 +86,7 @@ const nl: Translations = {
         heroTitle1: 'Implementeer OpenClaw.',
         heroTitle2: 'Lokaal. Direct.',
         badge: 'OpenClaw & Hermes lokaal',
+        tutorialBadge: 'Aan de slag op Go',
         description:
             'Een lichte desktopclient om je OpenClaw-instanties te beheren. Deploy, monitor en beheer je claws — rechtstreeks vanaf je computer.',
         features: 'Functies',
@@ -1092,7 +1093,7 @@ const nl: Translations = {
         description:
             'Deploy OpenClaw op je eigen VPS met \u00e9\u00e9n klik. Zelfhostbare cloudhosting met volledige root-toegang, wereldwijde locaties en transparante prijzen.',
         badge: 'OpenClaw & Hermes in de cloud',
-        tutorialBadge: 'Bekijk. Deploy.',
+        tutorialBadge: 'Aan de slag op Cloud',
         tutorialVideoThumbnail: 'ClawHost handleiding videominiatuur',
         clawhostGoLogoAlt: 'ClawHost Go',
         trustMrrBadgeAlt: 'TrustMRR verified revenue badge',
@@ -1872,6 +1873,14 @@ const nl: Translations = {
         contactTitle: '12. Contactinformatie',
         contactText:
             'Als je vragen hebt over deze Voorwaarden, neem dan contact met ons op via'
+    },
+    productHunt: {
+        liveOn: 'Live op',
+        productHunt: 'Product Hunt',
+        celebrate: 'Steun ons & geniet van',
+        discount: '10% korting',
+        yourFirstMonth: 'je eerste bestelling',
+        upvoteNow: 'Stem op ons'
     },
     hermesBanner: {
         title: 'Hermes Agent',

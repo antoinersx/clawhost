@@ -86,6 +86,7 @@ const pl: Translations = {
         heroTitle1: 'Wdróż OpenClaw.',
         heroTitle2: 'Lokalnie. Natychmiast.',
         badge: 'OpenClaw i Hermes lokalnie',
+        tutorialBadge: 'Jak zacząć w Go',
         description:
             'Lekki klient desktopowy do zarządzania instancjami OpenClaw. Wdrażaj, monitoruj i kontroluj swoje claws — bezpośrednio ze swojego komputera.',
         features: 'Funkcje',
@@ -1086,7 +1087,7 @@ const pl: Translations = {
         description:
             'Wdróż OpenClaw na własnym VPS jednym kliknięciem. Samodzielnie hostowalny hosting chmurowy z pełnym dostępem root, globalnymi lokalizacjami i przejrzystym cennikiem.',
         badge: 'OpenClaw i Hermes w chmurze',
-        tutorialBadge: 'Obejrzyj. Wdróż.',
+        tutorialBadge: 'Jak zacząć w Cloud',
         tutorialVideoThumbnail: 'Miniatura filmu instruktażowego ClawHost',
         clawhostGoLogoAlt: 'ClawHost Go',
         trustMrrBadgeAlt: 'TrustMRR verified revenue badge',
@@ -1859,6 +1860,14 @@ const pl: Translations = {
         contactTitle: '12. Dane kontaktowe',
         contactText:
             'Jeśli masz pytania dotyczące niniejszych Warunków, skontaktuj się z nami pod adresem'
+    },
+    productHunt: {
+        liveOn: 'Na żywo na',
+        productHunt: 'Product Hunt',
+        celebrate: 'Wesprzyj nas i skorzystaj z',
+        discount: '10% zniżki',
+        yourFirstMonth: 'na pierwsze zamówienie',
+        upvoteNow: 'Zagłosuj'
     },
     hermesBanner: {
         title: 'Hermes Agent',

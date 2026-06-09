@@ -86,6 +86,7 @@ const ar: Translations = {
         heroTitle1: 'انشر OpenClaw.',
         heroTitle2: 'محلياً. فوراً.',
         badge: 'OpenClaw وHermes محلياً',
+        tutorialBadge: 'كيفية البدء على Go',
         description:
             'تطبيق سطح مكتب خفيف لإدارة مثيلات OpenClaw الخاصة بك. انشر وراقب وتحكم في claws الخاصة بك — مباشرة من جهازك.',
         features: 'الميزات',
@@ -1042,7 +1043,7 @@ const ar: Translations = {
         description:
             'انشر OpenClaw على خادم VPS الخاص بك بنقرة واحدة. استضافة سحابية ذاتية مع وصول كامل للجذر ومواقع عالمية وأسعار شفافة.',
         badge: 'OpenClaw وHermes في السحابة',
-        tutorialBadge: 'شاهد. انشر.',
+        tutorialBadge: 'كيفية البدء على السحابة',
         tutorialVideoThumbnail: 'صورة مصغرة لفيديو شرح ClawHost',
         clawhostGoLogoAlt: 'ClawHost Go',
         trustMrrBadgeAlt: 'TrustMRR verified revenue badge',
@@ -1781,6 +1782,14 @@ const ar: Translations = {
             'نحتفظ بالحق في تعديل هذه الشروط في أي وقت. سنخطر المستخدمين بأي تغييرات جوهرية عبر البريد الإلكتروني أو من خلال الخدمة. الاستمرار في استخدام الخدمة بعد هذه التعديلات يشكل قبولاً للشروط المحدّثة.',
         contactTitle: '12. معلومات الاتصال',
         contactText: 'إذا كانت لديك أسئلة حول هذه الشروط، يرجى التواصل معنا على'
+    },
+    productHunt: {
+        liveOn: 'متاح على',
+        productHunt: 'Product Hunt',
+        celebrate: 'ادعمنا واستمتع بـ',
+        discount: 'خصم 10%',
+        yourFirstMonth: 'على طلبك الأول',
+        upvoteNow: 'صوّت لنا'
     },
     hermesBanner: {
         title: 'Hermes Agent',

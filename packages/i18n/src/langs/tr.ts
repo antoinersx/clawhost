@@ -86,6 +86,7 @@ const tr: Translations = {
         heroTitle1: 'OpenClaw Dağıt.',
         heroTitle2: 'Yerel. Anında.',
         badge: 'OpenClaw ve Hermes Yerel',
+        tutorialBadge: 'Go’da Nasıl Başlanır',
         description:
             "OpenClaw örneklerinizi yönetmek için hafif bir masaüstü istemcisi. Claw'larınızı doğrudan bilgisayarınızdan dağıtın, izleyin ve kontrol edin.",
         features: 'Özellikler',
@@ -1077,7 +1078,7 @@ const tr: Translations = {
         description:
             "OpenClaw'u tek tıkla kendi VPS'inize dağıtın. Tam root erişimi, küresel konumlar ve şeffaf fiyatlandırma ile kendi kendine barındırılabilir bulut barındırma.",
         badge: 'OpenClaw ve Hermes Bulutta',
-        tutorialBadge: 'İzle. Dağıt.',
+        tutorialBadge: 'Cloud’da Nasıl Başlanır',
         tutorialVideoThumbnail: 'ClawHost eğitim videosu küçük resmi',
         clawhostGoLogoAlt: 'ClawHost Go',
         trustMrrBadgeAlt: 'TrustMRR verified revenue badge',
@@ -1855,6 +1856,14 @@ const tr: Translations = {
         contactTitle: '12. İletişim Bilgileri',
         contactText:
             'Bu Şartlar hakkında sorularınız varsa, lütfen şu adresten bize ulaşın:'
+    },
+    productHunt: {
+        liveOn: 'Yayında',
+        productHunt: 'Product Hunt',
+        celebrate: 'Bizi destekleyin ve',
+        discount: '%10 indirim',
+        yourFirstMonth: 'ilk siparişinizde',
+        upvoteNow: 'Oy Verin'
     },
     hermesBanner: {
         title: 'Hermes Agent',
