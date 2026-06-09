@@ -597,6 +597,33 @@ const en = {
                     'Reinstall wipes the OpenClaw runtime and gives you a clean slate. Your server, IP, and keys stay the same.',
                 cta: 'Learn More'
             },
+            hermesAgentLaunch: {
+                subject: 'Hermes Agent is here',
+                preview: 'Deploy Hermes agents directly on ClawHost.',
+                tag: 'Hermes Agent',
+                heading: 'Hermes agents, now on ClawHost',
+                description:
+                    'Hermes Agent is now supported on ClawHost. Spin up a Hermes-powered claw in minutes, configure model providers from the Files tab, and chat with it from the built-in terminal. No extra setup, no glue code.',
+                cta: 'Deploy Hermes'
+            },
+            clawHostGoLaunch: {
+                subject: 'ClawHost Go is here',
+                preview: 'A native desktop app to run OpenClaw locally on your machine.',
+                tag: 'ClawHost Go',
+                heading: 'Your claws, on your desk',
+                description:
+                    'ClawHost Go is a native desktop app for macOS and Windows. Deploy and manage OpenClaw instances directly on your machine — no cloud, no subscription, just a one-time license. It comes with a built-in terminal, file editor, version manager, and zero-config local DNS.',
+                cta: 'Download ClawHost Go'
+            },
+            productHuntLaunch: {
+                subject: 'Help us launch on Product Hunt',
+                preview: 'We just launched on Product Hunt. Your upvote matters.',
+                tag: 'Product Hunt Launch',
+                heading: 'We\'re live on Product Hunt',
+                description:
+                    'Today we launched ClawHost on Product Hunt. If we have helped you ship faster, an upvote would mean the world. As a thank you, use code PH10 for 10% off your first order.',
+                cta: 'Upvote on Product Hunt'
+            },
             yearlyPlans: {
                 subject: 'Save with yearly billing',
                 preview: 'Same service, lower price',

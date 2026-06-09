@@ -10,7 +10,7 @@ import FEATURE_EMAILS from '@/lib/featureEmails'
 import { ok, fail } from '@/lib/response'
 import { t } from '@openclaw/i18n'
 
-const BATCH_SIZE = 5
+const BATCH_SIZE = 4
 const BATCH_DELAY_MS = 200
 const FEATURE_COUNT = FEATURE_EMAILS.length
 

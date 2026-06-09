@@ -630,6 +630,33 @@ const it: Translations = {
                     'Reinstalla il runtime OpenClaw sul tuo server esistente con un singolo clic. Il tuo server resta intatto — solo OpenClaw viene reinstallato da zero.',
                 cta: 'Scopri di Più'
             },
+            hermesAgentLaunch: {
+                subject: 'L\'agente Hermes è arrivato',
+                preview: 'Distribuisci agenti Hermes direttamente su ClawHost.',
+                tag: 'Agente Hermes',
+                heading: 'Agenti Hermes, ora su ClawHost',
+                description:
+                    'L\'agente Hermes è ora supportato su ClawHost. Avvia un claw alimentato da Hermes in pochi minuti, configura i provider di modelli dalla scheda File e chatta con esso dal terminale integrato. Nessuna configurazione extra, nessun codice di collegamento.',
+                cta: 'Distribuisci Hermes'
+            },
+            clawHostGoLaunch: {
+                subject: 'ClawHost Go è arrivato',
+                preview: 'Una desktop app nativa per eseguire OpenClaw localmente sul tuo computer.',
+                tag: 'ClawHost Go',
+                heading: 'I tuoi claws, sulla tua scrivania',
+                description:
+                    'ClawHost Go è una desktop app nativa per macOS e Windows. Distribuisci e gestisci istanze OpenClaw direttamente sul tuo computer — niente cloud, niente abbonamento, solo una licenza una tantum. Include terminale integrato, editor di file, gestore delle versioni e DNS locale senza configurazione.',
+                cta: 'Scarica ClawHost Go'
+            },
+            productHuntLaunch: {
+                subject: 'Aiutaci con il lancio su Product Hunt',
+                preview: 'Abbiamo appena lanciato su Product Hunt. Il tuo voto conta.',
+                tag: 'Lancio su Product Hunt',
+                heading: 'Siamo live su Product Hunt',
+                description:
+                    'Oggi lanciamo ClawHost su Product Hunt. Se ti abbiamo aiutato a spedire più velocemente, un upvote significherebbe il mondo. Come ringraziamento, usa il codice PH10 per il 10% di sconto sul tuo primo ordine.',
+                cta: 'Vota su Product Hunt'
+            },
             yearlyPlans: {
                 subject: 'Lo sapevi? Risparmia con i piani annuali',
                 preview: 'Passa alla fatturazione annuale e paga meno',

@@ -628,6 +628,33 @@ const de: Translations = {
                     'Neuinstallation löscht die OpenClaw-Runtime und gibt dir eine saubere Seite. Server, IP und Schlüssel bleiben gleich.',
                 cta: 'Mehr Erfahren'
             },
+            hermesAgentLaunch: {
+                subject: 'Hermes Agent ist da',
+                preview: 'Deploye Hermes-Agenten direkt auf ClawHost.',
+                tag: 'Hermes Agent',
+                heading: 'Hermes-Agenten, jetzt auf ClawHost',
+                description:
+                    'Hermes Agent wird jetzt von ClawHost unterstützt. Starte einen Hermes-betriebenen Claw in Minuten, konfiguriere Modell-Provider über den Files-Tab und chatte mit ihm direkt aus dem integrierten Terminal. Kein zusätzliches Setup, kein Glue-Code.',
+                cta: 'Hermes deployen'
+            },
+            clawHostGoLaunch: {
+                subject: 'ClawHost Go ist da',
+                preview: 'Eine native Desktop-App, um OpenClaw lokal auf deinem Rechner laufen zu lassen.',
+                tag: 'ClawHost Go',
+                heading: 'Deine Claws, auf deinem Schreibtisch',
+                description:
+                    'ClawHost Go ist eine native Desktop-App für macOS und Windows. Deploye und verwalte OpenClaw-Instanzen direkt auf deinem Rechner — keine Cloud, kein Abo, nur eine einmalige Lizenz. Mit integriertem Terminal, Datei-Editor, Versions-Manager und Zero-Config lokalem DNS.',
+                cta: 'ClawHost Go herunterladen'
+            },
+            productHuntLaunch: {
+                subject: 'Hilf uns beim Launch auf Product Hunt',
+                preview: 'Wir sind gerade auf Product Hunt gestartet. Dein Vote zählt.',
+                tag: 'Product Hunt Launch',
+                heading: 'Wir sind live auf Product Hunt',
+                description:
+                    'Heute starten wir ClawHost auf Product Hunt. Falls wir dir geholfen haben, schneller zu shippen, würde ein Upvote die Welt bedeuten. Als Dankeschön: Code PH10 für 10% Rabatt auf deine erste Bestellung.',
+                cta: 'Auf Product Hunt voten'
+            },
             yearlyPlans: {
                 subject: 'Sparen mit jährlicher Abrechnung',
                 preview: 'Gleicher Service, niedrigerer Preis',

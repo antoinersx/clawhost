@@ -613,6 +613,33 @@ const nl: Translations = {
                     'Herinstalleer de OpenClaw-runtime op je bestaande server met \u00e9\u00e9n klik. Je server blijft intact \u2014 alleen OpenClaw krijgt een schone installatie.',
                 cta: 'Meer informatie'
             },
+            hermesAgentLaunch: {
+                subject: 'Hermes Agent is er',
+                preview: 'Deploy Hermes-agents direct op ClawHost.',
+                tag: 'Hermes Agent',
+                heading: 'Hermes-agents, nu op ClawHost',
+                description:
+                    'Hermes Agent wordt nu ondersteund op ClawHost. Start binnen enkele minuten een Hermes-aangedreven claw, configureer modelaanbieders vanuit het tabblad Bestanden en chat ermee vanuit de ingebouwde terminal. Geen extra setup, geen lijmcode.',
+                cta: 'Hermes deployen'
+            },
+            clawHostGoLaunch: {
+                subject: 'ClawHost Go is er',
+                preview: 'Een native desktop-app om OpenClaw lokaal op je machine te draaien.',
+                tag: 'ClawHost Go',
+                heading: 'Je claws, op je bureau',
+                description:
+                    'ClawHost Go is een native desktop-app voor macOS en Windows. Deploy en beheer OpenClaw-instances direct op je machine — geen cloud, geen abonnement, alleen een eenmalige licentie. Met ingebouwde terminal, bestandseditor, versiebeheer en zero-config lokale DNS.',
+                cta: 'Download ClawHost Go'
+            },
+            productHuntLaunch: {
+                subject: 'Help ons lanceren op Product Hunt',
+                preview: 'We zijn net gelanceerd op Product Hunt. Jouw stem telt.',
+                tag: 'Product Hunt Lancering',
+                heading: 'We zijn live op Product Hunt',
+                description:
+                    'Vandaag lanceren we ClawHost op Product Hunt. Als we je hebben geholpen sneller te verschepen, zou een upvote de wereld betekenen. Als dank: code PH10 voor 10% korting op je eerste bestelling.',
+                cta: 'Stem op Product Hunt'
+            },
             yearlyPlans: {
                 subject: 'Wist je dat? Bespaar met jaarplannen',
                 preview:

@@ -255,17 +255,12 @@ export interface UseCreateAgentFormReturn {
 export interface BannerSlide {
     id: string
     content: ReactNode
-    onDismiss: () => void
 }
 
 export interface UIState {
     toast: ToastData | null
     showToast: (message: string, type?: ToastType, duration?: number) => void
     hideToast: () => void
-    hermesBannerVisible: boolean
-    dismissHermesBanner: () => void
-    phBannerVisible: boolean
-    dismissPhBanner: () => void
 }
 
 export interface PreferencesState {

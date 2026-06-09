@@ -575,6 +575,33 @@ const zh: Translations = {
                     '一键在现有服务器上重新安装 OpenClaw 运行时。您的服务器保持不变——只有 OpenClaw 会获得全新安装。',
                 cta: '了解更多'
             },
+            hermesAgentLaunch: {
+                subject: 'Hermes Agent 已上线',
+                preview: '直接在 ClawHost 上部署 Hermes 代理。',
+                tag: 'Hermes Agent',
+                heading: 'Hermes 代理，现已在 ClawHost 上线',
+                description:
+                    'Hermes Agent 现已在 ClawHost 上获得支持。几分钟内启动一个由 Hermes 驱动的 claw，从"文件"标签配置模型提供商，并通过内置终端与其聊天。无需额外设置，无需粘合代码。',
+                cta: '部署 Hermes'
+            },
+            clawHostGoLaunch: {
+                subject: 'ClawHost Go 已上线',
+                preview: '在您的机器上本地运行 OpenClaw 的原生桌面应用。',
+                tag: 'ClawHost Go',
+                heading: '您的 claws，就在您的桌面上',
+                description:
+                    'ClawHost Go 是 macOS 和 Windows 的原生桌面应用。直接在您的机器上部署和管理 OpenClaw 实例 — 无云端、无订阅，只需一次性许可。内置终端、文件编辑器、版本管理器和零配置本地 DNS。',
+                cta: '下载 ClawHost Go'
+            },
+            productHuntLaunch: {
+                subject: '帮助我们在 Product Hunt 上发布',
+                preview: '我们刚刚在 Product Hunt 上线。您的投票很重要。',
+                tag: 'Product Hunt 发布',
+                heading: '我们已在 Product Hunt 上线',
+                description:
+                    '今天我们在 Product Hunt 上发布了 ClawHost。如果我们帮助您更快地发布产品，您的支持对我们意义重大。作为感谢，使用代码 PH10 获得首单 9 折优惠。',
+                cta: '在 Product Hunt 上投票'
+            },
             yearlyPlans: {
                 subject: '您知道吗？年付方案更省钱',
                 preview: '切换到年付账单，花费更少',

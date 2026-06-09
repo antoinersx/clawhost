@@ -641,6 +641,33 @@ const fr: Translations = {
                     'La réinstallation efface le runtime OpenClaw et vous donne une page blanche. Votre serveur, IP et clés restent intacts.',
                 cta: 'En Savoir Plus'
             },
+            hermesAgentLaunch: {
+                subject: 'L\'agent Hermes est arrivé',
+                preview: 'Déployez des agents Hermes directement sur ClawHost.',
+                tag: 'Agent Hermes',
+                heading: 'Les agents Hermes, maintenant sur ClawHost',
+                description:
+                    'L\'agent Hermes est désormais pris en charge sur ClawHost. Lancez un claw alimenté par Hermes en quelques minutes, configurez les fournisseurs de modèles depuis l\'onglet Fichiers et discutez avec lui depuis le terminal intégré. Aucune configuration supplémentaire, aucun code de liaison.',
+                cta: 'Déployer Hermes'
+            },
+            clawHostGoLaunch: {
+                subject: 'ClawHost Go est là',
+                preview: 'Une application de bureau native pour exécuter OpenClaw localement sur votre machine.',
+                tag: 'ClawHost Go',
+                heading: 'Vos claws, sur votre bureau',
+                description:
+                    'ClawHost Go est une application de bureau native pour macOS et Windows. Déployez et gérez vos instances OpenClaw directement sur votre machine — pas de cloud, pas d\'abonnement, juste une licence unique. Elle inclut un terminal intégré, un éditeur de fichiers, un gestionnaire de versions et un DNS local sans configuration.',
+                cta: 'Télécharger ClawHost Go'
+            },
+            productHuntLaunch: {
+                subject: 'Aidez-nous à lancer sur Product Hunt',
+                preview: 'Nous venons de lancer sur Product Hunt. Votre vote compte.',
+                tag: 'Lancement Product Hunt',
+                heading: 'Nous sommes en direct sur Product Hunt',
+                description:
+                    'Aujourd\'hui, nous lançons ClawHost sur Product Hunt. Si on vous a aidé à expédier plus vite, un upvote nous serait précieux. Pour vous remercier, utilisez le code PH10 et bénéficiez de 10% de réduction sur votre première commande.',
+                cta: 'Voter sur Product Hunt'
+            },
             yearlyPlans: {
                 subject: 'Économisez avec la facturation annuelle',
                 preview: 'Même service, prix réduit',

@@ -612,6 +612,33 @@ const hi: Translations = {
                     'एक क्लिक में अपने मौजूदा सर्वर पर OpenClaw रनटाइम पुनः इंस्टॉल करें. आपका सर्वर बरकरार रहता है — केवल OpenClaw को क्लीन इंस्टॉलेशन मिलता है.',
                 cta: 'और जानें'
             },
+            hermesAgentLaunch: {
+                subject: 'Hermes Agent आ गया है',
+                preview: 'Hermes एजेंट सीधे ClawHost पर तैनात करें।',
+                tag: 'Hermes Agent',
+                heading: 'Hermes एजेंट, अब ClawHost पर',
+                description:
+                    'Hermes Agent अब ClawHost पर समर्थित है। मिनटों में Hermes-संचालित claw चालू करें, Files टैब से मॉडल प्रदाताओं को कॉन्फ़िगर करें, और बिल्ट-इन टर्मिनल से इसके साथ चैट करें। कोई अतिरिक्त सेटअप नहीं, कोई ग्लू कोड नहीं।',
+                cta: 'Hermes तैनात करें'
+            },
+            clawHostGoLaunch: {
+                subject: 'ClawHost Go आ गया है',
+                preview: 'अपनी मशीन पर स्थानीय रूप से OpenClaw चलाने के लिए एक नेटिव डेस्कटॉप ऐप।',
+                tag: 'ClawHost Go',
+                heading: 'आपके claws, आपकी डेस्क पर',
+                description:
+                    'ClawHost Go macOS और Windows के लिए एक नेटिव डेस्कटॉप ऐप है। अपनी मशीन पर सीधे OpenClaw इंस्टेंस तैनात और प्रबंधित करें — कोई क्लाउड नहीं, कोई सब्सक्रिप्शन नहीं, बस एक बार का लाइसेंस। इसमें बिल्ट-इन टर्मिनल, फ़ाइल एडिटर, वर्शन मैनेजर और ज़ीरो-कॉन्फिग लोकल DNS शामिल है।',
+                cta: 'ClawHost Go डाउनलोड करें'
+            },
+            productHuntLaunch: {
+                subject: 'Product Hunt पर हमारे लॉन्च में मदद करें',
+                preview: 'हमने अभी Product Hunt पर लॉन्च किया है। आपका वोट मायने रखता है।',
+                tag: 'Product Hunt लॉन्च',
+                heading: 'हम Product Hunt पर लाइव हैं',
+                description:
+                    'आज हमने Product Hunt पर ClawHost लॉन्च किया है। अगर हमने आपको तेज़ी से शिप करने में मदद की है, तो एक अपवोट बहुत मायने रखेगा। धन्यवाद स्वरूप, अपने पहले ऑर्डर पर 10% छूट के लिए PH10 कोड का उपयोग करें।',
+                cta: 'Product Hunt पर अपवोट करें'
+            },
             yearlyPlans: {
                 subject: 'क्या आप जानते हैं? वार्षिक प्लान से बचत करें',
                 preview: 'वार्षिक बिलिंग पर स्विच करें और कम भुगतान करें',

@@ -9,7 +9,10 @@ const featureEmailKey = {
     subdomain: 'subdomain',
     darkMode: 'darkMode',
     reinstall: 'reinstall',
-    yearlyPlans: 'yearlyPlans'
+    yearlyPlans: 'yearlyPlans',
+    productHuntLaunch: 'productHuntLaunch',
+    clawHostGoLaunch: 'clawHostGoLaunch',
+    hermesAgentLaunch: 'hermesAgentLaunch'
 } as const
 
 export default featureEmailKey

@@ -623,6 +623,33 @@ const es: Translations = {
                     'La reinstalación limpia el runtime de OpenClaw y te da una página en blanco. Tu servidor, IP y claves se mantienen.',
                 cta: 'Saber Más'
             },
+            hermesAgentLaunch: {
+                subject: 'El Agente Hermes ya está aquí',
+                preview: 'Despliega agentes Hermes directamente en ClawHost.',
+                tag: 'Agente Hermes',
+                heading: 'Agentes Hermes, ahora en ClawHost',
+                description:
+                    'El Agente Hermes ya es compatible con ClawHost. Crea un claw impulsado por Hermes en minutos, configura los proveedores de modelos desde la pestaña Archivos y chatea con él desde el terminal integrado. Sin configuración adicional, sin código de unión.',
+                cta: 'Desplegar Hermes'
+            },
+            clawHostGoLaunch: {
+                subject: 'Ya está disponible ClawHost Go',
+                preview: 'Una app de escritorio nativa para ejecutar OpenClaw localmente en tu máquina.',
+                tag: 'ClawHost Go',
+                heading: 'Tus claws, en tu escritorio',
+                description:
+                    'ClawHost Go es una app de escritorio nativa para macOS y Windows. Despliega y gestiona instancias de OpenClaw directamente en tu máquina — sin nube, sin suscripción, solo una licencia única. Incluye terminal integrada, editor de archivos, gestor de versiones y DNS local sin configuración.',
+                cta: 'Descargar ClawHost Go'
+            },
+            productHuntLaunch: {
+                subject: 'Ayúdanos a lanzar en Product Hunt',
+                preview: 'Acabamos de lanzar en Product Hunt. Tu voto importa.',
+                tag: 'Lanzamiento en Product Hunt',
+                heading: 'Estamos en vivo en Product Hunt',
+                description:
+                    'Hoy lanzamos ClawHost en Product Hunt. Si te ayudamos a enviar más rápido, un voto significaría mucho. Como agradecimiento, usa el código PH10 para obtener un 10% de descuento en tu primer pedido.',
+                cta: 'Vota en Product Hunt'
+            },
             yearlyPlans: {
                 subject: 'Ahorra con facturación anual',
                 preview: 'Mismo servicio, menor precio',

@@ -605,6 +605,33 @@ const tr: Translations = {
                     'Mevcut sunucunuzda OpenClaw çalışma zamanını tek tıkla yeniden yükleyin. Sunucunuz olduğu gibi kalır — sadece OpenClaw temiz bir kurulum alır.',
                 cta: 'Daha Fazla Bilgi'
             },
+            hermesAgentLaunch: {
+                subject: 'Hermes Agent burada',
+                preview: 'Hermes ajanlarını doğrudan ClawHost\'a dağıtın.',
+                tag: 'Hermes Ajanı',
+                heading: 'Hermes ajanları, artık ClawHost\'ta',
+                description:
+                    'Hermes Agent artık ClawHost\'ta destekleniyor. Birkaç dakikada Hermes destekli bir claw çalıştırın, model sağlayıcılarını Dosyalar sekmesinden yapılandırın ve yerleşik terminalden onunla sohbet edin. Ek kurulum yok, yapıştırıcı kod yok.',
+                cta: 'Hermes\'i dağıt'
+            },
+            clawHostGoLaunch: {
+                subject: 'ClawHost Go burada',
+                preview: 'OpenClaw\'u makinenizde yerel olarak çalıştırmak için yerel bir masaüstü uygulaması.',
+                tag: 'ClawHost Go',
+                heading: 'Claw\'larınız, masanızda',
+                description:
+                    'ClawHost Go, macOS ve Windows için yerel bir masaüstü uygulamasıdır. OpenClaw örneklerini doğrudan makinenizde dağıtın ve yönetin — bulut yok, abonelik yok, sadece tek seferlik lisans. Yerleşik terminal, dosya düzenleyici, sürüm yöneticisi ve sıfır yapılandırmalı yerel DNS ile birlikte gelir.',
+                cta: 'ClawHost Go\'yu indir'
+            },
+            productHuntLaunch: {
+                subject: 'Product Hunt\'taki lansmanımıza yardım edin',
+                preview: 'Product Hunt\'ta yayına yeni girdik. Oyunuz önemli.',
+                tag: 'Product Hunt Lansmanı',
+                heading: 'Product Hunt\'ta yayındayız',
+                description:
+                    'Bugün ClawHost\'u Product Hunt\'ta yayınlıyoruz. Daha hızlı kargo göndermenize yardımcı olduysak, bir oy bizim için çok şey ifade eder. Teşekkür olarak, ilk siparişinizde %10 indirim için PH10 kodunu kullanın.',
+                cta: 'Product Hunt\'ta oy ver'
+            },
             yearlyPlans: {
                 subject: 'Biliyor muydunuz? Yıllık planlarla tasarruf edin',
                 preview: 'Yıllık faturalamaya geçin ve daha az ödeyin',

@@ -588,6 +588,33 @@ const ar: Translations = {
                     'أعد تثبيت بيئة تشغيل OpenClaw على خادمك الحالي بنقرة واحدة. خادمك يبقى كما هو — فقط OpenClaw يحصل على تثبيت نظيف.',
                 cta: 'اعرف المزيد'
             },
+            hermesAgentLaunch: {
+                subject: 'وكيل Hermes متاح الآن',
+                preview: 'انشر وكلاء Hermes مباشرة على ClawHost.',
+                tag: 'وكيل Hermes',
+                heading: 'وكلاء Hermes، الآن على ClawHost',
+                description:
+                    'وكيل Hermes مدعوم الآن على ClawHost. أنشئ claw مدعومًا بـ Hermes في دقائق، وقم بتكوين مزودي النماذج من علامة التبويب الملفات، وتحدث معه من الطرفية المدمجة. لا إعداد إضافي، ولا كود ربط.',
+                cta: 'نشر Hermes'
+            },
+            clawHostGoLaunch: {
+                subject: 'ClawHost Go متاح الآن',
+                preview: 'تطبيق سطح مكتب أصلي لتشغيل OpenClaw محليًا على جهازك.',
+                tag: 'ClawHost Go',
+                heading: 'مخالبك، على مكتبك',
+                description:
+                    'ClawHost Go هو تطبيق سطح مكتب أصلي لنظامي macOS و Windows. انشر وأدر مثيلات OpenClaw مباشرة على جهازك — لا حوسبة سحابية، ولا اشتراك، فقط ترخيص لمرة واحدة. يأتي مع طرفية مدمجة، ومحرر ملفات، ومدير إصدارات، و DNS محلي بدون تكوين.',
+                cta: 'تنزيل ClawHost Go'
+            },
+            productHuntLaunch: {
+                subject: 'ساعدنا في إطلاقنا على Product Hunt',
+                preview: 'لقد أطلقنا للتو على Product Hunt. صوتك يهمنا.',
+                tag: 'إطلاق على Product Hunt',
+                heading: 'نحن مباشر على Product Hunt',
+                description:
+                    'أطلقنا اليوم ClawHost على Product Hunt. إذا ساعدناك على الشحن أسرع، فإن تصويتك يعني لنا الكثير. كشكر لك، استخدم رمز PH10 للحصول على خصم 10% على طلبك الأول.',
+                cta: 'صوّت على Product Hunt'
+            },
             yearlyPlans: {
                 subject: 'هل تعلم؟ وفّر مع الخطط السنوية',
                 preview: 'بدّل إلى الفوترة السنوية وادفع أقل',

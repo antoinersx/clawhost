@@ -14,7 +14,10 @@ import {
     SubdomainEmail,
     DarkModeEmail,
     ReinstallEmail,
-    YearlyPlansEmail
+    YearlyPlansEmail,
+    ProductHuntLaunchEmail,
+    ClawHostGoLaunchEmail,
+    HermesAgentLaunchEmail
 } from '@/emails'
 
 const FEATURE_EMAILS: FeatureEmailDefinition[] = [
@@ -72,6 +75,21 @@ const FEATURE_EMAILS: FeatureEmailDefinition[] = [
         key: featureEmailKey.yearlyPlans,
         subject: t('emails.features.yearlyPlans.subject'),
         render: () => YearlyPlansEmail({})
+    },
+    {
+        key: featureEmailKey.hermesAgentLaunch,
+        subject: t('emails.features.hermesAgentLaunch.subject'),
+        render: () => HermesAgentLaunchEmail({})
+    },
+    {
+        key: featureEmailKey.clawHostGoLaunch,
+        subject: t('emails.features.clawHostGoLaunch.subject'),
+        render: () => ClawHostGoLaunchEmail({})
+    },
+    {
+        key: featureEmailKey.productHuntLaunch,
+        subject: t('emails.features.productHuntLaunch.subject'),
+        render: () => ProductHuntLaunchEmail({})
     }
 ]
 

@@ -607,6 +607,33 @@ const ja: Translations = {
                     '既存のサーバーにワンクリックでOpenClawランタイムを再インストール。サーバーはそのまま — OpenClawだけがクリーンインストール。',
                 cta: '詳細を見る'
             },
+            hermesAgentLaunch: {
+                subject: 'Hermes Agent が登場',
+                preview: 'Hermes エージェントを ClawHost に直接デプロイ。',
+                tag: 'Hermes Agent',
+                heading: 'Hermes エージェント、ClawHost で利用可能に',
+                description:
+                    'Hermes Agent が ClawHost でサポートされるようになりました。数分で Hermes 駆動の claw を起動し、Files タブからモデルプロバイダーを設定し、組み込みターミナルからチャットできます。追加のセットアップやグルーコードは不要です。',
+                cta: 'Hermes をデプロイ'
+            },
+            clawHostGoLaunch: {
+                subject: 'ClawHost Go が登場',
+                preview: 'OpenClaw をローカルマシンで実行するネイティブデスクトップアプリ。',
+                tag: 'ClawHost Go',
+                heading: 'あなたの claws を、デスクトップで',
+                description:
+                    'ClawHost Go は macOS と Windows 向けのネイティブデスクトップアプリです。OpenClaw インスタンスをマシン上で直接デプロイ・管理できます — クラウド不要、サブスクなし、一度きりのライセンスのみ。組み込みターミナル、ファイルエディタ、バージョンマネージャ、ゼロコンフィグのローカル DNS を備えています。',
+                cta: 'ClawHost Go をダウンロード'
+            },
+            productHuntLaunch: {
+                subject: 'Product Huntでのローンチを応援してください',
+                preview: 'Product Huntでローンチしました。あなたの一票が重要です。',
+                tag: 'Product Huntローンチ',
+                heading: 'Product Huntで公開中です',
+                description:
+                    '本日、ClawHostをProduct Huntでローンチしました。私たちが出荷を速めるお手伝いができたなら、応援していただけると幸いです。お礼として、初回注文10%オフのコードPH10をご利用ください。',
+                cta: 'Product Huntで応援する'
+            },
             yearlyPlans: {
                 subject: 'ご存知ですか？年間プランでお得に',
                 preview: '年間契約に切り替えて節約',

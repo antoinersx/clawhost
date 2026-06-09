@@ -615,6 +615,33 @@ const pl: Translations = {
                     'Zainstaluj ponownie środowisko OpenClaw na istniejącym serwerze jednym kliknięciem. Twój serwer pozostaje nietknięty — tylko OpenClaw otrzymuje czystą instalację.',
                 cta: 'Dowiedz się więcej'
             },
+            hermesAgentLaunch: {
+                subject: 'Hermes Agent już jest',
+                preview: 'Wdrażaj agentów Hermes bezpośrednio na ClawHost.',
+                tag: 'Hermes Agent',
+                heading: 'Agenci Hermes, teraz na ClawHost',
+                description:
+                    'Hermes Agent jest teraz obsługiwany na ClawHost. Uruchom claw zasilany przez Hermes w kilka minut, skonfiguruj dostawców modeli z zakładki Pliki i rozmawiaj z nim z wbudowanego terminala. Bez dodatkowej konfiguracji, bez kodu klejącego.',
+                cta: 'Wdróż Hermes'
+            },
+            clawHostGoLaunch: {
+                subject: 'ClawHost Go już jest',
+                preview: 'Natywna aplikacja desktopowa do uruchamiania OpenClaw lokalnie na twoim komputerze.',
+                tag: 'ClawHost Go',
+                heading: 'Twoje claws, na twoim biurku',
+                description:
+                    'ClawHost Go to natywna aplikacja desktopowa dla macOS i Windows. Wdrażaj i zarządzaj instancjami OpenClaw bezpośrednio na swoim komputerze — bez chmury, bez subskrypcji, tylko jedna licencja na zawsze. Zawiera wbudowany terminal, edytor plików, menedżer wersji i lokalny DNS bez konfiguracji.',
+                cta: 'Pobierz ClawHost Go'
+            },
+            productHuntLaunch: {
+                subject: 'Pomóż nam w starcie na Product Hunt',
+                preview: 'Właśnie wystartowaliśmy na Product Hunt. Twój głos się liczy.',
+                tag: 'Start na Product Hunt',
+                heading: 'Jesteśmy na żywo na Product Hunt',
+                description:
+                    'Dziś uruchamiamy ClawHost na Product Hunt. Jeśli pomogliśmy ci szybciej wdrażać, twój głos znaczy dla nas świat. W ramach podziękowania użyj kodu PH10 i otrzymaj 10% zniżki na pierwsze zamówienie.',
+                cta: 'Zagłosuj na Product Hunt'
+            },
             yearlyPlans: {
                 subject: 'Czy wiesz? Oszczędzaj z planami rocznymi',
                 preview: 'Przejdź na rozliczenie roczne i płać mniej',

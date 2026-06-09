@@ -1,7 +1,7 @@
 {
     "name": "clawhostgo",
     "productName": "ClawHostGo",
-    "version": "0.0.37",
+    "version": "0.0.38",
     "description": "ClawHost Go — desktop client to deploy and manage OpenClaw instances on your machine.",
     "author": {
         "name": "ClawHost",

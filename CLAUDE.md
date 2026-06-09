@@ -653,7 +653,7 @@ The provider resolver includes in-memory caching with TTL (5 min for server type
 
 - **Firebase**: Enable Authentication with Email/Password, Google, and GitHub sign-in methods. Generate a service account key for the Admin SDK
 - **Cloudflare**: API token needs DNS edit permissions for the zone. Creates A records for each claw subdomain (60s TTL)
-- **Resend**: Verify your sending domain. `FROM_EMAIL` defaults to `OpenClaw <noreply@openclaw.com>`
+- **Resend**: Verify your sending domain. `FROM_EMAIL` defaults to `ClawHost <noreply@clawhost.cloud>`
 - **Polar**: Create an organization, generate an access token, and configure a webhook pointing to `POST /api/webhooks/polar` with the secret
 
 ### State Management (Web)
