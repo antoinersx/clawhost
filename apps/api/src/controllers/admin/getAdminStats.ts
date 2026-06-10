@@ -10,7 +10,6 @@ import {
     sshKeys,
     volumes,
     referrals,
-    waitlist,
     emails
 } from '@/db/schema'
 import { ok } from '@/lib/response'
@@ -38,7 +37,6 @@ const getAdminStats = withErrorHandler(
         sshKeyCount,
         volumeCount,
         referralCount,
-        waitlistCount,
         emailCount,
         billingData
     ] = await Promise.all([
@@ -48,7 +46,6 @@ const getAdminStats = withErrorHandler(
         safeCount(sshKeys),
         safeCount(volumes),
         safeCount(referrals),
-        safeCount(waitlist),
         safeCount(emails),
         orders.listAll(1, 1).catch(() => ({ totalCount: 0 }))
     ])
@@ -62,7 +59,6 @@ const getAdminStats = withErrorHandler(
             sshKeys: sshKeyCount,
             volumes: volumeCount,
             referrals: referralCount,
-            waitlist: waitlistCount,
             emails: emailCount,
             billing: billingData.totalCount
         },

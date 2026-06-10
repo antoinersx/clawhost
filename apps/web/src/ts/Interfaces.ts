@@ -679,21 +679,6 @@ export interface GeneratedKeyPair {
     privateKey: string
 }
 
-export interface GoWaitlistFormProps {
-    user: User | null
-    authLoading: boolean
-    hasJoined: boolean
-    isJoining: boolean
-    isCheckingStatus: boolean
-    waitlistEmail: string
-    isValidEmail: boolean
-    onWaitlistEmailChange: (value: string) => void
-    onJoinWaitlist: (email: string) => void
-    onEmailSubmit: (e: React.FormEvent) => void
-    loggedInClassName?: string
-    guestClassName?: string
-}
-
 export interface GoDownloadButtonProps {
     className?: string
 }
@@ -1588,6 +1573,12 @@ export interface DeviceInfo {
     arch: string
 }
 
+export interface AppUpdateInfo {
+    hasUpdate: boolean
+    currentVersion: string
+    latestVersion?: string
+}
+
 export interface ElectronAPI {
     isDesktop?: boolean
     getAppVersion: () => Promise<string>
@@ -1600,6 +1591,10 @@ export interface ElectronAPI {
     invoke: (channel: string, ...args: unknown[]) => Promise<unknown>
     onTerminalData: (cb: (id: string, data: string) => void) => () => void
     onTerminalExit: (cb: (id: string) => void) => () => void
+    checkAppUpdate?: () => Promise<AppUpdateInfo>
+    checkForUpdatesNow?: () => Promise<AppUpdateInfo>
+    quitAndInstall?: () => Promise<void>
+    onUpdateDownloaded?: (cb: (info: AppUpdateInfo) => void) => () => void
 }
 
 export interface WebVitalsMetric {
@@ -1714,15 +1709,6 @@ export interface SitemapRoute {
 export interface ComparisonRow {
     us: string
     others: string
-}
-
-export interface WaitlistStatusResponse {
-    joined: boolean
-}
-
-export interface JoinWaitlistResponse {
-    joined: boolean
-    alreadyJoined: boolean
 }
 
 export interface ComparisonTableProps {
@@ -1949,7 +1935,6 @@ export interface AdminAnalyticsResponse {
     sshKeys: AdminAnalyticsDataPoint[]
     volumes: AdminAnalyticsDataPoint[]
     referrals: AdminAnalyticsDataPoint[]
-    waitlist: AdminAnalyticsDataPoint[]
     emails: AdminAnalyticsDataPoint[]
 }
 
@@ -1967,7 +1952,6 @@ export interface AdminStats {
     sshKeys: number
     volumes: number
     referrals: number
-    waitlist: number
     emails: number
     billing: number
 }
@@ -1994,13 +1978,6 @@ export interface AdminPendingAgentListItem {
     expiresAt: string
     userId: string
     ownerEmail: string | null
-}
-
-export interface AdminWaitlistListItem {
-    id: string
-    email: string
-    userId: string | null
-    createdAt: string
 }
 
 export interface AdminEmailListItem {
@@ -2117,7 +2094,6 @@ export interface AdminEntitySelection {
         | 'volume'
         | 'pending-agent'
         | 'referral'
-        | 'waitlist'
         | 'email'
         | 'billing'
     id: string

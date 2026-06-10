@@ -72,10 +72,6 @@ const API_PATHS = {
             `/users/me/billing/${orderId}/invoice`,
         AUTH_METHOD: (method: string) => `/users/me/auth/${method}`
     },
-    WAITLIST: {
-        BASE: '/waitlist',
-        STATUS: '/waitlist/status'
-    },
     ADMIN: {
         USERS: '/admin/users',
         USER: (id: string) => `/admin/users/${id}`,
@@ -88,7 +84,6 @@ const API_PATHS = {
         SSH_KEYS: '/admin/ssh-keys',
         VOLUMES: '/admin/volumes',
         REFERRALS: '/admin/referrals',
-        WAITLIST: '/admin/waitlist',
         EMAILS: '/admin/emails'
     },
     WEBHOOKS: {

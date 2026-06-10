@@ -14,7 +14,6 @@ import {
     getAdminUsers,
     getAdminUserDetail,
     getAdminVolumes,
-    getAdminWaitlist,
     updateAdminUser
 } from '@/controllers/admin'
 import adminOnly from '@/middleware/adminOnly'
@@ -33,7 +32,6 @@ app.get(`/pending${apiPaths.CLAWS.BASE}`, getAdminPendingAgents)
 app.get('/ssh-keys', getAdminSSHKeys)
 app.get('/volumes', getAdminVolumes)
 app.get('/referrals', getAdminReferrals)
-app.get('/waitlist', getAdminWaitlist)
 app.get('/emails', getAdminEmails)
 
 export default app

@@ -8,6 +8,5 @@ export {
     rateLimits,
     otpCodes,
     emails,
-    waitlist,
     volumes
 } from '@/db/schema/index'

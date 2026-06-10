@@ -6,7 +6,6 @@ import cronRoutes from '@/routes/cron'
 import plansRoutes from '@/routes/plans'
 import sshKeysRoutes from '@/routes/ssh-keys'
 import usersRoutes from '@/routes/users'
-import waitlistRoutes from '@/routes/waitlist'
 import webhooksRoutes from '@/routes/webhooks'
 
 export {
@@ -18,6 +17,5 @@ export {
     plansRoutes,
     sshKeysRoutes,
     usersRoutes,
-    waitlistRoutes,
     webhooksRoutes
 }

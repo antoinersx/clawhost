@@ -10,7 +10,6 @@ import {
     useAdminUsers,
     useAdminUserDetail,
     useAdminVolumesList,
-    useAdminWaitlistList,
     useUpdateAdminUser
 } from '@/hooks/useAdmin'
 
@@ -118,7 +117,6 @@ export {
     useAdminUsers,
     useAdminUserDetail,
     useAdminVolumesList,
-    useAdminWaitlistList,
     useUpdateAdminUser,
     useAffiliate,
     useGenerateReferralCode,

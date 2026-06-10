@@ -41,6 +41,8 @@ contextBridge.exposeInMainWorld(ELECTRON_API_KEY, {
             ipcRenderer.removeListener(IPC_CHANNEL.TERMINAL_EXIT, listener)
     },
     checkAppUpdate: () => ipcRenderer.invoke(IPC_CHANNEL.CHECK_APP_UPDATE),
+    checkForUpdatesNow: () =>
+        ipcRenderer.invoke(IPC_CHANNEL.CHECK_FOR_UPDATES_NOW),
     quitAndInstall: () => ipcRenderer.invoke(IPC_CHANNEL.QUIT_AND_INSTALL),
     onUpdateDownloaded: (callback: (info: AppUpdateInfo) => void) => {
         const listener = (

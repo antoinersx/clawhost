@@ -7,6 +7,7 @@ import { useProfile } from '@/hooks'
 import {
     Logo,
     LanguageSelector,
+    LocalBackground,
     ThemeToggle,
     UserDropdown,
     LicenseRequired
@@ -36,7 +37,7 @@ const LicenseGate: FC<LicenseGateProps> = ({ children }): ReactNode => {
     if (!profile?.hasLicense) {
         return (
             <div className='bg-background text-foreground fixed inset-0 flex flex-col'>
-                <div className='landing-grid pointer-events-none' />
+                <LocalBackground />
 
                 <div className='border-border bg-background md:bg-background/80 relative z-10 flex shrink-0 items-center justify-between border-b px-6 py-3 md:backdrop-blur-xl'>
                     <Logo to={ROUTES.AGENTS} />

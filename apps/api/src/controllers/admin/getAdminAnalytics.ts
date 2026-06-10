@@ -15,7 +15,6 @@ import {
     sshKeys,
     volumes,
     referrals,
-    waitlist,
     emails
 } from '@/db/schema'
 import { ok, fail } from '@/lib/response'
@@ -69,7 +68,6 @@ const TABLE_CONFIG: AnalyticsTableConfig[] = [
     { key: 'sshKeys', table: sshKeys, column: 'created_at' },
     { key: 'volumes', table: volumes, column: 'created_at' },
     { key: 'referrals', table: referrals, column: 'created_at' },
-    { key: 'waitlist', table: waitlist, column: 'created_at' },
     { key: 'emails', table: emails, column: 'sent_at' }
 ]
 

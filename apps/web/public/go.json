@@ -1,5 +1,5 @@
 {
-    "version": "0.0.19",
+    "version": "0.0.24",
     "mac": {
         "arm64": "https://cdn.clawhost.cloud/go/clawhost-mac-arm64.dmg",
         "x64": "https://cdn.clawhost.cloud/go/clawhost-mac-intel.dmg"

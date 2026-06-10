@@ -56,6 +56,7 @@ const registerAllHandlers = (): void => {
     ipcMain.handle(IPC_CHANNEL.GET_DNS_STATUS, () => dnsResolver.isDnsSetup())
     ipcMain.handle(IPC_CHANNEL.SETUP_DNS, () => dnsResolver.setupResolver())
     ipcMain.handle(IPC_CHANNEL.CHECK_APP_UPDATE, () => appUpdater.getPendingUpdate())
+    ipcMain.handle(IPC_CHANNEL.CHECK_FOR_UPDATES_NOW, () => appUpdater.checkForUpdatesNow())
     ipcMain.handle(IPC_CHANNEL.QUIT_AND_INSTALL, () => appUpdater.quitAndInstall())
     ipcMain.handle(
         IPC_CHANNEL.OAUTH_WINDOW,

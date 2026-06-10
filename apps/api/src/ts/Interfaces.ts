@@ -586,10 +586,6 @@ export interface GoogleUserinfoResponse {
     name?: string
 }
 
-export interface JoinWaitlistBody {
-    email: string
-}
-
 export interface FeatureEmailLayoutProps {
     preview: string
     children: ReactNode

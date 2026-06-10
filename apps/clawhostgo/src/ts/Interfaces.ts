@@ -86,6 +86,18 @@ interface AppUpdateInfo {
     latestVersion?: string
 }
 
+interface AgentCreatedEvent {
+    id: string
+    name: string
+    subdomain: string
+}
+
+interface AgentDeletedEvent {
+    id: string
+    name: string
+    subdomain: string
+}
+
 export type {
     ElectronAPI,
     LocalAgentConfig,
@@ -98,5 +110,7 @@ export type {
     UpdateProfileData,
     NpmVersionEntry,
     VersionEntry,
-    AppUpdateInfo
+    AppUpdateInfo,
+    AgentCreatedEvent,
+    AgentDeletedEvent
 }

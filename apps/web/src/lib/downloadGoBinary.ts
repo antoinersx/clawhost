@@ -17,6 +17,9 @@ const downloadGoBinary = async (
     }
     if (!url) throw new Error(`${platform} url missing`)
 
+    const head = await fetch(url, { method: 'HEAD', cache: 'no-cache' })
+    if (!head.ok) throw new Error(`${platform} binary not available (${head.status})`)
+
     const filename = url.split('/').pop() || `clawhost-${platform}`
     const a = document.createElement('a')
     a.href = url

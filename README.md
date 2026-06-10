@@ -109,7 +109,6 @@ clawhost/
 | `volumes`          | Persistent storage volumes attached to agents                                  |
 | `otpCodes`         | OTP authentication codes with expiration and attempt tracking                  |
 | `rateLimits`       | Rate limiting for authentication and other sensitive endpoints                 |
-| `waitlist`         | Sign-ups awaiting access                                                       |
 | `emails`           | Outbound email log (deliverability + auditing)                                 |
 | `referrals`        | Affiliate referral codes and user-attribution links                            |
 | `referralPayments` | Commission payouts owed to referrers                                           |
@@ -360,8 +359,6 @@ bun --filter api email:dev    # Preview email templates at localhost:3333
 | `GET`  | `/api/plans/locations`                  | List available regions                     |
 | `GET`  | `/api/plans/volume-pricing`             | Get volume pricing                         |
 | `GET`  | `/api/plans/availability`               | Check plan availability per location       |
-| `POST` | `/api/waitlist`                         | Join the waitlist                          |
-| `GET`  | `/api/waitlist/status`                  | Check waitlist status by email             |
 | `POST` | `/api/webhooks/polar`                   | Polar payment/subscription webhook         |
 
 ### Protected Endpoints (Bearer token required)
@@ -437,7 +434,6 @@ bun --filter api email:dev    # Preview email templates at localhost:3333
 | `GET`  | `/api/admin/ssh-keys`       | All SSH keys                 |
 | `GET`  | `/api/admin/volumes`        | All volumes                  |
 | `GET`  | `/api/admin/referrals`      | Affiliate referral log       |
-| `GET`  | `/api/admin/waitlist`       | Waitlist entries             |
 | `GET`  | `/api/admin/emails`         | Outbound email log           |
 
 **SSH Keys**
