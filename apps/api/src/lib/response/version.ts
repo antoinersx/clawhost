@@ -1,7 +1,8 @@
-import { createRequire } from 'node:module'
+import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
-const require = createRequire(import.meta.url)
-const { version } = require(join(process.cwd(), 'package.json'))
+const { version } = JSON.parse(
+    readFileSync(join(import.meta.dirname, '../../../package.json'), 'utf-8')
+)
 
 export default `v${version}`
