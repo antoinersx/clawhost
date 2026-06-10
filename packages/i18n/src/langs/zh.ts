@@ -237,6 +237,7 @@ const zh: Translations = {
     },
     errors: {
         somethingWentWrong: '出了点问题!',
+        connectionFailed: '连接服务器时出现问题。请检查您的网络连接并重试!',
         couldNotLoadData: '无法加载数据。请重试!',
         notFound: '页面未找到!',
         pageNotFoundDescription: '您要查找的页面不存在或已被移动.',

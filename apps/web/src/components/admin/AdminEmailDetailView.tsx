@@ -6,8 +6,7 @@ import { t } from '@openclaw/i18n'
 import { getLocale } from '@/lib'
 import { DialogHeader, DialogTitle, Button } from '@/components/ui'
 import { EnvelopeIcon } from '@phosphor-icons/react'
-import AdminDetailField from '@/components/admin/AdminDetailField'
-import AdminOwnerLink from '@/components/admin/AdminOwnerLink'
+import { AdminDetailField, AdminOwnerLink } from '@/components/admin'
 
 const AdminEmailDetailView: FC<AdminEmailDetailViewProps> = ({
     email,

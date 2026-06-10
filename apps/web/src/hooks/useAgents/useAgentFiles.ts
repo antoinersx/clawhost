@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { api } from '@/lib'
-import AGENT_FILES_QUERY_KEY from '@/hooks/useAgents/AGENT_FILES_QUERY_KEY'
+import { AGENT_FILES_QUERY_KEY } from '@/hooks/useAgents'
 
 const useAgentFiles = (agentId: string, enabled: boolean) => {
     return useQuery({

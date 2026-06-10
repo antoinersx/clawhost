@@ -1,6 +1,6 @@
 import type { HetznerServerTypesResponse, RawServerType } from '@/ts/Interfaces'
 
-import getClient from '@/services/hetzner/hetznerClient'
+import { getClient } from '@/services/hetzner'
 
 const getRawServerTypes = async (): Promise<RawServerType[]> => {
     const data =

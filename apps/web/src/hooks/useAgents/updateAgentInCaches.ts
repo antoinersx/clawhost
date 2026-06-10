@@ -1,8 +1,7 @@
 import type { Agent } from '@/ts/Interfaces'
 import type { QueryClient } from '@tanstack/react-query'
 
-import AGENTS_QUERY_KEY from '@/hooks/useAgents/AGENTS_QUERY_KEY'
-import ADMIN_AGENTS_QUERY_KEY from '@/hooks/useAgents/ADMIN_AGENTS_QUERY_KEY'
+import { AGENTS_QUERY_KEY, ADMIN_AGENTS_QUERY_KEY } from '@/hooks/useAgents'
 
 const updateAgentInCaches = (
     queryClient: QueryClient,

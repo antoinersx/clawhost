@@ -1,4 +1,4 @@
-import getLocale from '@/lib/getLocale'
+import { getLocale } from '@/lib'
 
 const formatDate = (dateString: string): string => {
     return new Date(dateString).toLocaleDateString(getLocale(), {

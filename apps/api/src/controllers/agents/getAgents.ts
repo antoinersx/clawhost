@@ -11,9 +11,10 @@ import {
     decryptAgentSecrets
 } from '@/controllers/agents/helpers'
 import { subscriptions, checkouts } from '@/lib/polar'
+import { checkoutStatus } from '@/lib/constants'
 import { ok } from '@/lib/response'
 import { t } from '@openclaw/i18n'
-import withErrorHandler from '@/lib/withErrorHandler'
+import { withErrorHandler } from '@/lib'
 
 const getAgents = withErrorHandler('getAgents')(async (
     c: AuthenticatedContext
@@ -84,15 +85,15 @@ const getAgents = withErrorHandler('getAgents')(async (
         userPendingAgents.map(async (p) => {
             try {
                 const checkout = await checkouts.get(p.checkoutId)
-                if (checkout?.status === 'expired') {
+                if (checkout?.status === checkoutStatus.expired) {
                     await db
                         .delete(pendingAgents)
                         .where(eq(pendingAgents.id, p.id))
                     return null
                 }
                 const paid =
-                    checkout?.status === 'succeeded' ||
-                    checkout?.status === 'confirmed'
+                    checkout?.status === checkoutStatus.succeeded ||
+                    checkout?.status === checkoutStatus.confirmed
                 return {
                     pending: p,
                     paid,

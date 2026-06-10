@@ -1,6 +1,6 @@
 import type { HetznerVolumeResponse, VolumeDetails } from '@/ts/Interfaces'
 
-import getClient from '@/services/hetzner/hetznerClient'
+import { getClient } from '@/services/hetzner'
 
 const getVolume = async (volumeId: number): Promise<VolumeDetails> => {
     const data = await getClient().get<HetznerVolumeResponse>(

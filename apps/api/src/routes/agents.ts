@@ -39,7 +39,7 @@ import {
     updateAgentEmoji,
     updateAgentSSHKey
 } from '@/controllers/agents'
-import adminOnly from '@/middleware/adminOnly'
+import { adminOnly } from '@/middleware'
 
 const app = new Hono<HonoEnv>()
 

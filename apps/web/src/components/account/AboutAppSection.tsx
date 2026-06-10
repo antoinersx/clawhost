@@ -4,6 +4,7 @@ import type {
     AppUpdateInfo,
     ElectronWindow
 } from '@/ts/Interfaces'
+import type { CheckStatus } from '@/ts/Types'
 
 import { Fragment, useState } from 'react'
 import { t } from '@openclaw/i18n'
@@ -13,21 +14,13 @@ import {
     CheckCircleIcon
 } from '@phosphor-icons/react'
 import { Button } from '@/components/ui'
+import { CHECK_STATUS } from '@/lib/constants'
 
 const PLATFORM_LABELS: Record<string, string> = {
     darwin: 'macOS',
     win32: 'Windows',
     linux: 'Linux'
 }
-
-const CHECK_STATUS = {
-    IDLE: 'idle',
-    CHECKING: 'checking',
-    UP_TO_DATE: 'up-to-date',
-    UPDATE_READY: 'update-ready'
-} as const
-
-type CheckStatus = (typeof CHECK_STATUS)[keyof typeof CHECK_STATUS]
 
 const AboutAppSection: FC<AboutAppSectionProps> = ({
     version,

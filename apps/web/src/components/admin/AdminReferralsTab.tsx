@@ -4,6 +4,7 @@ import type { AdminResourceTabProps } from '@/ts/Interfaces'
 import { Fragment, useState } from 'react'
 import { t } from '@openclaw/i18n'
 import { formatDate, formatCurrency } from '@/lib'
+import { SORT_ORDER } from '@/lib/constants'
 import {
     useAdminReferralsList,
     useInfiniteScrollObserver,
@@ -27,7 +28,7 @@ const PAGE_SIZE = 20
 const AdminReferralsTab: FC<AdminResourceTabProps> = ({
     onSelectEntity
 }): ReactNode => {
-    const [sortOrder, setSortOrder] = useState('newest')
+    const [sortOrder, setSortOrder] = useState<string>(SORT_ORDER.NEWEST)
 
     const {
         data,
@@ -59,16 +60,16 @@ const AdminReferralsTab: FC<AdminResourceTabProps> = ({
                     <SelectTrigger
                         className='h-10 w-full sm:w-40'
                         placeholder={
-                            sortOrder === 'newest'
+                            sortOrder === SORT_ORDER.NEWEST
                                 ? t('admin.sortNewest')
                                 : t('admin.sortOldest')
                         }
                     />
                     <SelectContent>
-                        <SelectItem value='newest'>
+                        <SelectItem value={SORT_ORDER.NEWEST}>
                             {t('admin.sortNewest')}
                         </SelectItem>
-                        <SelectItem value='oldest'>
+                        <SelectItem value={SORT_ORDER.OLDEST}>
                             {t('admin.sortOldest')}
                         </SelectItem>
                     </SelectContent>

@@ -3,7 +3,7 @@ import type { TerminalSocketData } from '@/ts/Interfaces'
 
 import { Client } from 'ssh2'
 import { verifyToken } from '@/services/firebase'
-import hostKeyStore from '@/services/hostKeyStore'
+import { hostKeyStore } from '@/services'
 import {
     findUserAgent,
     getAgentConfig,
@@ -17,6 +17,8 @@ const TERMINAL_PATTERN = new RegExp(
 )
 
 const PING_INTERVAL = 5000
+
+const RESIZE_MESSAGE_TYPE = 'resize'
 
 const terminalSocket = {
     async handleUpgrade(
@@ -143,7 +145,7 @@ const terminalSocket = {
                 try {
                     const parsed = JSON.parse(str)
                     if (
-                        parsed.type === 'resize' &&
+                        parsed.type === RESIZE_MESSAGE_TYPE &&
                         parsed.cols &&
                         parsed.rows
                     ) {

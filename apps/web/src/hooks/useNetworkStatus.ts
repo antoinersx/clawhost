@@ -1,10 +1,10 @@
 import type { ElectronWindow } from '@/ts/Interfaces'
 
 import { useState, useEffect, useCallback } from 'react'
-import { networkStatus } from '@openclaw/shared'
+import { networkStatus, externalUrls } from '@openclaw/shared'
 
 const CHECK_INTERVAL = 10_000
-const PING_URL = 'https://clients3.google.com/generate_204'
+const PING_URL = externalUrls.GOOGLE.GENERATE_204
 const LATENCY_THRESHOLD = 3_000
 const PING_TIMEOUT = 5_000
 

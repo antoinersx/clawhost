@@ -18,7 +18,7 @@ import {
     DropdownMenuTrigger,
     DropdownMenuContent
 } from '@/components/ui'
-import ColorSwatch from '@/components/dashboard/EmojiColorPicker/ColorSwatch'
+import { ColorSwatch } from '@/components/dashboard/EmojiColorPicker'
 
 const EmojiColorPicker: FC<EmojiColorPickerProps> = ({
     emoji,

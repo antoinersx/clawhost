@@ -12,7 +12,7 @@ import {
 import { subscriptions } from '@/lib/polar'
 import { ok } from '@/lib/response'
 import { t } from '@openclaw/i18n'
-import withErrorHandler from '@/lib/withErrorHandler'
+import { withErrorHandler } from '@/lib'
 
 const getAdminAgents = withErrorHandler('getAdminAgents')(async (
     c: AuthenticatedContext

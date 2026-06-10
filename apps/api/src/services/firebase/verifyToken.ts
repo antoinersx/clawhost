@@ -1,4 +1,4 @@
-import auth from '@/services/firebase/auth'
+import { auth } from '@/services/firebase'
 
 const verifyToken = async (token: string) => {
     try {

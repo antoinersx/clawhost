@@ -4,6 +4,7 @@ import type { AdminResourceTabProps } from '@/ts/Interfaces'
 import { Fragment, useState } from 'react'
 import { t } from '@openclaw/i18n'
 import { formatDate } from '@/lib'
+import { SORT_ORDER } from '@/lib/constants'
 import {
     useAdminSSHKeysList,
     useDebouncedValue,
@@ -29,7 +30,7 @@ const AdminSSHKeysTab: FC<AdminResourceTabProps> = ({
     onSelectEntity
 }): ReactNode => {
     const [search, setSearch] = useState('')
-    const [sortOrder, setSortOrder] = useState('newest')
+    const [sortOrder, setSortOrder] = useState<string>(SORT_ORDER.NEWEST)
     const debouncedSearch = useDebouncedValue(search, 300)
 
     const {
@@ -71,16 +72,16 @@ const AdminSSHKeysTab: FC<AdminResourceTabProps> = ({
                     <SelectTrigger
                         className='h-10 w-full sm:w-40'
                         placeholder={
-                            sortOrder === 'newest'
+                            sortOrder === SORT_ORDER.NEWEST
                                 ? t('admin.sortNewest')
                                 : t('admin.sortOldest')
                         }
                     />
                     <SelectContent>
-                        <SelectItem value='newest'>
+                        <SelectItem value={SORT_ORDER.NEWEST}>
                             {t('admin.sortNewest')}
                         </SelectItem>
-                        <SelectItem value='oldest'>
+                        <SelectItem value={SORT_ORDER.OLDEST}>
                             {t('admin.sortOldest')}
                         </SelectItem>
                     </SelectContent>

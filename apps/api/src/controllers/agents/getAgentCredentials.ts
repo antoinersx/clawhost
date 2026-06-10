@@ -1,6 +1,6 @@
 import { withAgent } from '@/controllers/agents/helpers'
 import { ok } from '@/lib/response'
-import withErrorHandler from '@/lib/withErrorHandler'
+import { withErrorHandler } from '@/lib'
 
 const getAgentCredentials = withErrorHandler(
     'getAgentCredentials',

@@ -1,9 +1,10 @@
 import type { CacheEntry, ServerStatus } from '@/ts/Interfaces'
 
-import cache from '@/services/provider/cache'
+import { agentProvider } from '@openclaw/shared'
+import { cache } from '@/services/provider'
 
 const updateCachedServerStatus = (serverId: string, status: string) => {
-    const provider = 'hetzner'
+    const provider = agentProvider.hetzner
 
     const serversEntry = cache.get(`${provider}:servers`) as
         | CacheEntry<Map<string, ServerStatus>>

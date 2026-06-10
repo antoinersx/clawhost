@@ -3,8 +3,7 @@ import type { BannerSlide } from '@/ts/Interfaces'
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import HermesBanner from '@/components/layout/HermesBanner'
-import ProductHuntBanner from '@/components/layout/ProductHuntBanner'
+import { HermesBanner, ProductHuntBanner } from '@/components/layout'
 import { BANNER_CAROUSEL } from '@/lib/constants'
 
 const SLIDES: BannerSlide[] = [

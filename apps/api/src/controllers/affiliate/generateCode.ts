@@ -5,7 +5,7 @@ import { db } from '@/db'
 import { users } from '@/db/schema'
 import { ok, fail } from '@/lib/response'
 import { t } from '@openclaw/i18n'
-import generateReferralCode from '@/lib/generateReferralCode'
+import { generateReferralCode } from '@/lib'
 
 const generateCode = async (c: AuthenticatedContext) => {
     try {

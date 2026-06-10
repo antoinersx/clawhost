@@ -1630,6 +1630,18 @@ export interface ElectronWindow {
     electronAPI?: ElectronAPI
 }
 
+export interface UAHighEntropyValues {
+    architecture?: string
+}
+
+export interface UADataLike {
+    getHighEntropyValues?: (keys: string[]) => Promise<UAHighEntropyValues>
+}
+
+export interface NavigatorWithUAData {
+    userAgentData?: UADataLike
+}
+
 export interface OAuthWindowResult {
     accessToken: string | null
     idToken: string | null

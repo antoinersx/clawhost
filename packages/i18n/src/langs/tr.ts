@@ -243,6 +243,8 @@ const tr: Translations = {
     },
     errors: {
         somethingWentWrong: 'Bir şeyler ters gitti!',
+        connectionFailed:
+            'Sunucuya bağlanırken bir şeyler ters gitti. Bağlantınızı kontrol edip tekrar deneyin!',
         couldNotLoadData: 'Veriler yüklenemedi. Lütfen tekrar deneyin!',
         notFound: 'Sayfa bulunamadı!',
         pageNotFoundDescription: 'Aradığınız sayfa mevcut değil veya taşınmış.',

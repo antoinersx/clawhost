@@ -2,7 +2,10 @@ import type { FC, ReactNode } from 'react'
 import type { HeroBadgeProps } from '@/ts/Interfaces'
 
 import { t } from '@openclaw/i18n'
+import { externalUrls } from '@openclaw/shared'
 import { SparkleIcon, PlayCircleIcon } from '@phosphor-icons/react'
+
+const TUTORIAL_VIDEO_ID = 'clawhost-tutorial'
 
 const HeroBadge: FC<HeroBadgeProps> = ({
     label,
@@ -30,7 +33,9 @@ const HeroBadge: FC<HeroBadgeProps> = ({
                 >
                     <div className='relative h-7 w-10 flex-shrink-0 overflow-hidden rounded-full'>
                         <img
-                            src='https://img.youtube.com/vi/clawhost-tutorial/mqdefault.jpg'
+                            src={externalUrls.YOUTUBE.THUMBNAIL(
+                                TUTORIAL_VIDEO_ID
+                            )}
                             alt={t('landing.tutorialVideoThumbnail')}
                             className='h-full w-full object-cover'
                             width={320}

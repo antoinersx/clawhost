@@ -7,7 +7,7 @@ import { db } from '@/db'
 import { agents } from '@/db/schema'
 import { ok, fail } from '@/lib/response'
 import { encrypt } from '@/lib/encryption'
-import executeSSH from '@/services/ssh'
+import { executeSSH } from '@/services'
 import { withAgent, generatePassword } from '@/controllers/agents/helpers'
 
 const rotatePassword = withAgent({ requireSSH: 'api.failedToRotatePassword' })(

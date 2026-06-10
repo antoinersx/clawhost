@@ -1,9 +1,8 @@
 import type { Context } from 'hono'
 import type { WebhookEvent } from '@/ts/Interfaces'
 
-import getPolarConfig from '@/lib/polar/getPolarConfig'
-import verifyWebhookSignature from '@/lib/polar/webhooks/verifyWebhookSignature'
-import snakeToCamel from '@/lib/polar/webhooks/snakeToCamel'
+import { getPolarConfig } from '@/lib/polar'
+import { verifyWebhookSignature, snakeToCamel } from '@/lib/polar/webhooks'
 
 const parseWebhook = async (c: Context): Promise<WebhookEvent | null> => {
     const config = getPolarConfig()

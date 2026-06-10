@@ -2,7 +2,7 @@ import type { AgentIdMutationParams } from '@/ts/Interfaces'
 
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { api } from '@/lib'
-import removeAgentFromCaches from '@/hooks/useAgents/removeAgentFromCaches'
+import { removeAgentFromCaches } from '@/hooks/useAgents'
 import { USER_STATS_QUERY_KEY } from '@/hooks/useUser'
 
 const useHardDeleteAgent = () => {

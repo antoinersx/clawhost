@@ -3,7 +3,7 @@ import type {
     HetznerDatacentersResponse
 } from '@/ts/Interfaces'
 
-import getClient from '@/services/hetzner/hetznerClient'
+import { getClient } from '@/services/hetzner'
 
 const getDatacenters = async (): Promise<DatacenterAvailability[]> => {
     const data =

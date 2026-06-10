@@ -3,4 +3,4 @@ const agentType = {
     HERMES: 'hermes'
 } as const
 
-export default agentType
+export { agentType }

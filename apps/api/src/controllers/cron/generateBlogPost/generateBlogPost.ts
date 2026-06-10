@@ -1,10 +1,12 @@
 import type { Context } from 'hono'
 
 import { ok, fail } from '@/lib/response'
-import githubApi from '@/controllers/cron/generateBlogPost/githubApi'
-import openaiHelpers from '@/controllers/cron/generateBlogPost/openaiHelpers'
-import slugify from '@/controllers/cron/generateBlogPost/slugify'
-import todayDate from '@/controllers/cron/generateBlogPost/todayDate'
+import {
+    githubApi,
+    openaiHelpers,
+    slugify,
+    todayDate
+} from '@/controllers/cron/generateBlogPost'
 
 const generateBlogPost = async (c: Context) => {
     const openaiKey = process.env.OPENAI_API_KEY

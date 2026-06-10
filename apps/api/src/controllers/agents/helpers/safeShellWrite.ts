@@ -1,4 +1,4 @@
-import executeSSH from '@/services/ssh'
+import { executeSSH } from '@/services'
 
 const safeShellWrite = async (
     ip: string,

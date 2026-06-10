@@ -245,6 +245,8 @@ const ja: Translations = {
     },
     errors: {
         somethingWentWrong: '問題が発生しました!',
+        connectionFailed:
+            'サーバーへの接続中に問題が発生しました。接続を確認してもう一度お試しください!',
         couldNotLoadData:
             'データを読み込めませんでした。もう一度お試しください!',
         notFound: 'ページが見つかりません!',

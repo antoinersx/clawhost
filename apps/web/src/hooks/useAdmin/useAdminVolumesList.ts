@@ -1,6 +1,6 @@
 import { useInfiniteQuery } from '@tanstack/react-query'
 import { api } from '@/lib'
-import ADMIN_VOLUMES_QUERY_KEY from '@/hooks/useAdmin/ADMIN_VOLUMES_QUERY_KEY'
+import { ADMIN_VOLUMES_QUERY_KEY } from '@/hooks/useAdmin'
 
 const useAdminVolumesList = (limit: number = 20, sort?: string) => {
     return useInfiniteQuery({

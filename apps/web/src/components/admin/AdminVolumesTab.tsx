@@ -4,6 +4,7 @@ import type { AdminResourceTabProps } from '@/ts/Interfaces'
 import { Fragment, useState } from 'react'
 import { t } from '@openclaw/i18n'
 import { formatDate } from '@/lib'
+import { SORT_ORDER } from '@/lib/constants'
 import {
     useAdminVolumesList,
     useInfiniteScrollObserver,
@@ -19,7 +20,7 @@ import {
 } from '@/components/ui'
 import { EmptyState, ErrorState } from '@/components'
 import { DatabaseIcon } from '@phosphor-icons/react'
-import AdminStatusBadge from '@/components/admin/AdminStatusBadge'
+import { AdminStatusBadge } from '@/components/admin'
 import AdminUserSkeleton from '@/pages/AdminUserSkeleton'
 
 const PAGE_SIZE = 20
@@ -27,7 +28,7 @@ const PAGE_SIZE = 20
 const AdminVolumesTab: FC<AdminResourceTabProps> = ({
     onSelectEntity
 }): ReactNode => {
-    const [sortOrder, setSortOrder] = useState('newest')
+    const [sortOrder, setSortOrder] = useState<string>(SORT_ORDER.NEWEST)
 
     const {
         data,
@@ -59,16 +60,16 @@ const AdminVolumesTab: FC<AdminResourceTabProps> = ({
                     <SelectTrigger
                         className='h-10 w-full sm:w-40'
                         placeholder={
-                            sortOrder === 'newest'
+                            sortOrder === SORT_ORDER.NEWEST
                                 ? t('admin.sortNewest')
                                 : t('admin.sortOldest')
                         }
                     />
                     <SelectContent>
-                        <SelectItem value='newest'>
+                        <SelectItem value={SORT_ORDER.NEWEST}>
                             {t('admin.sortNewest')}
                         </SelectItem>
-                        <SelectItem value='oldest'>
+                        <SelectItem value={SORT_ORDER.OLDEST}>
                             {t('admin.sortOldest')}
                         </SelectItem>
                     </SelectContent>

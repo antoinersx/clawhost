@@ -1,7 +1,7 @@
 import type { Context } from 'hono'
 import type { ContentfulStatusCode } from 'hono/utils/http-status'
 
-import version from '@/lib/response/version'
+import { version } from '@/lib/response'
 
 const fail = <T = null>(
     c: Context,

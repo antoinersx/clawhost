@@ -9,7 +9,7 @@ import {
     DialogHeader,
     DialogTitle
 } from '@/components/ui'
-import AgentLogsContent from '@/components/dashboard/AgentLogsContent'
+import { AgentLogsContent } from '@/components/dashboard'
 
 const AgentLogsDialog: FC<AgentLogsDialogProps> = ({
     agentId,

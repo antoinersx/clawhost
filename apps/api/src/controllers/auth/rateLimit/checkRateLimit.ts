@@ -1,7 +1,7 @@
 import { eq } from 'drizzle-orm'
 import { db } from '@/db'
 import { rateLimits } from '@/db/schema'
-import memoryCache from '@/controllers/auth/rateLimit/memoryCache'
+import { memoryCache } from '@/controllers/auth/rateLimit'
 
 const checkRateLimit = async (
     key: string,

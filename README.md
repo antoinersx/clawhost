@@ -135,7 +135,7 @@ A Hetzner Cloud API token is required for server provisioning.
 ### 1. Clone & Install
 
 ```bash
-git clone https://github.com/bfzli/clawhost.git
+git clone https://github.com/antoinersx/clawhost.git
 cd clawhost
 bun install
 ```

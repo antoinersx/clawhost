@@ -1,7 +1,7 @@
 import type { GoPlatform, MacArch } from '@/ts/Types'
 
-import fetchGoManifest from '@/lib/fetchGoManifest'
-import GO_PLATFORM from '@/lib/constants/goPlatform'
+import { fetchGoManifest } from '@/lib'
+import { GO_PLATFORM } from '@/lib/constants'
 
 const downloadGoBinary = async (
     platform: GoPlatform,
@@ -18,7 +18,8 @@ const downloadGoBinary = async (
     if (!url) throw new Error(`${platform} url missing`)
 
     const head = await fetch(url, { method: 'HEAD', cache: 'no-cache' })
-    if (!head.ok) throw new Error(`${platform} binary not available (${head.status})`)
+    if (!head.ok)
+        throw new Error(`${platform} binary not available (${head.status})`)
 
     const filename = url.split('/').pop() || `clawhost-${platform}`
     const a = document.createElement('a')

@@ -7,7 +7,7 @@ import { agents } from '@/db/schema'
 import { findUserAgent, sanitizeAgent } from '@/controllers/agents/helpers'
 import { t } from '@openclaw/i18n'
 import { ok, fail } from '@/lib/response'
-import withErrorHandler from '@/lib/withErrorHandler'
+import { withErrorHandler } from '@/lib'
 
 const updateAgentEmoji = withErrorHandler('updateAgentEmoji')(async (
     c: AuthenticatedContext

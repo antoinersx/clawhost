@@ -5,7 +5,7 @@ import { db } from '@/db'
 import { users, agents, sshKeys } from '@/db/schema'
 import { ok } from '@/lib/response'
 import { t } from '@openclaw/i18n'
-import withErrorHandler from '@/lib/withErrorHandler'
+import { withErrorHandler } from '@/lib'
 
 const getAdminUsers = withErrorHandler(
     'getAdminUsers',

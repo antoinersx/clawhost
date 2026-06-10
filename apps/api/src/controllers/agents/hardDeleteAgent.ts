@@ -7,7 +7,7 @@ import { subscriptions } from '@/lib/polar'
 import { cleanupAgent } from '@/controllers/agents/helpers'
 import { ok, fail } from '@/lib/response'
 import { t } from '@openclaw/i18n'
-import withErrorHandler from '@/lib/withErrorHandler'
+import { withErrorHandler } from '@/lib'
 
 const hardDeleteAgent = withErrorHandler(
     'hardDeleteAgent',

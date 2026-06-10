@@ -24,8 +24,8 @@ import {
 import { t } from '@openclaw/i18n'
 import { auth, AUTH_STORAGE_KEY, PROFILE_CACHE_KEY } from '@/lib/firebase'
 import { api } from '@/lib'
-import AuthContext from '@/lib/auth/AuthContext'
-import STORAGE_KEYS from '@/lib/storageKeys'
+import { AuthContext } from '@/lib/auth'
+import { STORAGE_KEYS } from '@/lib/constants'
 import {
     PROFILE_QUERY_KEY,
     AGENTS_QUERY_KEY,

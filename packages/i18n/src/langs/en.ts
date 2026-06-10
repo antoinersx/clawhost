@@ -242,6 +242,8 @@ const en = {
     },
     errors: {
         somethingWentWrong: 'Something went wrong!',
+        connectionFailed:
+            'Something went wrong while connecting to the server. Please check your connection and try again!',
         couldNotLoadData: "We couldn't load the data. Please try again!",
         notFound: 'Page not found!',
         pageNotFoundDescription:

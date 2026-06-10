@@ -2,7 +2,7 @@ import type { FC, ReactNode } from 'react'
 import type { FileTreeItemProps } from '@/ts/Interfaces'
 
 import { getFileIconColor } from '@/components/dashboard/AgentConfigDialog/editorThemes'
-import getFileIconByName from '@/components/dashboard/AgentConfigDialog/editorThemes/getFileIcon'
+import { getFileIconByName } from '@/components/dashboard/AgentConfigDialog'
 
 const FileTreeItem: FC<FileTreeItemProps> = ({
     file,

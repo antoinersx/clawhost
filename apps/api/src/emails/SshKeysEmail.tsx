@@ -14,7 +14,7 @@ import {
     featureGif
 } from '@/lib/emailStyles'
 
-import CDN_ASSETS from '@/lib/cdn'
+import { CDN_ASSETS } from '@/lib'
 
 const SshKeysEmail: FC = (): ReactNode => {
     return (

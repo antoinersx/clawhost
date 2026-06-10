@@ -1,6 +1,6 @@
 import type { PolarCustomer, CreatePolarCustomerParams } from '@/ts/Interfaces'
 
-import getPolarClient from '@/lib/polar/getPolarClient'
+import { getPolarClient } from '@/lib/polar'
 
 const customers = {
     async create(data: CreatePolarCustomerParams): Promise<PolarCustomer> {

@@ -1,6 +1,6 @@
 import type { OrderCustomerResult } from '@/ts/Interfaces'
 
-import getPolarClient from '@/lib/polar/getPolarClient'
+import { getPolarClient } from '@/lib/polar'
 
 const get = async (orderId: string): Promise<OrderCustomerResult | null> => {
     const polar = getPolarClient()

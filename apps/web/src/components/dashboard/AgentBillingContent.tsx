@@ -1,8 +1,10 @@
 import type { FC, ReactNode } from 'react'
 import type { AgentBillingContentProps } from '@/ts/Interfaces'
 
-import AgentBillingSubscription from '@/components/dashboard/AgentBillingSubscription'
-import AgentBillingHistory from '@/components/dashboard/AgentBillingHistory'
+import {
+    AgentBillingSubscription,
+    AgentBillingHistory
+} from '@/components/dashboard'
 
 const AgentBillingContent: FC<AgentBillingContentProps> = ({
     agent,

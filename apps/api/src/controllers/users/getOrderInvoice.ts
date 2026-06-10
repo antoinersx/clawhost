@@ -6,7 +6,7 @@ import { users } from '@/db/schema'
 import { orders } from '@/lib/polar'
 import { ok, fail } from '@/lib/response'
 import { t } from '@openclaw/i18n'
-import withErrorHandler from '@/lib/withErrorHandler'
+import { withErrorHandler } from '@/lib'
 
 const getOrderInvoice = withErrorHandler(
     'getOrderInvoice',

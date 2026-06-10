@@ -1,6 +1,6 @@
 import type { ApiEnvelope, RequestConfig, RequestOptions } from '#shared/types'
 
-import ApiError from '#shared/ApiError'
+import { ApiError } from '#shared/ApiError'
 
 class RequestClient {
     private config: RequestConfig
@@ -22,11 +22,20 @@ class RequestClient {
             ...((init.headers as Record<string, string>) || {})
         }
 
-        return fetch(`${this.config.baseUrl}${endpoint}`, {
-            ...init,
-            headers,
-            body: body ? JSON.stringify(body) : undefined
-        })
+        try {
+            return await fetch(`${this.config.baseUrl}${endpoint}`, {
+                ...init,
+                headers,
+                body: body ? JSON.stringify(body) : undefined
+            })
+        } catch (error) {
+            if (
+                this.config.getNetworkErrorMessage &&
+                (error as Error)?.name !== 'AbortError'
+            )
+                throw new Error(this.config.getNetworkErrorMessage())
+            throw error
+        }
     }
 
     private isEnvelope(data: unknown): data is ApiEnvelope {
@@ -163,4 +172,4 @@ class RequestClient {
     }
 }
 
-export default RequestClient
+export { RequestClient }

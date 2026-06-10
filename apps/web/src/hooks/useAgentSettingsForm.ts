@@ -9,7 +9,7 @@ import {
     useUpdateAgentSubdomain,
     useUpdateAgentEmoji
 } from '@/hooks/useAgents'
-import useAbortController from '@/hooks/useAbortController'
+import { useAbortController } from '@/hooks'
 import { useUIStore } from '@/lib/store'
 import { TOAST_TYPE } from '@/lib/constants'
 import { api, handleAbortToast } from '@/lib'

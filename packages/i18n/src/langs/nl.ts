@@ -247,6 +247,8 @@ const nl: Translations = {
     },
     errors: {
         somethingWentWrong: 'Er is iets misgegaan!',
+        connectionFailed:
+            'Er is iets misgegaan bij het verbinden met de server. Controleer je verbinding en probeer het opnieuw!',
         couldNotLoadData:
             'We konden de gegevens niet laden. Probeer het opnieuw!',
         notFound: 'Pagina niet gevonden!',

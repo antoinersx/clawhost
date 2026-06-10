@@ -5,7 +5,7 @@ import { orders } from '@/lib/polar'
 import { withAgent } from '@/controllers/agents/helpers'
 import { ok } from '@/lib/response'
 import { t } from '@openclaw/i18n'
-import withErrorHandler from '@/lib/withErrorHandler'
+import { withErrorHandler } from '@/lib'
 
 const getAgentBilling = withErrorHandler(
     'getAgentBilling',

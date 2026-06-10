@@ -1,6 +1,6 @@
 import type { Context } from 'hono'
 
-import version from '@/lib/response/version'
+import { version } from '@/lib/response'
 
 const ok = <T>(
     c: Context,

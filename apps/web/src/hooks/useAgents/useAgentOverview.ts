@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { api } from '@/lib'
-import usePageVisibility from '@/hooks/usePageVisibility'
-import AGENT_OVERVIEW_QUERY_KEY from '@/hooks/useAgents/AGENT_OVERVIEW_QUERY_KEY'
+import { usePageVisibility } from '@/hooks'
+import { AGENT_OVERVIEW_QUERY_KEY } from '@/hooks/useAgents'
 
 const useAgentOverview = (agentId: string, enabled: boolean) => {
     const isVisible = usePageVisibility()

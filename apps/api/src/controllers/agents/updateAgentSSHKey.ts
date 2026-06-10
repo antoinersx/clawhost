@@ -6,7 +6,7 @@ import { agentStatus } from '@openclaw/shared'
 import { db } from '@/db'
 import { agents, sshKeys } from '@/db/schema'
 import { ok, fail } from '@/lib/response'
-import executeSSH from '@/services/ssh'
+import { executeSSH } from '@/services'
 import { withAgent } from '@/controllers/agents/helpers'
 
 const updateAgentSSHKey = withAgent()(async (c, agent) => {

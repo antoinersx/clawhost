@@ -4,7 +4,7 @@ import { getProvider } from '@/services/provider'
 import { inputValidation } from '@openclaw/shared'
 import { ok } from '@/lib/response'
 import { t } from '@openclaw/i18n'
-import withErrorHandler from '@/lib/withErrorHandler'
+import { withErrorHandler } from '@/lib'
 
 const getVolumePricing = withErrorHandler(
     'getVolumePricing',

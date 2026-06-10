@@ -246,6 +246,8 @@ const hi: Translations = {
     },
     errors: {
         somethingWentWrong: 'कुछ गलत हो गया!',
+        connectionFailed:
+            'सर्वर से कनेक्ट करते समय कुछ गलत हो गया। कृपया अपना कनेक्शन जांचें और पुनः प्रयास करें!',
         couldNotLoadData: 'हम डेटा लोड नहीं कर सके. कृपया पुनः प्रयास करें!',
         notFound: 'पृष्ठ नहीं मिला!',
         pageNotFoundDescription:

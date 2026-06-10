@@ -1,7 +1,13 @@
 import { agentType } from '@openclaw/shared'
-import applyToolsDefaults from '@/controllers/agents/helpers/applyToolsDefaults'
+import { applyToolsDefaults, getAgentConfig } from '@/controllers/agents/helpers'
 
 const GATEWAY_PORT = 18789
+
+const configModes = {
+    GATEWAY: 'local',
+    AUTH: 'token',
+    SANDBOX: 'off'
+} as const
 
 const generateOpenClawSteps = (
     gatewayToken: string,
@@ -197,20 +203,19 @@ const generateCloudInit = (
     selectedAgentType?: string
 ): string => {
     const isHermes = selectedAgentType === agentType.HERMES
+    const agentConfig = getAgentConfig(selectedAgentType)
     const fullDomain = `${subdomain}.${domain}`
 
     let agentSteps: string
-    let agentUser: string
 
     if (isHermes) {
         agentSteps = generateHermesSteps()
-        agentUser = 'hermes'
     } else {
         const config: Record<string, unknown> = {
             gateway: {
-                mode: 'local',
+                mode: configModes.GATEWAY,
                 auth: {
-                    mode: 'token',
+                    mode: configModes.AUTH,
                     token: gatewayToken
                 },
                 remote: {
@@ -236,21 +241,19 @@ const generateCloudInit = (
         }
 
         applyToolsDefaults(config)
-        config.agents = { defaults: { sandbox: { mode: 'off' } } }
+        config.agents = { defaults: { sandbox: { mode: configModes.SANDBOX } } }
 
         const configJson = JSON.stringify(config, null, 2).replace(
             /\n/g,
             '\n    '
         )
         agentSteps = generateOpenClawSteps(gatewayToken, configJson)
-        agentUser = 'openclaw'
     }
 
-    const serviceName = isHermes ? 'hermes-gateway' : 'openclaw-gateway'
     const webProxySteps = isHermes
         ? ''
-        : generateWebProxySteps(serviceName, fullDomain, domain)
-    const brewSteps = isHermes ? '' : generateBrewStep(agentUser)
+        : generateWebProxySteps(agentConfig.serviceName, fullDomain, domain)
+    const brewSteps = isHermes ? '' : generateBrewStep(agentConfig.user)
 
     return `#cloud-config
 

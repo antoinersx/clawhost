@@ -16,9 +16,11 @@ import { useUIStore } from '@/lib/store'
 import { useAuth } from '@/lib/auth'
 import { handleAbortToast } from '@/lib'
 import { generatePassword, generateToken } from '@/lib/agent-utils'
-import SecuritySection from '@/components/dashboard/AgentSecurityContent/SecuritySection'
-import SecretField from '@/components/dashboard/AgentSecurityContent/SecretField'
-import SecuritySSHKeySection from '@/components/dashboard/AgentSecurityContent/SecuritySSHKeySection'
+import {
+    SecuritySection,
+    SecretField,
+    SecuritySSHKeySection
+} from '@/components/dashboard/AgentSecurityContent'
 
 const DEMO_PASSWORD = 'x9Kf2mPq7wLn4R'
 const DEMO_TOKEN = 'gw_demo_4a8b2c1d3e5f6789'

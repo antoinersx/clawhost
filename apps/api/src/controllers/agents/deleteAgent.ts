@@ -12,7 +12,7 @@ import {
 } from '@/controllers/agents/helpers'
 import { t } from '@openclaw/i18n'
 import { ok, fail } from '@/lib/response'
-import withErrorHandler from '@/lib/withErrorHandler'
+import { withErrorHandler } from '@/lib'
 
 const deleteAgent = withErrorHandler(
     'deleteAgent',

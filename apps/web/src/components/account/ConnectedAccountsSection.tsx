@@ -4,7 +4,7 @@ import type { ConnectedAccountsSectionProps } from '@/ts/Interfaces'
 import { t } from '@openclaw/i18n'
 import { authMethod } from '@openclaw/shared'
 import { OAUTH_PROVIDER } from '@/lib/constants'
-import ConnectedAccountRow from '@/components/account/ConnectedAccountRow'
+import { ConnectedAccountRow } from '@/components/account'
 import { GoogleIcon, GithubIcon } from '@/components/icons'
 import { EnvelopeIcon } from '@phosphor-icons/react'
 

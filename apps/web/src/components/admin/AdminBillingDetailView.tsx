@@ -6,8 +6,7 @@ import { t } from '@openclaw/i18n'
 import { formatDate, formatCurrency } from '@/lib'
 import { DialogHeader, DialogTitle, Button } from '@/components/ui'
 import { CreditCardIcon } from '@phosphor-icons/react'
-import AdminDetailField from '@/components/admin/AdminDetailField'
-import AdminStatusBadge from '@/components/admin/AdminStatusBadge'
+import { AdminDetailField, AdminStatusBadge } from '@/components/admin'
 
 const AdminBillingDetailView: FC<AdminBillingDetailViewProps> = ({
     order,

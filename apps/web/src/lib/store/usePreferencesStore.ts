@@ -3,8 +3,12 @@ import type { PreferencesState } from '@/ts/Interfaces'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import { setLanguage as setI18nLanguage, loadLanguage } from '@openclaw/i18n'
-import { AFFILIATE_PERIOD, THEMES, LANGUAGES } from '@/lib/constants'
-import STORAGE_KEYS from '@/lib/storageKeys'
+import {
+    AFFILIATE_PERIOD,
+    THEMES,
+    LANGUAGES,
+    STORAGE_KEYS
+} from '@/lib/constants'
 
 const usePreferencesStore = create<PreferencesState>()(
     persist(

@@ -4,7 +4,7 @@ import type { FileTreeProps } from '@/ts/Interfaces'
 import { Fragment } from 'react'
 import { t } from '@openclaw/i18n'
 import { FolderOpenIcon } from '@phosphor-icons/react'
-import FileTreeItem from '@/components/dashboard/AgentConfigDialog/FileTreeItem'
+import { FileTreeItem } from '@/components/dashboard/AgentConfigDialog'
 
 const FileTree: FC<FileTreeProps> = ({
     folders,

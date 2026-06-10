@@ -246,6 +246,8 @@ const pl: Translations = {
     },
     errors: {
         somethingWentWrong: 'Coś poszło nie tak !',
+        connectionFailed:
+            'Coś poszło nie tak podczas łączenia z serwerem. Sprawdź swoje połączenie i spróbuj ponownie !',
         couldNotLoadData: 'Nie udało się załadować danych. Spróbuj ponownie !',
         notFound: 'Nie znaleziono strony !',
         pageNotFoundDescription:

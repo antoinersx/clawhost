@@ -14,7 +14,7 @@ import {
 import { motion } from 'framer-motion'
 import { useQuery } from '@tanstack/react-query'
 import { t } from '@openclaw/i18n'
-import { agentStatus, agentType } from '@openclaw/shared'
+import { agentStatus, agentType, UNKNOWN_VERSION } from '@openclaw/shared'
 import { useAuth } from '@/lib/auth'
 import { AGENT_DETAIL_TABS } from '@/lib/constants'
 import {
@@ -45,7 +45,8 @@ const AgentTerminalContent = lazy(
     () => import('@/components/dashboard/AgentTerminalContent')
 )
 const AgentMonitorContent = lazy(
-    () => import('@/components/dashboard/AgentMonitorContent')
+    () =>
+        import('@/components/dashboard/AgentMonitorContent/AgentMonitorContent')
 )
 const AgentConfigContent = lazy(
     () => import('@/components/dashboard/AgentConfigDialog/AgentConfigContent')
@@ -80,10 +81,7 @@ const AgentDetailPanel: FC<AgentDetailPanelProps> = ({
     const hiddenTabs = useMemo<AgentDetailTab[]>(() => {
         const hidden: AgentDetailTab[] = []
         if (isHermes) {
-            hidden.push(
-                AGENT_DETAIL_TABS.PREVIEW,
-                AGENT_DETAIL_TABS.OVERVIEW
-            )
+            hidden.push(AGENT_DETAIL_TABS.PREVIEW, AGENT_DETAIL_TABS.OVERVIEW)
         }
         if (isLocal)
             hidden.push(
@@ -158,7 +156,7 @@ const AgentDetailPanel: FC<AgentDetailPanelProps> = ({
     const versionDisplay = useMemo(() => {
         if (versionQuery.isLoading) return null
         if (versionQuery.isError || !versionQuery.data) return null
-        if (versionQuery.data.version === 'unknown') return null
+        if (versionQuery.data.version === UNKNOWN_VERSION) return null
         return versionQuery.data.version
     }, [versionQuery.isLoading, versionQuery.isError, versionQuery.data])
     const isOutdated =

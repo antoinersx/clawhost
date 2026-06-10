@@ -9,10 +9,10 @@ import {
     getBaseDir,
     safeShellWrite
 } from '@/controllers/agents/helpers'
-import executeSSH from '@/services/ssh'
+import { executeSSH } from '@/services'
 import { t } from '@openclaw/i18n'
 import { ok, fail } from '@/lib/response'
-import withErrorHandler from '@/lib/withErrorHandler'
+import { withErrorHandler } from '@/lib'
 
 const updateAgentFile = withErrorHandler(
     'updateAgentFile',

@@ -12,7 +12,7 @@ import {
     ResponsiveContainer,
     CartesianGrid
 } from 'recharts'
-import MetricCard from '@/components/dashboard/AgentMonitorContent/MetricCard'
+import { MetricCard } from '@/components/dashboard/AgentMonitorContent'
 
 const tooltipStyle = {
     backgroundColor: 'hsl(var(--background))',

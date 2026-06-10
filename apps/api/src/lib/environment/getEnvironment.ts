@@ -1,8 +1,7 @@
 import type { Context } from 'hono'
 import type { Environment } from '@/ts/Types'
 
-import DEV from '@/lib/environment/DEV'
-import PROD from '@/lib/environment/PROD'
+import { PROD, DEV } from '@/lib/environment'
 
 const client = process.env.CLIENT || ''
 const isLocalServer =

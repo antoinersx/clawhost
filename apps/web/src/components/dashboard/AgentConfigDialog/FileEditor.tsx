@@ -15,7 +15,7 @@ import {
     getLanguageExtension,
     getFileIconColor
 } from '@/components/dashboard/AgentConfigDialog/editorThemes'
-import getFileIconByName from '@/components/dashboard/AgentConfigDialog/editorThemes/getFileIcon'
+import { getFileIconByName } from '@/components/dashboard/AgentConfigDialog'
 
 const FileEditor: FC<FileEditorProps> = ({
     selectedFile,

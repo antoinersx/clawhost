@@ -1,7 +1,7 @@
 import type { FC, ReactNode } from 'react'
 import type { AgentAvatarProps } from '@/ts/Interfaces'
 
-import AgentTypeMascot from '@/components/shared/AgentTypeMascot'
+import { AgentTypeMascot } from '@/components/shared'
 import { AGENT_AVATAR_SIZE } from '@/lib/constants'
 
 const sizeMap = {

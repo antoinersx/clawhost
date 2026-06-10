@@ -1,6 +1,6 @@
 import { useInfiniteQuery } from '@tanstack/react-query'
 import { api } from '@/lib'
-import ADMIN_PENDING_AGENTS_QUERY_KEY from '@/hooks/useAdmin/ADMIN_PENDING_AGENTS_QUERY_KEY'
+import { ADMIN_PENDING_AGENTS_QUERY_KEY } from '@/hooks/useAdmin'
 
 const useAdminPendingAgentsList = (limit: number = 20, sort?: string) => {
     return useInfiniteQuery({

@@ -248,6 +248,8 @@ const es: Translations = {
     },
     errors: {
         somethingWentWrong: '¡Algo salió mal!',
+        connectionFailed:
+            '¡Algo salió mal al conectar con el servidor. Comprueba tu conexión e inténtalo de nuevo!',
         couldNotLoadData:
             'No pudimos cargar los datos. Por favor, intenta de nuevo!',
         notFound: 'Página no encontrada!',

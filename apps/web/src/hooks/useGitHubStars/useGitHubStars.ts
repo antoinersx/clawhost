@@ -1,9 +1,8 @@
 import type { GitHubStarsData } from '@/ts/Interfaces'
 
 import { useQuery } from '@tanstack/react-query'
-import GITHUB_STARS_QUERY_KEY from '@/hooks/useGitHubStars/GITHUB_STARS_QUERY_KEY'
-
-const GITHUB_REPO = 'bfzli/clawhost'
+import { externalUrls } from '@openclaw/shared'
+import { GITHUB_STARS_QUERY_KEY } from '@/hooks/useGitHubStars'
 
 const formatStars = (count: number): string => {
     if (count >= 1000)
@@ -16,7 +15,9 @@ let inflightStars: Promise<GitHubStarsData> | null = null
 const fetchGitHubStars = (): Promise<GitHubStarsData> => {
     if (inflightStars) return inflightStars
 
-    inflightStars = fetch(`https://api.github.com/repos/${GITHUB_REPO}`)
+    inflightStars = fetch(
+        externalUrls.GITHUB.REPO_INFO(externalUrls.GITHUB.CLAWHOST_REPO)
+    )
         .then((response) => {
             if (!response.ok) throw new Error('Failed to fetch GitHub stars')
             return response.json()

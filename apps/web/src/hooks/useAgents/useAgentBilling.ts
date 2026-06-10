@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { api } from '@/lib'
-import AGENT_BILLING_QUERY_KEY from '@/hooks/useAgents/AGENT_BILLING_QUERY_KEY'
+import { AGENT_BILLING_QUERY_KEY } from '@/hooks/useAgents'
 
 const useAgentBilling = (agentId: string, enabled: boolean = true) => {
     return useQuery({

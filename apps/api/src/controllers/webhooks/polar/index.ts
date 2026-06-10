@@ -3,6 +3,7 @@ import type { Context } from 'hono'
 import { t } from '@openclaw/i18n'
 import { parseWebhook, handleWebhook } from '@/lib/polar'
 import { ok, fail } from '@/lib/response'
+import trackReferral from '@/controllers/webhooks/polar/trackReferral'
 import {
     onCheckoutUpdated,
     onSubscriptionActive,
@@ -35,3 +36,4 @@ const handlePolarWebhook = async (c: Context) => {
 }
 
 export default handlePolarWebhook
+export { trackReferral }

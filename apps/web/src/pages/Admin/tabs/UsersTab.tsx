@@ -10,6 +10,7 @@ import {
     usePaginationState
 } from '@/hooks'
 import { EmptyState, ErrorState } from '@/components'
+import { HAS_AGENTS_FILTER, SORT_ORDER } from '@/lib/constants'
 import { AdminUserRow, AdminUserFilters } from '@/components/admin'
 import { UsersIcon } from '@phosphor-icons/react'
 import AdminUserSkeleton from '@/pages/AdminUserSkeleton'
@@ -18,8 +19,8 @@ const ADMIN_PAGE_SIZE = 20
 
 const UsersTab: FC<AdminUsersTabProps> = ({ onSelectEntity }): ReactNode => {
     const [search, setSearch] = useState('')
-    const [hasAgents, setHasAgents] = useState('all')
-    const [sortOrder, setSortOrder] = useState('newest')
+    const [hasAgents, setHasAgents] = useState<string>(HAS_AGENTS_FILTER.ALL)
+    const [sortOrder, setSortOrder] = useState<string>(SORT_ORDER.NEWEST)
     const debouncedSearch = useDebouncedValue(search, 300)
 
     const {
@@ -33,7 +34,7 @@ const UsersTab: FC<AdminUsersTabProps> = ({ onSelectEntity }): ReactNode => {
     } = useAdminUsers(
         ADMIN_PAGE_SIZE,
         debouncedSearch || undefined,
-        hasAgents === 'all' ? undefined : hasAgents,
+        hasAgents === HAS_AGENTS_FILTER.ALL ? undefined : hasAgents,
         sortOrder
     )
 

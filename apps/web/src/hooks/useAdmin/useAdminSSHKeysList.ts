@@ -1,6 +1,6 @@
 import { useInfiniteQuery } from '@tanstack/react-query'
 import { api } from '@/lib'
-import ADMIN_SSH_KEYS_QUERY_KEY from '@/hooks/useAdmin/ADMIN_SSH_KEYS_QUERY_KEY'
+import { ADMIN_SSH_KEYS_QUERY_KEY } from '@/hooks/useAdmin'
 
 const useAdminSSHKeysList = (
     limit: number = 20,

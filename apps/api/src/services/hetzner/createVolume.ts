@@ -1,6 +1,6 @@
 import type { HetznerVolumeResponse, VolumeInfo } from '@/ts/Interfaces'
 
-import getClient from '@/services/hetzner/hetznerClient'
+import { getClient } from '@/services/hetzner'
 
 const createVolume = async (
     name: string,

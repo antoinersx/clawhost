@@ -15,4 +15,4 @@ const agentStatus = {
     awaitingPayment: 'awaiting_payment'
 } as const
 
-export default agentStatus
+export { agentStatus }

@@ -7,7 +7,7 @@ import type {
 import { t } from '@openclaw/i18n'
 import { Card, CardContent } from '@/components/ui'
 import { ReceiptIcon } from '@phosphor-icons/react'
-import AdminStatusBadge from '@/components/admin/AdminStatusBadge'
+import { AdminStatusBadge } from '@/components/admin'
 
 const AdminUserBillingSection: FC<AdminUserBillingSectionProps> = ({
     billingOrders,

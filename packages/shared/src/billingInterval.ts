@@ -3,4 +3,4 @@ const billingInterval = {
     YEAR: 'year'
 } as const
 
-export default billingInterval
+export { billingInterval }

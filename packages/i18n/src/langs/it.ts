@@ -250,6 +250,8 @@ const it: Translations = {
     },
     errors: {
         somethingWentWrong: 'Qualcosa \u00e8 andato storto!',
+        connectionFailed:
+            'Qualcosa \u00e8 andato storto durante la connessione al server. Controlla la tua connessione e riprova!',
         couldNotLoadData: 'Impossibile caricare i dati. Riprova!',
         notFound: 'Pagina non trovata!',
         pageNotFoundDescription:

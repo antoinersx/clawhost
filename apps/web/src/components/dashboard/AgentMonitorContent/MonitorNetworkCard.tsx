@@ -3,8 +3,10 @@ import type { MonitorNetworkCardProps } from '@/ts/Interfaces'
 
 import { t } from '@openclaw/i18n'
 import { WifiHighIcon } from '@phosphor-icons/react'
-import MetricCard from '@/components/dashboard/AgentMonitorContent/MetricCard'
-import formatBytes from '@/components/dashboard/AgentMonitorContent/formatBytes'
+import {
+    MetricCard,
+    formatBytes
+} from '@/components/dashboard/AgentMonitorContent'
 
 const MonitorNetworkCard: FC<MonitorNetworkCardProps> = ({
     rxBytes,

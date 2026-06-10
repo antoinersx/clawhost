@@ -1,16 +1,16 @@
 import crypto from 'crypto'
-import config from '@/lib/encryption/encryptionConfig'
+import { encryptionConfig } from '@/lib/encryption'
 
 const decrypt = (ciphertext: string): string => {
-    if (!ciphertext.startsWith(config.PREFIX))
+    if (!ciphertext.startsWith(encryptionConfig.PREFIX))
         throw new Error('Invalid ciphertext: missing encryption prefix')
 
-    const parts = ciphertext.slice(config.PREFIX.length).split(':')
+    const parts = ciphertext.slice(encryptionConfig.PREFIX.length).split(':')
     if (parts.length !== 3)
         throw new Error('Invalid ciphertext: malformed encryption format')
 
     try {
-        const key = config.getKey()
+        const key = encryptionConfig.getKey()
         const iv = Buffer.from(parts[0], 'hex')
         const encrypted = Buffer.from(parts[1], 'hex')
         const tag = Buffer.from(parts[2], 'hex')

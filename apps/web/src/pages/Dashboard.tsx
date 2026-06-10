@@ -35,11 +35,14 @@ import {
 } from '@/components/dashboard'
 import { useAuth } from '@/lib/auth'
 
+const PAYMENT_PARAM = 'payment'
+const PAYMENT_SUCCESS_VALUE = 'success'
+
 const Dashboard: FC = (): ReactNode => {
     const navigate = useNavigate()
     const [searchParams, setSearchParams] = useSearchParams()
     const [awaitingAgent, setAwaitingAgent] = useState(
-        () => searchParams.get('payment') === 'success'
+        () => searchParams.get(PAYMENT_PARAM) === PAYMENT_SUCCESS_VALUE
     )
     const {
         chatSettingsAgentId,

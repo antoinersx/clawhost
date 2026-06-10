@@ -1,6 +1,6 @@
 const AGENTS = '/agents'
 
-const API_PATHS = {
+const apiPaths = {
     AUTH: {
         SEND_OTP: '/auth/send-otp',
         VERIFY_OTP: '/auth/verify-otp',
@@ -91,4 +91,4 @@ const API_PATHS = {
     }
 }
 
-export default API_PATHS
+export { apiPaths }

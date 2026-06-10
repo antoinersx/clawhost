@@ -1,7 +1,7 @@
 import { eq } from 'drizzle-orm'
 import { db } from '@/db'
 import { agents } from '@/db/schema'
-import decryptAgentSecrets from '@/controllers/agents/helpers/decryptAgentSecrets'
+import { decryptAgentSecrets } from '@/controllers/agents/helpers'
 
 const findUserAgent = async (
     userId: string,

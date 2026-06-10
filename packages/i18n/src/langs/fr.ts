@@ -249,6 +249,8 @@ const fr: Translations = {
     },
     errors: {
         somethingWentWrong: 'Une erreur est survenue !',
+        connectionFailed:
+            'Une erreur est survenue lors de la connexion au serveur. Veuillez vérifier votre connexion et réessayer !',
         couldNotLoadData:
             'Impossible de charger les données. Veuillez réessayer !',
         notFound: 'Page introuvable !',

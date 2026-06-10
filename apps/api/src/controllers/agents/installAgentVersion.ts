@@ -8,7 +8,7 @@ import { eq } from 'drizzle-orm'
 import { externalUrls } from '@openclaw/shared'
 import { db } from '@/db'
 import { agents } from '@/db/schema'
-import executeSSH from '@/services/ssh'
+import { executeSSH } from '@/services'
 import {
     invalidateVersionCache,
     getAgentConfig,
@@ -16,10 +16,11 @@ import {
 } from '@/controllers/agents/helpers'
 import { t } from '@openclaw/i18n'
 import { ok, fail } from '@/lib/response'
-import { gatewayDefaults } from '@/lib/constants'
+import { gatewayDefaults, gatewayMarkers } from '@/lib/constants'
 
 const VERSION_REGEX = /^[a-zA-Z0-9._-]+$/
 const OUTDATED_CUTOFF = new Date('2026-02-01')
+const OUTDATED_VERSION_ERROR = 'outdated_version'
 
 const buildNpmInstallCommands = async (
     version: string,
@@ -39,7 +40,7 @@ const buildNpmInstallCommands = async (
             (await registryResponse.json()) as NpmRegistryTimeResponse
         const publishedAt = registry.time?.[version]
         if (publishedAt && new Date(publishedAt) < OUTDATED_CUTOFF)
-            throw new Error('outdated_version')
+            throw new Error(OUTDATED_VERSION_ERROR)
     }
 
     const nginxPatch = `(grep -q 'proxy_hide_header Content-Security-Policy' /etc/nginx/sites-available/${nginxSite} || sed -i 's|proxy_send_timeout 86400;|proxy_send_timeout 86400;\\n            proxy_hide_header Content-Security-Policy;\\n            proxy_hide_header X-Frame-Options;\\n            add_header Content-Security-Policy "frame-ancestors https://${DOMAIN} https://*.${DOMAIN} http://localhost:* https://localhost:*" always;|g' /etc/nginx/sites-available/${nginxSite}) && nginx -t && systemctl reload nginx || true`
@@ -53,7 +54,7 @@ const buildNpmInstallCommands = async (
         nginxPatch,
         `systemctl restart ${serviceName}`,
         'sleep 15',
-        `curl -sf -o /dev/null --max-time 5 ${gatewayDefaults.BASE_URL} && echo "GATEWAY_OK" || echo "GATEWAY_FAILED"`
+        `curl -sf -o /dev/null --max-time 5 ${gatewayDefaults.BASE_URL} && echo "${gatewayMarkers.OK}" || echo "${gatewayMarkers.FAILED}"`
     ].join(' && ')
 }
 
@@ -69,7 +70,7 @@ const buildGitHubInstallCommands = (
         `su - ${user} -c 'curl -fsSL https://raw.githubusercontent.com/${githubRepo}/main/scripts/install.sh | HERMES_VERSION=${version} bash -s -- --skip-setup'`,
         `systemctl restart ${serviceName} 2>/dev/null || su - ${user} -c 'systemctl --user restart ${serviceName}' 2>/dev/null || true`,
         'sleep 5',
-        `su - ${user} -c '${versionCommand}' >/dev/null 2>&1 && echo "GATEWAY_OK" || echo "GATEWAY_FAILED"`
+        `su - ${user} -c '${versionCommand}' >/dev/null 2>&1 && echo "${gatewayMarkers.OK}" || echo "${gatewayMarkers.FAILED}"`
     ].join(' && ')
 }
 
@@ -124,7 +125,7 @@ const installAgentVersion = async (c: AuthenticatedContext) => {
             } catch (error) {
                 if (
                     error instanceof Error &&
-                    error.message === 'outdated_version'
+                    error.message === OUTDATED_VERSION_ERROR
                 )
                     return fail(c, t('api.outdatedVersion'), 400)
                 throw error
@@ -154,14 +155,14 @@ const installAgentVersion = async (c: AuthenticatedContext) => {
 
         invalidateVersionCache(agent[0].ip)
 
-        const success = output.includes('GATEWAY_OK')
+        const success = output.includes(gatewayMarkers.OK)
 
         if (success) return ok(c, { version }, t('api.installVersionSuccess'))
 
         console.error(
             'installAgentVersion',
             new Error(
-                `agent ${id} version ${version} install did not reach GATEWAY_OK. Output tail:\n${output.slice(-2000)}`
+                `agent ${id} version ${version} install did not reach ${gatewayMarkers.OK}. Output tail:\n${output.slice(-2000)}`
             )
         )
         return fail(c, t('api.failedToInstallVersion'), 500)

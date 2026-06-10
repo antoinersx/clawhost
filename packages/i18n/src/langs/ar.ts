@@ -240,6 +240,8 @@ const ar: Translations = {
     },
     errors: {
         somethingWentWrong: 'حدث خطأ ما !',
+        connectionFailed:
+            'حدث خطأ ما أثناء الاتصال بالخادم. يرجى التحقق من اتصالك والمحاولة مرة أخرى !',
         couldNotLoadData: 'لم نتمكن من تحميل البيانات. يرجى المحاولة مجدداً !',
         notFound: 'الصفحة غير موجودة !',
         pageNotFoundDescription:

@@ -13,6 +13,8 @@ import findUserAgent from '@/controllers/agents/helpers/findUserAgent'
 import decryptAgentSecrets from '@/controllers/agents/helpers/decryptAgentSecrets'
 import DOMAIN from '@/controllers/agents/helpers/constants'
 import syncAgentServers from '@/controllers/agents/helpers/syncAgentServers'
+import versionCache from '@/controllers/agents/helpers/versionCache'
+import applyToolsDefaults from '@/controllers/agents/helpers/applyToolsDefaults'
 import invalidateVersionCache from '@/controllers/agents/helpers/invalidateVersionCache'
 import fetchAgentVersion from '@/controllers/agents/helpers/fetchAgentVersion'
 import executeServerLifecycle from '@/controllers/agents/helpers/executeServerLifecycle'
@@ -38,6 +40,8 @@ export {
     safeShellWrite,
     DOMAIN,
     syncAgentServers,
+    versionCache,
+    applyToolsDefaults,
     executeServerLifecycle,
     invalidateVersionCache,
     fetchAgentVersion,

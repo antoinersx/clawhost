@@ -2,7 +2,7 @@ import { readFileSync } from 'fs'
 import { resolve } from 'path'
 
 import app from '@/app'
-import terminalSocket from '@/services/terminalSocket'
+import { terminalSocket } from '@/services'
 
 const port = Number(process.env.PORT)
 const pkg = JSON.parse(

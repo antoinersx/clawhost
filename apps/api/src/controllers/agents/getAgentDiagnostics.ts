@@ -1,6 +1,6 @@
 import type { AuthenticatedContext } from '@/ts/Types'
 
-import executeSSH from '@/services/ssh'
+import { executeSSH } from '@/services'
 import { findUserAgent, getAgentConfig } from '@/controllers/agents/helpers'
 import { t } from '@openclaw/i18n'
 import { ok, fail } from '@/lib/response'

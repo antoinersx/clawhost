@@ -1,6 +1,6 @@
 import { useInfiniteQuery } from '@tanstack/react-query'
 import { api } from '@/lib'
-import ADMIN_USERS_QUERY_KEY from '@/hooks/useAdmin/ADMIN_USERS_QUERY_KEY'
+import { ADMIN_USERS_QUERY_KEY } from '@/hooks/useAdmin'
 
 const useAdminUsers = (
     limit: number = 20,

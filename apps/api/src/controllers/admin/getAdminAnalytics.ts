@@ -19,7 +19,7 @@ import {
 } from '@/db/schema'
 import { ok, fail } from '@/lib/response'
 import { t } from '@openclaw/i18n'
-import withErrorHandler from '@/lib/withErrorHandler'
+import { withErrorHandler } from '@/lib'
 
 const RANGE_CONFIG: Record<string, AnalyticsRangeConfig> = {
     day: { trunc: 'hour', offset: '24 hours' },

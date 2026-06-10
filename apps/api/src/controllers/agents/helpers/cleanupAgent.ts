@@ -4,8 +4,7 @@ import { eq } from 'drizzle-orm'
 import { db } from '@/db'
 import { agents, volumes } from '@/db/schema'
 import { getProvider } from '@/services/provider'
-import cloudflare from '@/services/cloudflare'
-import hostKeyStore from '@/services/hostKeyStore'
+import { cloudflare, hostKeyStore } from '@/services'
 
 const cleanupAgent = async (
     agentId: string,

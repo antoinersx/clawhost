@@ -9,10 +9,12 @@ import { usePreferencesStore } from '@/lib/store'
 import { THEMES } from '@/lib'
 import { useAgentFiles } from '@/hooks'
 import { demoFiles } from '@/data'
-import FileTreeSkeleton from '@/components/dashboard/AgentConfigDialog/FileTreeSkeleton'
-import FileTree from '@/components/dashboard/AgentConfigDialog/FileTree'
-import FileEditor from '@/components/dashboard/AgentConfigDialog/FileEditor'
-import useFileEditor from '@/components/dashboard/AgentConfigDialog/useFileEditor'
+import {
+    FileTreeSkeleton,
+    FileTree,
+    FileEditor,
+    useFileEditor
+} from '@/components/dashboard/AgentConfigDialog'
 
 const AgentConfigContent: FC<AgentFileExplorerContentProps> = ({
     agentId,

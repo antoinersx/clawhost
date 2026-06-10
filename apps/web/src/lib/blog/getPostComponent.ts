@@ -1,8 +1,7 @@
 import type { ComponentType } from 'react'
 
 import { lazy } from 'react'
-import moduleEntries from '@/lib/blog/data'
-import loaders from '@/lib/blog/componentLoaders'
+import { moduleEntries, loaders } from '@/lib/blog'
 
 const cache = new Map<string, ComponentType>()
 

@@ -11,7 +11,7 @@ import {
 import { CircleNotchIcon, DownloadSimpleIcon } from '@phosphor-icons/react'
 import { formatLongDate, formatCurrencyFromCents } from '@/lib/formatters'
 import { billingReasonLabels } from '@/lib/billing'
-import BillingStatusBadge from '@/components/billing/BillingStatusBadge'
+import { BillingStatusBadge } from '@/components/billing'
 
 const BillingOrderCard: FC<BillingOrderCardProps> = ({
     order,

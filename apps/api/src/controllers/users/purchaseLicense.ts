@@ -4,6 +4,7 @@ import { eq } from 'drizzle-orm'
 import { db } from '@/db'
 import { users } from '@/db/schema'
 import { customers, checkouts } from '@/lib/polar'
+import { metadataType } from '@/lib/constants'
 import { getEnvironment } from '@/lib/environment'
 import { ok, fail } from '@/lib/response'
 import { t } from '@openclaw/i18n'
@@ -56,7 +57,7 @@ const purchaseLicense = async (c: AuthenticatedContext) => {
             customerId: customer.id,
             successUrl,
             metadata: {
-                type: 'license',
+                type: metadataType.license,
                 userId,
                 environment: getEnvironment(c),
                 ...(referralCode ? { referralCode } : {})

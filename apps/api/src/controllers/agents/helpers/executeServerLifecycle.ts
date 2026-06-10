@@ -2,21 +2,22 @@ import type { ServerLifecycleResult } from '@/ts/Interfaces'
 import type { AgentRow } from '@/ts/Types'
 
 import { eq } from 'drizzle-orm'
+import { agentStatus } from '@openclaw/shared'
 import { db } from '@/db'
 import { agents } from '@/db/schema'
 import { getProvider, updateCachedServerStatus } from '@/services/provider'
 
 const LIFECYCLE_CONFIG = {
     start: {
-        transitionalStatus: 'starting',
+        transitionalStatus: agentStatus.starting,
         providerMethod: 'startServer'
     },
     stop: {
-        transitionalStatus: 'stopping',
+        transitionalStatus: agentStatus.stopping,
         providerMethod: 'stopServer'
     },
     restart: {
-        transitionalStatus: 'restarting',
+        transitionalStatus: agentStatus.restarting,
         providerMethod: 'restartServer'
     }
 }

@@ -3,9 +3,10 @@ import type { FC, MouseEvent, ReactNode } from 'react'
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { t } from '@openclaw/i18n'
-import Logo from '@/components/layout/Logo'
+import { Logo } from '@/components/layout'
 import { TrustMrrBadge } from '@/components/landing'
 import { ROUTES } from '@/lib'
+import { SCROLL_SPY } from '@/lib/constants'
 import { GITHUB_REPO_URL } from '@/hooks'
 import {
     TWITTER_URL,
@@ -39,12 +40,15 @@ const LandingFooter: FC = (): ReactNode => {
         const handleScroll = (): void => {
             for (const section of [...LANDING_SECTIONS].reverse()) {
                 const el = document.getElementById(section)
-                if (el && window.scrollY >= el.offsetTop - 100) {
+                if (
+                    el &&
+                    window.scrollY >= el.offsetTop - SCROLL_SPY.SECTION_OFFSET
+                ) {
                     setActiveSection(section)
                     return
                 }
             }
-            if (window.scrollY < 200) setActiveSection('')
+            if (window.scrollY < SCROLL_SPY.TOP_THRESHOLD) setActiveSection('')
         }
 
         window.addEventListener('scroll', handleScroll)

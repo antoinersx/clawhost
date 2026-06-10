@@ -249,6 +249,8 @@ const de: Translations = {
     },
     errors: {
         somethingWentWrong: 'Etwas ist schiefgelaufen!',
+        connectionFailed:
+            'Beim Verbinden mit dem Server ist ein Fehler aufgetreten. Bitte überprüfe deine Verbindung und versuche es erneut!',
         couldNotLoadData:
             'Die Daten konnten nicht geladen werden. Bitte versuche es erneut!',
         notFound: 'Seite nicht gefunden!',

@@ -33,7 +33,7 @@ import {
 } from '@/lib/links'
 import { GITHUB_REPO_URL } from '@/hooks'
 import { usePreferencesStore } from '@/lib/store'
-import { PRODUCT } from '@/lib/constants'
+import { PRODUCT, SCROLL_SPY } from '@/lib/constants'
 import {
     ShieldCheckIcon,
     GlobeIcon,
@@ -117,14 +117,17 @@ const Landing: FC = (): ReactNode => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY < 200) {
+            if (window.scrollY < SCROLL_SPY.TOP_THRESHOLD) {
                 setActiveSection('')
                 return
             }
             const sections = SCROLL_SECTIONS
             for (const section of sections) {
                 const el = document.getElementById(section)
-                if (el && window.scrollY >= el.offsetTop - 100) {
+                if (
+                    el &&
+                    window.scrollY >= el.offsetTop - SCROLL_SPY.SECTION_OFFSET
+                ) {
                     setActiveSection(section)
                     break
                 }

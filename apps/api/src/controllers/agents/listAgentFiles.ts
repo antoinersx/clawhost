@@ -1,11 +1,11 @@
 import type { AgentFileType } from '@/ts/Types'
 
 import { agentFileType } from '@openclaw/shared'
-import executeSSH from '@/services/ssh'
+import { executeSSH } from '@/services'
 import { getBaseDir, withAgent } from '@/controllers/agents/helpers'
 import { t } from '@openclaw/i18n'
 import { ok } from '@/lib/response'
-import withErrorHandler from '@/lib/withErrorHandler'
+import { withErrorHandler } from '@/lib'
 
 const getFileType = (name: string): AgentFileType => {
     if (name.endsWith('.json') || name.endsWith('.jsonb'))

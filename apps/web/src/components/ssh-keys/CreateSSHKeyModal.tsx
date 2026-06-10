@@ -17,8 +17,7 @@ import {
     DialogHeader,
     DialogTitle
 } from '@/components/ui'
-import SSHKeyUploadForm from '@/components/ssh-keys/SSHKeyUploadForm'
-import SSHKeyGenerateForm from '@/components/ssh-keys/SSHKeyGenerateForm'
+import { SSHKeyUploadForm, SSHKeyGenerateForm } from '@/components/ssh-keys'
 
 const CreateSSHKeyModal: FC<CreateSSHKeyModalProps> = ({
     onClose

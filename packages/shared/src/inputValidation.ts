@@ -1,4 +1,4 @@
-const INPUT_VALIDATION_LENGTH = {
+const inputValidation = {
     CLAW_NAME: { MAX: 50 },
     USER_NAME: { MAX: 100 },
     SSH_KEY_NAME: { MAX: 100 },
@@ -20,4 +20,4 @@ const INPUT_VALIDATION_LENGTH = {
     GATEWAY_TOKEN: { MIN: 16, MAX: 256 }
 }
 
-export default INPUT_VALIDATION_LENGTH
+export { inputValidation }

@@ -3,4 +3,4 @@ const agentProvider = {
     local: 'local'
 } as const
 
-export default agentProvider
+export { agentProvider }

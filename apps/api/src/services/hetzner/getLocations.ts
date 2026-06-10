@@ -4,7 +4,7 @@ import type {
     LocationInfo
 } from '@/ts/Interfaces'
 
-import getClient from '@/services/hetzner/hetznerClient'
+import { getClient } from '@/services/hetzner'
 
 const getLocations = async (): Promise<LocationInfo[]> => {
     const [locData, dcData] = await Promise.all([

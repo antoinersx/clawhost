@@ -247,6 +247,8 @@ const pt: Translations = {
     },
     errors: {
         somethingWentWrong: 'Algo deu errado!',
+        connectionFailed:
+            'Algo deu errado ao conectar ao servidor. Verifique sua conexão e tente novamente!',
         couldNotLoadData:
             'Não foi possível carregar os dados. Por favor, tente novamente!',
         notFound: 'Página não encontrada!',

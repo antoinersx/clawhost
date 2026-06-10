@@ -14,6 +14,7 @@ import {
     authMethod,
     externalUrls,
     httpMethod,
+    providerId,
     userRole
 } from '@openclaw/shared'
 import { environment } from '@/lib/constants'
@@ -118,9 +119,9 @@ app.use('/*', async (c, next) => {
 
         const signInProvider = decoded.firebase?.sign_in_provider
         const resolvedAuthMethod =
-            signInProvider === 'google.com'
+            signInProvider === providerId.google
                 ? authMethod.google
-                : signInProvider === 'github.com'
+                : signInProvider === providerId.github
                   ? authMethod.github
                   : authMethod.email
 

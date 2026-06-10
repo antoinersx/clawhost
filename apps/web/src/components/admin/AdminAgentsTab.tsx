@@ -4,6 +4,7 @@ import type { AdminResourceTabProps } from '@/ts/Interfaces'
 import { Fragment, useState } from 'react'
 import { t } from '@openclaw/i18n'
 import { formatDate } from '@/lib'
+import { SORT_ORDER } from '@/lib/constants'
 import {
     useAdminAgentsList,
     useDebouncedValue,
@@ -21,7 +22,7 @@ import {
 } from '@/components/ui'
 import { EmptyState, ErrorState } from '@/components'
 import { HardDrivesIcon, MagnifyingGlassIcon } from '@phosphor-icons/react'
-import AdminStatusBadge from '@/components/admin/AdminStatusBadge'
+import { AdminStatusBadge } from '@/components/admin'
 import AdminUserSkeleton from '@/pages/AdminUserSkeleton'
 
 const PAGE_SIZE = 20
@@ -30,7 +31,7 @@ const AdminAgentsTab: FC<AdminResourceTabProps> = ({
     onSelectEntity
 }): ReactNode => {
     const [search, setSearch] = useState('')
-    const [sortOrder, setSortOrder] = useState('newest')
+    const [sortOrder, setSortOrder] = useState<string>(SORT_ORDER.NEWEST)
     const debouncedSearch = useDebouncedValue(search, 300)
 
     const {
@@ -70,16 +71,16 @@ const AdminAgentsTab: FC<AdminResourceTabProps> = ({
                     <SelectTrigger
                         className='h-10 w-full sm:w-40'
                         placeholder={
-                            sortOrder === 'newest'
+                            sortOrder === SORT_ORDER.NEWEST
                                 ? t('admin.sortNewest')
                                 : t('admin.sortOldest')
                         }
                     />
                     <SelectContent>
-                        <SelectItem value='newest'>
+                        <SelectItem value={SORT_ORDER.NEWEST}>
                             {t('admin.sortNewest')}
                         </SelectItem>
-                        <SelectItem value='oldest'>
+                        <SelectItem value={SORT_ORDER.OLDEST}>
                             {t('admin.sortOldest')}
                         </SelectItem>
                     </SelectContent>

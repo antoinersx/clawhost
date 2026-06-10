@@ -1,6 +1,6 @@
 import type { AuthenticatedContext } from '@/ts/Types'
 
-import sshStream from '@/services/sshStream'
+import { sshStream } from '@/services'
 import { findUserAgent, getAgentConfig } from '@/controllers/agents/helpers'
 import { checkRateLimit, setRateLimit } from '@/controllers/auth/rateLimit'
 import { t } from '@openclaw/i18n'

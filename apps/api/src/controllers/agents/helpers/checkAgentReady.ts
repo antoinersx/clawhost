@@ -1,6 +1,5 @@
-import executeSSH from '@/services/ssh'
-import getAgentConfig from '@/controllers/agents/helpers/getAgentConfig'
-import checkSubdomainReady from '@/controllers/agents/helpers/checkSubdomainReady'
+import { executeSSH } from '@/services'
+import { getAgentConfig, checkSubdomainReady } from '@/controllers/agents/helpers'
 
 const READY_MARKER = 'CLAWHOST_AGENT_READY'
 
