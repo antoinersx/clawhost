@@ -21,7 +21,10 @@ export default tseslint.config(
             '**/.vite/**',
             'apps/clawhostgo/resources/**',
             'apps/clawhostgo/scripts/*.js',
-            'resources/**'
+            'resources/**',
+            '**/android/**',
+            '**/ios/**',
+            '**/.expo/**'
         ]
     },
     js.configs.recommended,
@@ -86,6 +89,16 @@ export default tseslint.config(
                 'warn',
                 { allowConstantExport: true }
             ]
+        }
+    },
+    {
+        files: ['apps/mobile/**/*.{ts,tsx}'],
+        plugins: {
+            'react-hooks': reactHooks
+        },
+        rules: {
+            ...reactHooks.configs.recommended.rules,
+            'react-hooks/exhaustive-deps': 'off'
         }
     },
     {

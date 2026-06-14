@@ -165,6 +165,48 @@ const LandingFooter: FC = (): ReactNode => {
                                 />
                             </a>
                         </div>
+                        <div className='mt-5 hidden items-center gap-3'>
+                            <a
+                                href='#'
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                aria-label={t('footer.downloadAndroid')}
+                                className='opacity-80 transition hover:opacity-100'
+                            >
+                                <img
+                                    src='/badges/google-play-dark.svg'
+                                    alt={t('footer.downloadAndroid')}
+                                    loading='lazy'
+                                    className='hidden h-10 dark:block'
+                                />
+                                <img
+                                    src='/badges/google-play-light.svg'
+                                    alt={t('footer.downloadAndroid')}
+                                    loading='lazy'
+                                    className='block h-10 dark:hidden'
+                                />
+                            </a>
+                            <a
+                                href='#'
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                aria-label={t('footer.downloadIos')}
+                                className='opacity-80 transition hover:opacity-100'
+                            >
+                                <img
+                                    src='/badges/app-store-light.svg'
+                                    alt={t('footer.downloadIos')}
+                                    loading='lazy'
+                                    className='block h-10 dark:hidden'
+                                />
+                                <img
+                                    src='/badges/app-store-dark.svg'
+                                    alt={t('footer.downloadIos')}
+                                    loading='lazy'
+                                    className='hidden h-10 dark:block'
+                                />
+                            </a>
+                        </div>
                         <p className='text-muted-foreground mt-4 text-sm'>
                             &copy; {new Date().getFullYear()}{' '}
                             {t('footer.copyrightName')}{' '}

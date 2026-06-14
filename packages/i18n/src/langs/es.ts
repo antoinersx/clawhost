@@ -216,6 +216,8 @@ const es: Translations = {
         failedToFetchLatestVersion: '¡Error al obtener la última versión!'
     },
     footer: {
+        downloadAndroid: 'Disponible en Google Play',
+        downloadIos: 'Descargar en el App Store',
         website: 'Sitio web',
         copyrightName: 'ClawHost',
         copyrightRights: 'Todos los derechos reservados.',
@@ -278,6 +280,7 @@ const es: Translations = {
         noPasswordAvailable: 'No hay contraseña disponible para este claw!'
     },
     api: {
+        githubExchangeFailed: '¡Error al iniciar sesión con GitHub!',
         missingRequiredFields: 'Faltan campos obligatorios!',
         agentNotFound: 'Agent no encontrado!',
         agentRenamed: 'Agent renombrado con éxito.',
@@ -751,6 +754,12 @@ const es: Translations = {
             'Cuando está activado, los enlaces externos se abren dentro de la aplicación en lugar del navegador del sistema.'
     },
     billing: {
+        billingHistory: 'Historial de facturación',
+        billingDescription:
+            'Consulta tu historial de pagos, facturas y suscripciones.',
+        noBillingHistory: 'Sin historial de facturación',
+        noBillingHistoryDescription:
+            'Tus pagos y facturas aparecerán aquí.',
         date: 'Fecha',
         product: 'Producto',
         amount: 'Monto',
@@ -1004,7 +1013,49 @@ const es: Translations = {
         },
         tabNotAvailableForAgent: 'No disponible para este tipo de agente'
     },
+    mobile: {
+        versions: 'Versiones',
+        currentVersion: 'Versión actual',
+        latestVersion: 'Última versión',
+        install: 'Instalar',
+        terminal: 'Terminal',
+        reinstall: 'Reinstalar',
+        fileSaved: 'Archivo guardado.',
+        terminalDisconnected: 'Desconectado',
+        terminalPlaceholder: 'Escribe un comando...',
+        manage: 'Gestionar',
+        sync: 'Sincronizar',
+        rename: 'Renombrar',
+        newName: 'Nuevo nombre',
+        credentials: 'Credenciales',
+        showCredentials: 'Mostrar credenciales',
+        rotatePassword: 'Rotar contraseña',
+        rotateGatewayToken: 'Rotar token de gateway',
+        syncSuccess: 'Sincronizado correctamente.',
+        signIn: 'Iniciar sesión',
+        signInDescription:
+            'Autentícate para gestionar y desplegar tus agentes.',
+        enterEmail: 'Correo electrónico',
+        emailPlaceholder: 'ejemplo@clawhost.cloud',
+        continueWithEmail: 'Continuar con correo',
+        otpDescription:
+            'Te enviaremos un código para iniciar sesión. Sin contraseña.',
+        sending: 'Enviando...',
+        checkYourEmail: 'Revisa tu correo',
+        codeSentTo: 'Enviamos un código de 6 dígitos a',
+        resendCode: 'Reenviar código',
+        resendIn: 'Reenviar en {{seconds}}s',
+        changeEmail: 'Cambiar correo',
+        invalidCode: '¡Código inválido!',
+        signingIn: 'Iniciando sesión...',
+        signOut: 'Cerrar sesión',
+        loadMore: 'Cargar más',
+        deployClaw: 'Desplegar Agente',
+        deployYourFirstClaw: 'Despliega tu primer Agente',
+    },
     createClaw: {
+        provider: 'Proveedor',
+        providerAtCapacity: 'Sin capacidad',
         title: 'Desplegar OpenClaw',
         description: 'Configura tu servidor y comienza a construir con IA.',
         clawName: 'Nombre',

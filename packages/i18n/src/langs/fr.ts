@@ -217,6 +217,8 @@ const fr: Translations = {
             'Impossible de récupérer la dernière version !'
     },
     footer: {
+        downloadAndroid: 'Télécharger sur Google Play',
+        downloadIos: "Télécharger sur l'App Store",
         website: 'Site web',
         copyrightName: 'ClawHost',
         copyrightRights: 'Tous droits réservés.',
@@ -279,6 +281,7 @@ const fr: Translations = {
         noPasswordAvailable: 'Aucun mot de passe disponible pour ce claw !'
     },
     api: {
+        githubExchangeFailed: 'Échec de la connexion GitHub !',
         missingRequiredFields: 'Champs obligatoires manquants !',
         agentNotFound: 'Agent introuvable !',
         agentRenamed: 'Agent renommé avec succès.',
@@ -769,6 +772,12 @@ const fr: Translations = {
             "Lorsque cette option est activée, les liens externes s'ouvrent dans l'application au lieu du navigateur système."
     },
     billing: {
+        billingHistory: 'Historique de facturation',
+        billingDescription:
+            'Consultez votre historique de paiement, vos factures et vos abonnements.',
+        noBillingHistory: 'Aucun historique de facturation',
+        noBillingHistoryDescription:
+            'Vos paiements et factures apparaîtront ici.',
         date: 'Date',
         product: 'Produit',
         amount: 'Montant',
@@ -1029,7 +1038,49 @@ const fr: Translations = {
         },
         tabNotAvailableForAgent: "Non disponible pour ce type d'agent"
     },
+    mobile: {
+        versions: 'Versions',
+        currentVersion: 'Version actuelle',
+        latestVersion: 'Dernière version',
+        install: 'Installer',
+        terminal: 'Terminal',
+        reinstall: 'Réinstaller',
+        fileSaved: 'Fichier enregistré.',
+        terminalDisconnected: 'Déconnecté',
+        terminalPlaceholder: 'Tapez une commande...',
+        manage: 'Gérer',
+        sync: 'Synchroniser',
+        rename: 'Renommer',
+        newName: 'Nouveau nom',
+        credentials: 'Identifiants',
+        showCredentials: 'Afficher les identifiants',
+        rotatePassword: 'Réinitialiser le mot de passe',
+        rotateGatewayToken: 'Réinitialiser le jeton',
+        syncSuccess: 'Synchronisé avec succès.',
+        signIn: 'Se connecter',
+        signInDescription:
+            'Authentifiez-vous pour gérer et déployer vos agents.',
+        enterEmail: 'Adresse e-mail',
+        emailPlaceholder: 'exemple@clawhost.cloud',
+        continueWithEmail: "Continuer avec l'e-mail",
+        otpDescription:
+            'Nous vous enverrons un code pour vous connecter. Aucun mot de passe requis.',
+        sending: 'Envoi...',
+        checkYourEmail: 'Vérifiez vos e-mails',
+        codeSentTo: 'Nous avons envoyé un code à 6 chiffres à',
+        resendCode: 'Renvoyer le code',
+        resendIn: 'Renvoyer dans {{seconds}}s',
+        changeEmail: "Changer d'e-mail",
+        invalidCode: 'Code invalide !',
+        signingIn: 'Connexion...',
+        signOut: 'Se déconnecter',
+        loadMore: 'Charger plus',
+        deployClaw: 'Déployer un Agent',
+        deployYourFirstClaw: 'Déployez votre premier Agent',
+    },
     createClaw: {
+        provider: 'Fournisseur',
+        providerAtCapacity: 'Capacité atteinte',
         title: 'Déployer OpenClaw',
         description:
             "Configurez votre serveur et commencez à construire avec l'IA.",

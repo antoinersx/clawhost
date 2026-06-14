@@ -1,0 +1,27 @@
+{
+    "expo": {
+        "name": "ClawHost",
+        "slug": "clawhost",
+        "version": "0.0.1",
+        "orientation": "portrait",
+        "userInterfaceStyle": "dark",
+        "backgroundColor": "#0a0a0f",
+        "newArchEnabled": true,
+        "splash": {
+            "backgroundColor": "#0a0a0f"
+        },
+        "ios": {
+            "supportsTablet": true,
+            "bundleIdentifier": "com.clawhost.app"
+        },
+        "android": {
+            "package": "com.clawhost.app",
+            "adaptiveIcon": {
+                "backgroundColor": "#0a0a0f"
+            }
+        },
+        "scheme": "clawhost",
+        "platforms": ["ios", "android"],
+        "plugins": ["expo-font"]
+    }
+}

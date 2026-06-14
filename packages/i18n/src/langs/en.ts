@@ -210,6 +210,8 @@ const en = {
         failedToFetchLatestVersion: 'Failed to fetch the latest version!'
     },
     footer: {
+        downloadAndroid: 'Get it on Google Play',
+        downloadIos: 'Download on the App Store',
         website: 'Website',
         copyrightName: 'ClawHost',
         copyrightRights: 'All rights reserved.',
@@ -268,6 +270,7 @@ const en = {
         noPasswordAvailable: 'No password available for this claw!'
     },
     api: {
+        githubExchangeFailed: 'GitHub sign-in failed!',
         missingRequiredFields: 'Missing required fields!',
         agentNotFound: 'Agent not found!',
         agentRenamed: 'Agent renamed successfully.',
@@ -722,6 +725,12 @@ const en = {
             'When enabled, external links open inside the app instead of the system browser.'
     },
     billing: {
+        billingHistory: 'Billing History',
+        billingDescription:
+            'View your payment history, invoices, and subscriptions.',
+        noBillingHistory: 'No billing history',
+        noBillingHistoryDescription:
+            'Your payments and invoices will appear here.',
         date: 'Date',
         product: 'Product',
         amount: 'Amount',
@@ -973,7 +982,48 @@ const en = {
         },
         tabNotAvailableForAgent: 'Not available for this agent type'
     },
+    mobile: {
+        versions: 'Versions',
+        currentVersion: 'Current version',
+        latestVersion: 'Latest version',
+        install: 'Install',
+        terminal: 'Terminal',
+        reinstall: 'Reinstall',
+        fileSaved: 'File saved.',
+        terminalDisconnected: 'Disconnected',
+        terminalPlaceholder: 'Type a command...',
+        manage: 'Manage',
+        sync: 'Sync',
+        rename: 'Rename',
+        newName: 'New name',
+        credentials: 'Credentials',
+        showCredentials: 'Show credentials',
+        rotatePassword: 'Rotate password',
+        rotateGatewayToken: 'Rotate gateway token',
+        syncSuccess: 'Synced successfully.',
+        signIn: 'Authenticate',
+        signInDescription: 'Authenticate to manage and deploy your agents.',
+        enterEmail: 'Email Address',
+        emailPlaceholder: 'example@clawhost.cloud',
+        continueWithEmail: 'Continue with Email',
+        otpDescription:
+            "We'll send you a code to sign in. No password needed.",
+        sending: 'Sending...',
+        checkYourEmail: 'Check your email',
+        codeSentTo: 'We sent a 6-digit code to',
+        resendCode: 'Resend code',
+        resendIn: 'Resend in {{seconds}}s',
+        changeEmail: 'Change email',
+        invalidCode: 'Invalid code!',
+        signingIn: 'Signing in...',
+        signOut: 'Sign Out',
+        loadMore: 'Load More',
+        deployClaw: 'Deploy Agent',
+        deployYourFirstClaw: 'Deploy your first Agent',
+    },
     createClaw: {
+        provider: 'Provider',
+        providerAtCapacity: 'At capacity',
         title: 'Deploy Agent',
         description: 'Configure your server and start building with AI.',
         clawName: 'Name',

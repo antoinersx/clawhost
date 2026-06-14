@@ -4,7 +4,8 @@ const apiPaths = {
     AUTH: {
         SEND_OTP: '/auth/send-otp',
         VERIFY_OTP: '/auth/verify-otp',
-        RESOLVE_CONFLICT: '/auth/resolve-credential-conflict'
+        RESOLVE_CONFLICT: '/auth/resolve-credential-conflict',
+        GITHUB_EXCHANGE: '/auth/github-exchange'
     },
     PLANS: {
         BASE: '/plans',

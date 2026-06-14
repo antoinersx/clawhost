@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from 'fs'
 import { resolve } from 'path'
 
-const apps = ['apps/api', 'apps/web', 'apps/clawhostgo']
+const apps = ['apps/api', 'apps/web', 'apps/mobile', 'apps/clawhostgo']
 const root = resolve(import.meta.dirname, '..')
 
 for (const app of apps) {

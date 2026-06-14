@@ -43,7 +43,7 @@ ClawHost is an open-source, self-hostable cloud hosting platform that lets anyon
 - **Billing Built-In** — Polar.sh integration for subscriptions, invoicing, and billing portal
 - **Affiliate & Referrals** — Built-in referral codes and payouts
 - **Export & Backup** — Export agent configurations for backup and migration
-- **Cross-Platform** — Web and desktop (Electron) apps
+- **Cross-Platform** — Web, mobile (iOS/Android), and desktop (Electron) apps
 - **Fully Open Source** — MIT licensed, self-host the entire platform yourself
 
 ## Architecture
@@ -55,6 +55,7 @@ clawhost/
 ├── apps/
 │   ├── api/                 # Hono.js backend API (runs on Bun)
 │   ├── web/                 # React + Vite frontend
+│   ├── mobile/              # React Native + Expo mobile app
 │   └── clawhostgo/          # Electron desktop app (ClawHostGo)
 ├── packages/
 │   ├── shared/              # @openclaw/shared — HTTP client, API paths, status/role/provider
@@ -95,6 +96,7 @@ clawhost/
 | **Icons**               | [Phosphor Icons](https://phosphoricons.com)                                                                     |
 | **Animations**          | [Framer Motion](https://www.framer.com/motion)                                                                  |
 | **Blog**                | MDX with frontmatter                                                                                            |
+| **Mobile**              | [React Native](https://reactnative.dev) + [Expo](https://expo.dev)                                              |
 | **Desktop**             | [Electron](https://www.electronjs.org) with Electron Forge                                                      |
 | **Monorepo**            | [Turborepo](https://turbo.build) + [Bun](https://bun.sh)                                                        |
 
@@ -321,6 +323,7 @@ bun dev:desktop
 | `bun dev:web`           | Start web app only                              |
 | `bun dev:api`           | Start API only                                  |
 | `bun dev:desktop`       | Start the ClawHostGo desktop app (Electron)     |
+| `bun dev:mobile`        | Start the mobile app (Expo)                     |
 | `bun test`              | Run Vitest across the monorepo                  |
 | `bun test:watch`        | Run Vitest in watch mode                        |
 | `bun build-go-manifest` | Build the desktop release manifest              |

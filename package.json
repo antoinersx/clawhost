@@ -12,6 +12,7 @@
         "dev:web": "bun --filter web dev",
         "dev:api": "bun --filter api dev",
         "dev:desktop": "bun --filter clawhostgo dev",
+        "dev:mobile": "bun --filter mobile dev",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix",
         "format": "prettier --write . && eslint . --fix",

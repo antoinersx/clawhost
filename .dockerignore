@@ -10,6 +10,7 @@ apps/web
 !apps/web/package.json
 apps/auth
 apps/clawhostgo
+apps/mobile
 apps/api/.next
 apps/api/node_modules
 apps/api/models

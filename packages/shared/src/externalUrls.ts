@@ -25,6 +25,8 @@ const externalUrls = {
         API: 'https://api.github.com',
         USER: 'https://api.github.com/user',
         USER_EMAILS: 'https://api.github.com/user/emails',
+        OAUTH_AUTHORIZE: 'https://github.com/login/oauth/authorize',
+        OAUTH_TOKEN: 'https://github.com/login/oauth/access_token',
         CLAWHOST_REPO: 'antoinersx/clawhost',
         HERMES_AGENT_REPO: 'NousResearch/hermes-agent',
         REPO_INFO: (slug: string) => `https://api.github.com/repos/${slug}`,
