@@ -1975,18 +1975,9 @@ const it: Translations = {
         contactTitle: '12. Informazioni di Contatto',
         contactText: 'Se hai domande su questi Termini, contattaci a'
     },
-    productHunt: {
-        liveOn: 'Live su',
-        productHunt: 'Product Hunt',
-        celebrate: 'Supportaci e goditi',
-        discount: '10% di sconto',
-        yourFirstMonth: 'sul tuo primo ordine',
-        upvoteNow: 'Votaci'
-    },
-    hermesBanner: {
-        title: 'Hermes Agent',
-        message:
-            'Gli agenti Hermes sono ora supportati per il deployment su ClawHost.'
+    acquiredBanner: {
+        title: 'Acquisito da GetOpenClaw.ai',
+        message: 'ClawHost ora fa parte di GetOpenClaw.ai — tutti i tuoi dati sono accessibili solo lì.'
     },
     compare: {
         title: 'Confronto',

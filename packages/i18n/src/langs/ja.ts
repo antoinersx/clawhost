@@ -1910,17 +1910,9 @@ const ja: Translations = {
         contactText:
             'これらの規約に関するご質問がある場合は、以下までお問い合わせください'
     },
-    productHunt: {
-        liveOn: '公開中',
-        productHunt: 'Product Hunt',
-        celebrate: '応援して楽しもう',
-        discount: '10%オフ',
-        yourFirstMonth: '初回注文',
-        upvoteNow: '応援する'
-    },
-    hermesBanner: {
-        title: 'Hermes Agent',
-        message: 'HermesエージェントがClawHostでのデプロイに対応しました。'
+    acquiredBanner: {
+        title: 'GetOpenClaw.ai が買収',
+        message: 'ClawHost は GetOpenClaw.ai の一部になりました — すべてのデータはそちらからのみアクセスできます。'
     },
     compare: {
         title: '比較',

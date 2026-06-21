@@ -1777,17 +1777,9 @@ const zh: Translations = {
         contactTitle: '12. 联系信息',
         contactText: '如果您对这些条款有任何疑问，请通过以下方式联系我们'
     },
-    productHunt: {
-        liveOn: '已上线',
-        productHunt: 'Product Hunt',
-        celebrate: '支持我们并享受',
-        discount: '9折优惠',
-        yourFirstMonth: '您的首单',
-        upvoteNow: '为我们投票'
-    },
-    hermesBanner: {
-        title: 'Hermes Agent',
-        message: 'Hermes 代理现已支持在 ClawHost 上部署。'
+    acquiredBanner: {
+        title: 'GetOpenClaw.ai 已收购',
+        message: 'ClawHost 现已成为 GetOpenClaw.ai 的一部分 — 您的所有数据只能在那里访问。'
     },
     compare: {
         title: '对比',

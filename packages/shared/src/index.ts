@@ -4,6 +4,7 @@ import { agentStatus } from '#shared/agentStatus'
 import { agentType } from '#shared/agentType'
 import { ApiError } from '#shared/ApiError'
 import { apiPaths } from '#shared/apiPaths'
+import { AUTH_DISABLED } from '#shared/authDisabled'
 import { externalUrls } from '#shared/externalUrls'
 import { httpMethod } from '#shared/httpMethod'
 import { RequestClient } from '#shared/RequestClient'
@@ -32,6 +33,7 @@ export {
     agentType,
     ApiError,
     apiPaths,
+    AUTH_DISABLED,
     externalUrls,
     httpMethod,
     RequestClient,

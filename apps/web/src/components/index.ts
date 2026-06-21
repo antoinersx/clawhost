@@ -1,13 +1,12 @@
 import {
+    AcquiredBanner,
     BetaBadge,
     Header,
-    HermesBanner,
     LandingFooter,
     Logo,
     PageBackground,
     PageHeader,
     PageTitle,
-    ProductHuntBanner,
     ScrollToTop
 } from '@/components/layout'
 
@@ -83,7 +82,7 @@ export {
     GoDownloadButton,
     GoPricingCard,
     Header,
-    HermesBanner,
+    AcquiredBanner,
     HeroBadge,
     HeroButtons,
     HeroTitle,
@@ -102,7 +101,6 @@ export {
     PageHeader,
     PageTitle,
     PricingSection,
-    ProductHuntBanner,
     LicenseRequired,
     ProtectedRoute,
     ScrollToTop,

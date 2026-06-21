@@ -1911,17 +1911,9 @@ const en = {
         contactText:
             'If you have any questions about these Terms, please contact us at'
     },
-    productHunt: {
-        liveOn: 'Live on',
-        productHunt: 'Product Hunt',
-        celebrate: 'Support us & enjoy',
-        discount: '10% off',
-        yourFirstMonth: 'your first order',
-        upvoteNow: 'Upvote Us'
-    },
-    hermesBanner: {
-        title: 'Hermes Agent',
-        message: 'Hermes agents are now supported for deployment on ClawHost.'
+    acquiredBanner: {
+        title: 'Acquired by GetOpenClaw.ai',
+        message: 'ClawHost is now part of GetOpenClaw.ai — all your data is accessible only there.'
     },
     compare: {
         title: 'Comparison',

@@ -1,6 +1,5 @@
 import AFFILIATE_PERIOD from '@/lib/constants/affiliatePeriod'
 import AVATAR_COLORS from '@/lib/constants/avatarColors'
-import BANNER_CAROUSEL from '@/lib/constants/bannerCarousel'
 import STORAGE_KEYS from '@/lib/storageKeys'
 import CHANGELOG_FEATURE_TYPE from '@/lib/constants/changelogFeatureType'
 import CHECK_STATUS from '@/lib/constants/checkStatus'
@@ -32,7 +31,6 @@ import MAC_ARCH from '@/lib/constants/macArch'
 export {
     AFFILIATE_PERIOD,
     AVATAR_COLORS,
-    BANNER_CAROUSEL,
     CHANGELOG_FEATURE_TYPE,
     CHECK_STATUS,
     AGENT_AVATAR_SIZE,

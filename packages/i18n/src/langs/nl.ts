@@ -1950,18 +1950,9 @@ const nl: Translations = {
         contactText:
             'Als je vragen hebt over deze Voorwaarden, neem dan contact met ons op via'
     },
-    productHunt: {
-        liveOn: 'Live op',
-        productHunt: 'Product Hunt',
-        celebrate: 'Steun ons & geniet van',
-        discount: '10% korting',
-        yourFirstMonth: 'je eerste bestelling',
-        upvoteNow: 'Stem op ons'
-    },
-    hermesBanner: {
-        title: 'Hermes Agent',
-        message:
-            'Hermes-agenten worden nu ondersteund voor deployment op ClawHost.'
+    acquiredBanner: {
+        title: 'Overgenomen door GetOpenClaw.ai',
+        message: 'ClawHost maakt nu deel uit van GetOpenClaw.ai — al je gegevens zijn alleen daar toegankelijk.'
     },
     compare: {
         title: 'Vergelijking',

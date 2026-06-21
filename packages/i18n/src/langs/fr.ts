@@ -2001,18 +2001,9 @@ const fr: Translations = {
         contactText:
             'Si vous avez des questions concernant ces Conditions, veuillez nous contacter à'
     },
-    productHunt: {
-        liveOn: 'En direct sur',
-        productHunt: 'Product Hunt',
-        celebrate: 'Soutenez-nous & profitez de',
-        discount: '10% de réduction',
-        yourFirstMonth: 'sur votre première commande',
-        upvoteNow: 'Votez pour nous'
-    },
-    hermesBanner: {
-        title: 'Hermes Agent',
-        message:
-            'Les agents Hermes sont désormais pris en charge pour le déploiement sur ClawHost.'
+    acquiredBanner: {
+        title: 'Racheté par GetOpenClaw.ai',
+        message: 'ClawHost fait désormais partie de GetOpenClaw.ai — toutes vos données sont accessibles uniquement là-bas.'
     },
     compare: {
         title: 'Comparaison',

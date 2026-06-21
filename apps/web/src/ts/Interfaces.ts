@@ -252,11 +252,6 @@ export interface UseCreateAgentFormReturn {
     reset: () => void
 }
 
-export interface BannerSlide {
-    id: string
-    content: ReactNode
-}
-
 export interface UIState {
     toast: ToastData | null
     showToast: (message: string, type?: ToastType, duration?: number) => void
@@ -389,6 +384,10 @@ export interface FooterRouteLink {
 
 export interface LogoProps {
     to?: string
+}
+
+export interface LogoSvgProps {
+    className?: string
 }
 
 export interface IconProps {

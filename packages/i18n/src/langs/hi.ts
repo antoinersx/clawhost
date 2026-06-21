@@ -1922,17 +1922,9 @@ const hi: Translations = {
         contactText:
             'यदि इन शर्तों के बारे में आपके कोई प्रश्न हैं, तो कृपया हमसे संपर्क करें'
     },
-    productHunt: {
-        liveOn: 'लाइव है',
-        productHunt: 'Product Hunt',
-        celebrate: 'हमें समर्थन दें और पाएँ',
-        discount: '10% की छूट',
-        yourFirstMonth: 'आपके पहले ऑर्डर पर',
-        upvoteNow: 'हमें अपवोट करें'
-    },
-    hermesBanner: {
-        title: 'Hermes Agent',
-        message: 'Hermes एजेंट अब ClawHost पर डिप्लॉयमेंट के लिए समर्थित हैं।'
+    acquiredBanner: {
+        title: 'GetOpenClaw.ai द्वारा अधिग्रहित',
+        message: 'ClawHost अब GetOpenClaw.ai का हिस्सा है — आपका सारा डेटा केवल वहीं से एक्सेस किया जा सकता है.'
     },
     compare: {
         title: 'तुलना',

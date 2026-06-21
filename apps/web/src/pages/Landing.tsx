@@ -28,8 +28,7 @@ import {
     FACEBOOK_URL,
     INSTAGRAM_URL,
     YOUTUBE_URL,
-    TIKTOK_URL,
-    TUTORIAL_URL
+    TIKTOK_URL
 } from '@/lib/links'
 import { GITHUB_REPO_URL } from '@/hooks'
 import { usePreferencesStore } from '@/lib/store'
@@ -90,7 +89,6 @@ const Landing: FC = (): ReactNode => {
     useEffect(() => {
         setProduct(PRODUCT.CLOUD)
     }, [setProduct])
-    const showTutorialBadge = true
     const hetznerPlans = PLANS
 
     const plans = hetznerPlans
@@ -209,11 +207,7 @@ const Landing: FC = (): ReactNode => {
 
                     <div className='animate-hero-fade-in relative mx-auto max-w-6xl'>
                         <div className='flex flex-col items-center text-center'>
-                            <HeroBadge
-                                tutorialBadge={showTutorialBadge}
-                                tutorialLabel={t('landing.tutorialBadge')}
-                                tutorialHref={TUTORIAL_URL}
-                            />
+                            <HeroBadge label={t('landing.badge')} />
 
                             <HeroTitle
                                 line1={t('landing.heroTitle1')}

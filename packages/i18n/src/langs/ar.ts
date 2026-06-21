@@ -1859,17 +1859,9 @@ const ar: Translations = {
         contactTitle: '12. معلومات الاتصال',
         contactText: 'إذا كانت لديك أسئلة حول هذه الشروط، يرجى التواصل معنا على'
     },
-    productHunt: {
-        liveOn: 'متاح على',
-        productHunt: 'Product Hunt',
-        celebrate: 'ادعمنا واستمتع بـ',
-        discount: 'خصم 10%',
-        yourFirstMonth: 'على طلبك الأول',
-        upvoteNow: 'صوّت لنا'
-    },
-    hermesBanner: {
-        title: 'Hermes Agent',
-        message: 'أصبح وكلاء Hermes مدعومين الآن للنشر على ClawHost.'
+    acquiredBanner: {
+        title: 'تم الاستحواذ عليها من قِبل GetOpenClaw.ai',
+        message: 'أصبح ClawHost الآن جزءًا من GetOpenClaw.ai — يمكن الوصول إلى جميع بياناتك من هناك فقط.'
     },
     compare: {
         title: 'مقارنة',

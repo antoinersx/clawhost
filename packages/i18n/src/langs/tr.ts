@@ -1933,18 +1933,9 @@ const tr: Translations = {
         contactText:
             'Bu Şartlar hakkında sorularınız varsa, lütfen şu adresten bize ulaşın:'
     },
-    productHunt: {
-        liveOn: 'Yayında',
-        productHunt: 'Product Hunt',
-        celebrate: 'Bizi destekleyin ve',
-        discount: '%10 indirim',
-        yourFirstMonth: 'ilk siparişinizde',
-        upvoteNow: 'Oy Verin'
-    },
-    hermesBanner: {
-        title: 'Hermes Agent',
-        message:
-            'Hermes ajanları artık ClawHost üzerinde dağıtım için desteklenmektedir.'
+    acquiredBanner: {
+        title: 'GetOpenClaw.ai tarafından satın alındı',
+        message: 'ClawHost artık GetOpenClaw.ai bünyesinde — tüm verilerinize yalnızca oradan erişebilirsiniz.'
     },
     compare: {
         title: 'Karşılaştırma',

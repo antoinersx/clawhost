@@ -85,6 +85,7 @@ const externalUrls = {
         GITHUB: `${LINKS}/github`,
         TUTORIAL: `${LINKS}/tutorial`,
         TUTORIAL_GO: `${LINKS}/tutorial-go`,
+        GETOPENCLAW_CLOUD: 'https://cloud.getopenclaw.ai',
         SUPPORT_EMAIL: `support@${DOMAIN}`
     }
 }

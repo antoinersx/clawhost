@@ -1931,18 +1931,9 @@ const ru: Translations = {
         contactText:
             'Если у вас есть вопросы об этих Условиях, свяжитесь с нами по адресу'
     },
-    productHunt: {
-        liveOn: 'Мы на',
-        productHunt: 'Product Hunt',
-        celebrate: 'Поддержите нас и получите',
-        discount: 'скидку 10%',
-        yourFirstMonth: 'на ваш первый заказ',
-        upvoteNow: 'Проголосуйте за нас'
-    },
-    hermesBanner: {
-        title: 'Hermes Agent',
-        message:
-            'Агенты Hermes теперь поддерживаются для развёртывания на ClawHost.'
+    acquiredBanner: {
+        title: 'Приобретён GetOpenClaw.ai',
+        message: 'ClawHost теперь часть GetOpenClaw.ai — все ваши данные доступны только там.'
     },
     compare: {
         title: 'Сравнение',

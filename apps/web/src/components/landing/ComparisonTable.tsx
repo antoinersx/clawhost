@@ -4,7 +4,7 @@ import type { ComparisonTableProps } from '@/ts/Interfaces'
 import { Link } from 'react-router-dom'
 import { CheckIcon, XIcon, ArrowRightIcon } from '@phosphor-icons/react'
 import { t } from '@openclaw/i18n'
-import { externalUrls } from '@openclaw/shared'
+import { LogoSvg } from '@/components/layout'
 import { Badge } from '@/components/ui'
 import { ROUTES } from '@/lib'
 
@@ -43,14 +43,7 @@ const ComparisonTable: FC<ComparisonTableProps> = ({
                             <tr className='border-border bg-foreground/[0.02] border-b'>
                                 <th className='px-6 py-4'>
                                     <div className='flex items-center justify-center gap-2'>
-                                        <img
-                                            src={`${externalUrls.CLAWHOST.CDN_GENERALS}/clawhost-logo-light.png`}
-                                            alt={t('common.brandName')}
-                                            className='h-6'
-                                            loading='lazy'
-                                            width={120}
-                                            height={24}
-                                        />
+                                        <LogoSvg className='h-6' />
 
                                         {logoSuffix && (
                                             <span className='font-clash text-foreground translate-y-px text-sm font-bold'>

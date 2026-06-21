@@ -2,14 +2,14 @@ import type { FC, ReactNode } from 'react'
 import type { HeaderProps, ElectronWindow } from '@/ts/Interfaces'
 
 import { Fragment, useState, useEffect, useCallback } from 'react'
-import { useLocation, Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { t } from '@openclaw/i18n'
 import { useAuth } from '@/lib/auth'
-import { useProfile, useRoutePrefetch } from '@/hooks'
+import { useProfile } from '@/hooks'
 import { Button, Skeleton } from '@/components/ui'
 import {
-    BannerCarousel,
+    AcquiredBanner,
     BetaBadge,
     Logo,
     ProductSwitcher
@@ -20,6 +20,7 @@ import {
     UserDropdown
 } from '@/components/shared'
 import { ROUTES } from '@/lib'
+import { GETOPENCLAW_CLOUD_URL } from '@/lib/links'
 import { LightningIcon, ListIcon, XIcon } from '@phosphor-icons/react'
 
 const Header: FC<HeaderProps> = ({
@@ -50,8 +51,6 @@ const Header: FC<HeaderProps> = ({
         window.addEventListener('scroll', onScroll)
         return () => window.removeEventListener('scroll', onScroll)
     }, [mobileMenuOpen])
-
-    const { prefetchRoute } = useRoutePrefetch()
 
     const isDesktop = !!(window as unknown as ElectronWindow).electronAPI
         ?.isDesktop
@@ -85,7 +84,7 @@ const Header: FC<HeaderProps> = ({
                           : 'border-b border-transparent bg-transparent'
                 }`}
             >
-                <BannerCarousel />
+                <AcquiredBanner />
                 <div className='mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4'>
                     <div className='flex items-center gap-3'>
                         <Logo />
@@ -143,26 +142,18 @@ const Header: FC<HeaderProps> = ({
                             />
                         ) : (
                             <div className='flex items-center gap-2'>
-                                <Link
-                                    to={ROUTES.LOGIN}
-                                    onMouseEnter={() =>
-                                        prefetchRoute(ROUTES.LOGIN)
-                                    }
+                                <a
+                                    href={GETOPENCLAW_CLOUD_URL}
                                     className='text-muted-foreground hover:text-foreground hidden px-3 py-1.5 text-sm transition sm:block'
                                 >
                                     {t('nav.login')}
-                                </Link>
+                                </a>
                                 <Button
                                     size='lg'
                                     className='gap-2 border-0 bg-gradient-to-r from-[#ef5350] to-[#c62828] px-4 text-white hover:opacity-90'
                                     asChild
                                 >
-                                    <Link
-                                        to={ROUTES.LOGIN}
-                                        onMouseEnter={() =>
-                                            prefetchRoute(ROUTES.LOGIN)
-                                        }
-                                    >
+                                    <a href={GETOPENCLAW_CLOUD_URL}>
                                         <LightningIcon
                                             className='h-4 w-4'
                                             weight='fill'
@@ -173,7 +164,7 @@ const Header: FC<HeaderProps> = ({
                                         <span className='hidden sm:inline'>
                                             {t('nav.deployOpenClaw')}
                                         </span>
-                                    </Link>
+                                    </a>
                                 </Button>
                             </div>
                         )}
