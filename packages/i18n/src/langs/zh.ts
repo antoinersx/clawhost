@@ -86,6 +86,7 @@ const zh: Translations = {
         heroTitle1: '部署 OpenClaw.',
         heroTitle2: '本地. 即时.',
         badge: '本地运行 OpenClaw 与 Hermes',
+        tutorialBadge: '如何在 Go 上开始',
         description:
             '一款轻量级桌面客户端，用于管理您的 OpenClaw 实例。部署、监控和控制您的 claws — 直接在您的设备上完成.',
         features: '功能',
@@ -204,6 +205,8 @@ const zh: Translations = {
         failedToFetchLatestVersion: '获取最新版本失败!'
     },
     footer: {
+        downloadAndroid: '在 Google Play 上获取',
+        downloadIos: '在 App Store 上下载',
         website: '网站',
         copyrightName: 'ClawHost',
         copyrightRights: '保留所有权利.',
@@ -236,6 +239,7 @@ const zh: Translations = {
     },
     errors: {
         somethingWentWrong: '出了点问题!',
+        connectionFailed: '连接服务器时出现问题。请检查您的网络连接并重试!',
         couldNotLoadData: '无法加载数据。请重试!',
         notFound: '页面未找到!',
         pageNotFoundDescription: '您要查找的页面不存在或已被移动.',
@@ -258,6 +262,7 @@ const zh: Translations = {
         noPasswordAvailable: '此 claw 没有可用的密码!'
     },
     api: {
+        githubExchangeFailed: 'GitHub 登录失败！',
         missingRequiredFields: '缺少必填字段!',
         agentNotFound: 'Agent 未找到!',
         agentRenamed: 'Agent 重命名成功.',
@@ -574,6 +579,33 @@ const zh: Translations = {
                     '一键在现有服务器上重新安装 OpenClaw 运行时。您的服务器保持不变——只有 OpenClaw 会获得全新安装。',
                 cta: '了解更多'
             },
+            hermesAgentLaunch: {
+                subject: 'Hermes Agent 已上线',
+                preview: '直接在 ClawHost 上部署 Hermes 代理。',
+                tag: 'Hermes Agent',
+                heading: 'Hermes 代理，现已在 ClawHost 上线',
+                description:
+                    'Hermes Agent 现已在 ClawHost 上获得支持。几分钟内启动一个由 Hermes 驱动的 claw，从"文件"标签配置模型提供商，并通过内置终端与其聊天。无需额外设置，无需粘合代码。',
+                cta: '部署 Hermes'
+            },
+            clawHostGoLaunch: {
+                subject: 'ClawHost Go 已上线',
+                preview: '在您的机器上本地运行 OpenClaw 的原生桌面应用。',
+                tag: 'ClawHost Go',
+                heading: '您的 claws，就在您的桌面上',
+                description:
+                    'ClawHost Go 是 macOS 和 Windows 的原生桌面应用。直接在您的机器上部署和管理 OpenClaw 实例 — 无云端、无订阅，只需一次性许可。内置终端、文件编辑器、版本管理器和零配置本地 DNS。',
+                cta: '下载 ClawHost Go'
+            },
+            productHuntLaunch: {
+                subject: '帮助我们在 Product Hunt 上发布',
+                preview: '我们刚刚在 Product Hunt 上线。您的投票很重要。',
+                tag: 'Product Hunt 发布',
+                heading: '我们已在 Product Hunt 上线',
+                description:
+                    '今天我们在 Product Hunt 上发布了 ClawHost。如果我们帮助您更快地发布产品，您的支持对我们意义重大。作为感谢，使用代码 PH10 获得首单 9 折优惠。',
+                cta: '在 Product Hunt 上投票'
+            },
             yearlyPlans: {
                 subject: '您知道吗？年付方案更省钱',
                 preview: '切换到年付账单，花费更少',
@@ -661,6 +693,10 @@ const zh: Translations = {
             '启用后，外部链接将在应用内打开，而不是使用系统浏览器。'
     },
     billing: {
+        billingHistory: '账单历史',
+        billingDescription: '查看您的付款历史、发票和订阅。',
+        noBillingHistory: '暂无账单历史',
+        noBillingHistoryDescription: '您的付款和发票将显示在这里。',
         date: '日期',
         product: '产品',
         amount: '金额',
@@ -897,7 +933,47 @@ const zh: Translations = {
         },
         tabNotAvailableForAgent: '此代理类型不可用'
     },
+    mobile: {
+        versions: '版本',
+        currentVersion: '当前版本',
+        latestVersion: '最新版本',
+        install: '安装',
+        terminal: '终端',
+        reinstall: '重新安装',
+        fileSaved: '文件已保存。',
+        terminalDisconnected: '已断开连接',
+        terminalPlaceholder: '输入命令…',
+        manage: '管理',
+        sync: '同步',
+        rename: '重命名',
+        newName: '新名称',
+        credentials: '凭据',
+        showCredentials: '显示凭据',
+        rotatePassword: '轮换密码',
+        rotateGatewayToken: '轮换网关令牌',
+        syncSuccess: '同步成功。',
+        signIn: '验证身份',
+        signInDescription: '验证身份以管理和部署您的代理。',
+        enterEmail: '电子邮箱地址',
+        emailPlaceholder: 'example@clawhost.cloud',
+        continueWithEmail: '使用邮箱继续',
+        otpDescription: '我们将向您发送一个登录验证码，无需密码。',
+        sending: '正在发送...',
+        checkYourEmail: '请查收您的邮箱',
+        codeSentTo: '我们已将 6 位验证码发送至',
+        resendCode: '重新发送验证码',
+        resendIn: '{{seconds}} 秒后可重新发送',
+        changeEmail: '更改邮箱',
+        invalidCode: '验证码无效！',
+        signingIn: '正在登录...',
+        signOut: '退出登录',
+        loadMore: '加载更多',
+        deployClaw: '部署代理',
+        deployYourFirstClaw: '部署您的第一个代理',
+    },
     createClaw: {
+        provider: '提供商',
+        providerAtCapacity: '已满负荷',
         title: '部署 OpenClaw',
         description: '配置您的服务器并开始使用 AI 构建。',
         clawName: '名称',
@@ -1014,7 +1090,7 @@ const zh: Translations = {
         description:
             '一键在您自己的 VPS 上部署 OpenClaw。自托管云托管，拥有完整 root 访问权限、全球位置和透明定价。',
         badge: '云端运行 OpenClaw 与 Hermes',
-        tutorialBadge: '观看。部署。',
+        tutorialBadge: '如何在 Cloud 上开始',
         tutorialVideoThumbnail: 'ClawHost 教程视频缩略图',
         clawhostGoLogoAlt: 'ClawHost Go',
         trustMrrBadgeAlt: 'TrustMRR verified revenue badge',
@@ -1701,9 +1777,9 @@ const zh: Translations = {
         contactTitle: '12. 联系信息',
         contactText: '如果您对这些条款有任何疑问，请通过以下方式联系我们'
     },
-    hermesBanner: {
-        title: 'Hermes Agent',
-        message: 'Hermes 代理现已支持在 ClawHost 上部署。'
+    acquiredBanner: {
+        title: 'GetOpenClaw.ai 已收购',
+        message: 'ClawHost 现已成为 GetOpenClaw.ai 的一部分 — 您的所有数据只能在那里访问。'
     },
     compare: {
         title: '对比',

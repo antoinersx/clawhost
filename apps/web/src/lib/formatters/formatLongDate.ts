@@ -1,4 +1,4 @@
-import getLocale from '@/lib/getLocale'
+import { getLocale } from '@/lib'
 
 const formatLongDate = (dateString: string | undefined): string => {
     if (!dateString) return '...'

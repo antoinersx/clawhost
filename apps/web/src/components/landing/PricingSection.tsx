@@ -2,13 +2,15 @@ import type { FC, ReactNode } from 'react'
 import type { PricingSectionProps } from '@/ts/Interfaces'
 
 import { Fragment, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { t } from '@openclaw/i18n'
 import { Button, Badge } from '@/components/ui'
 import { useAuth } from '@/lib/auth'
-import { ROUTES } from '@/lib'
+import { GETOPENCLAW_CLOUD_URL } from '@/lib/links'
+import { PLAN_TIERS } from '@/lib/constants'
 import { CaretDownIcon, CaretUpIcon } from '@phosphor-icons/react'
 import { SimplePlanCard, buildSimplePlans } from '@/components/landing'
+
+const RECOMMENDED_PLAN_ID = 'cax41'
 
 const PricingSection: FC<PricingSectionProps> = ({ plans }): ReactNode => {
     const { user } = useAuth()
@@ -85,14 +87,18 @@ const PricingSection: FC<PricingSectionProps> = ({ plans }): ReactNode => {
                                             plan.priceYearly
                                         )
                                         const isRecommended =
-                                            plan.id === 'cax41'
+                                            plan.id === RECOMMENDED_PLAN_ID
                                         const tierStarts: Record<
                                             string,
                                             string
                                         > = {
-                                            cx23: t('landing.tierShared'),
-                                            cax11: t('landing.tierArm'),
-                                            ccx13: t('landing.tierDedicated')
+                                            [PLAN_TIERS.SHARED_START]:
+                                                t('landing.tierShared'),
+                                            [PLAN_TIERS.ARM_START]:
+                                                t('landing.tierArm'),
+                                            [PLAN_TIERS.DEDICATED_START]: t(
+                                                'landing.tierDedicated'
+                                            )
                                         }
 
                                         const providerTiers = tierStarts
@@ -180,11 +186,9 @@ const PricingSection: FC<PricingSectionProps> = ({ plans }): ReactNode => {
                                                             }`}
                                                             asChild
                                                         >
-                                                            <Link
-                                                                to={
-                                                                    user
-                                                                        ? `${ROUTES.AGENTS}?plan=${plan.id}`
-                                                                        : `${ROUTES.LOGIN}?plan=${plan.id}`
+                                                            <a
+                                                                href={
+                                                                    GETOPENCLAW_CLOUD_URL
                                                                 }
                                                                 aria-label={
                                                                     user
@@ -209,7 +213,7 @@ const PricingSection: FC<PricingSectionProps> = ({ plans }): ReactNode => {
                                                                     : t(
                                                                           'landing.select'
                                                                       )}
-                                                            </Link>
+                                                            </a>
                                                         </Button>
                                                     </td>
                                                 </tr>

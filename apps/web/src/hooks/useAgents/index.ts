@@ -1,10 +1,20 @@
 import AGENTS_QUERY_KEY from '@/hooks/useAgents/AGENTS_QUERY_KEY'
+import ADMIN_AGENTS_QUERY_KEY from '@/hooks/useAgents/ADMIN_AGENTS_QUERY_KEY'
 import AGENT_VERSION_QUERY_KEY from '@/hooks/useAgents/AGENT_VERSION_QUERY_KEY'
 import AGENT_FILE_QUERY_KEY from '@/hooks/useAgents/AGENT_FILE_QUERY_KEY'
+import AGENT_FILES_QUERY_KEY from '@/hooks/useAgents/AGENT_FILES_QUERY_KEY'
 import AGENT_VERSIONS_QUERY_KEY from '@/hooks/useAgents/AGENT_VERSIONS_QUERY_KEY'
+import AGENT_LOGS_QUERY_KEY from '@/hooks/useAgents/AGENT_LOGS_QUERY_KEY'
+import AGENT_BILLING_QUERY_KEY from '@/hooks/useAgents/AGENT_BILLING_QUERY_KEY'
+import AGENT_OVERVIEW_QUERY_KEY from '@/hooks/useAgents/AGENT_OVERVIEW_QUERY_KEY'
+import AGENT_METRICS_QUERY_KEY from '@/hooks/useAgents/AGENT_METRICS_QUERY_KEY'
+import AGENT_DIAGNOSTICS_QUERY_KEY from '@/hooks/useAgents/AGENT_DIAGNOSTICS_QUERY_KEY'
+import AGENT_STARS_QUERY_KEY from '@/hooks/useAgents/AGENT_STARS_QUERY_KEY'
+import updateAgentInCaches from '@/hooks/useAgents/updateAgentInCaches'
+import removeAgentFromCaches from '@/hooks/useAgents/removeAgentFromCaches'
+import createAgentLifecycleMutation from '@/hooks/useAgents/createAgentLifecycleMutation'
 import useAgents from '@/hooks/useAgents/useAgents'
 import useAgentStars from '@/hooks/useAgents/useAgentStars'
-import AGENT_STARS_QUERY_KEY from '@/hooks/useAgents/AGENT_STARS_QUERY_KEY'
 import useAdminAgents from '@/hooks/useAgents/useAdminAgents'
 import usePurchaseAgent from '@/hooks/useAgents/usePurchaseAgent'
 import useStartAgent from '@/hooks/useAgents/useStartAgent'
@@ -36,10 +46,20 @@ import useExportAgent from '@/hooks/useAgents/useExportAgent'
 
 export {
     AGENTS_QUERY_KEY,
+    ADMIN_AGENTS_QUERY_KEY,
     AGENT_VERSION_QUERY_KEY,
     AGENT_FILE_QUERY_KEY,
+    AGENT_FILES_QUERY_KEY,
     AGENT_VERSIONS_QUERY_KEY,
+    AGENT_LOGS_QUERY_KEY,
+    AGENT_BILLING_QUERY_KEY,
+    AGENT_OVERVIEW_QUERY_KEY,
+    AGENT_METRICS_QUERY_KEY,
+    AGENT_DIAGNOSTICS_QUERY_KEY,
     AGENT_STARS_QUERY_KEY,
+    updateAgentInCaches,
+    removeAgentFromCaches,
+    createAgentLifecycleMutation,
     useAgents,
     useAgentStars,
     useAdminAgents,

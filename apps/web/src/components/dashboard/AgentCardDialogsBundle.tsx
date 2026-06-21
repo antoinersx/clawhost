@@ -2,10 +2,12 @@ import type { FC, ReactNode } from 'react'
 import type { AgentCardDialogsBundleProps } from '@/ts/Interfaces'
 
 import { Fragment } from 'react'
-import AgentCardDialogs from '@/components/dashboard/AgentCardDialogs'
-import AgentCredentialsDialog from '@/components/dashboard/AgentCredentialsDialog'
-import AgentDiagnosticsDialog from '@/components/dashboard/AgentDiagnosticsDialog'
-import AgentLogsDialog from '@/components/dashboard/AgentLogsDialog'
+import {
+    AgentCardDialogs,
+    AgentCredentialsDialog,
+    AgentDiagnosticsDialog,
+    AgentLogsDialog
+} from '@/components/dashboard'
 
 const AgentCardDialogsBundle: FC<AgentCardDialogsBundleProps> = ({
     agentId,

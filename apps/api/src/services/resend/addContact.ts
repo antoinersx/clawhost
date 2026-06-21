@@ -1,4 +1,4 @@
-import getResend from '@/services/resend/getResend'
+import { getResend } from '@/services/resend'
 
 const AUDIENCE_ID = process.env.RESEND_AUDIENCE_ID
 

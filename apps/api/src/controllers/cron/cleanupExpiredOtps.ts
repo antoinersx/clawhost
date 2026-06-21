@@ -4,7 +4,7 @@ import { lt } from 'drizzle-orm'
 import { db } from '@/db'
 import { otpCodes } from '@/db/schema'
 import { ok } from '@/lib/response'
-import withErrorHandler from '@/lib/withErrorHandler'
+import { withErrorHandler } from '@/lib'
 
 const cleanupExpiredOtps = withErrorHandler('cleanupExpiredOtps')(async (
     c: Context

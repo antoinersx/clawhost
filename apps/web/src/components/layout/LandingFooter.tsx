@@ -3,9 +3,10 @@ import type { FC, MouseEvent, ReactNode } from 'react'
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { t } from '@openclaw/i18n'
-import Logo from '@/components/layout/Logo'
+import { Logo } from '@/components/layout'
 import { TrustMrrBadge } from '@/components/landing'
 import { ROUTES } from '@/lib'
+import { SCROLL_SPY } from '@/lib/constants'
 import { GITHUB_REPO_URL } from '@/hooks'
 import {
     TWITTER_URL,
@@ -39,12 +40,15 @@ const LandingFooter: FC = (): ReactNode => {
         const handleScroll = (): void => {
             for (const section of [...LANDING_SECTIONS].reverse()) {
                 const el = document.getElementById(section)
-                if (el && window.scrollY >= el.offsetTop - 100) {
+                if (
+                    el &&
+                    window.scrollY >= el.offsetTop - SCROLL_SPY.SECTION_OFFSET
+                ) {
                     setActiveSection(section)
                     return
                 }
             }
-            if (window.scrollY < 200) setActiveSection('')
+            if (window.scrollY < SCROLL_SPY.TOP_THRESHOLD) setActiveSection('')
         }
 
         window.addEventListener('scroll', handleScroll)
@@ -158,6 +162,48 @@ const LandingFooter: FC = (): ReactNode => {
                                 <TiktokLogoIcon
                                     className='h-5 w-5'
                                     weight='fill'
+                                />
+                            </a>
+                        </div>
+                        <div className='mt-5 hidden items-center gap-3'>
+                            <a
+                                href='#'
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                aria-label={t('footer.downloadAndroid')}
+                                className='opacity-80 transition hover:opacity-100'
+                            >
+                                <img
+                                    src='/badges/google-play-dark.svg'
+                                    alt={t('footer.downloadAndroid')}
+                                    loading='lazy'
+                                    className='hidden h-10 dark:block'
+                                />
+                                <img
+                                    src='/badges/google-play-light.svg'
+                                    alt={t('footer.downloadAndroid')}
+                                    loading='lazy'
+                                    className='block h-10 dark:hidden'
+                                />
+                            </a>
+                            <a
+                                href='#'
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                aria-label={t('footer.downloadIos')}
+                                className='opacity-80 transition hover:opacity-100'
+                            >
+                                <img
+                                    src='/badges/app-store-light.svg'
+                                    alt={t('footer.downloadIos')}
+                                    loading='lazy'
+                                    className='block h-10 dark:hidden'
+                                />
+                                <img
+                                    src='/badges/app-store-dark.svg'
+                                    alt={t('footer.downloadIos')}
+                                    loading='lazy'
+                                    className='hidden h-10 dark:block'
                                 />
                             </a>
                         </div>

@@ -1,7 +1,7 @@
 import {
+    AcquiredBanner,
     BetaBadge,
     Header,
-    HermesBanner,
     LandingFooter,
     Logo,
     PageBackground,
@@ -23,6 +23,7 @@ import {
     LocalBackground,
     MacosDesktopPreview,
     PricingSection,
+    SelfHostButton,
     StatsRow,
     VideoModal
 } from '@/components/landing'
@@ -81,7 +82,7 @@ export {
     GoDownloadButton,
     GoPricingCard,
     Header,
-    HermesBanner,
+    AcquiredBanner,
     HeroBadge,
     HeroButtons,
     HeroTitle,
@@ -103,6 +104,7 @@ export {
     LicenseRequired,
     ProtectedRoute,
     ScrollToTop,
+    SelfHostButton,
     StatsRow,
     SupportButton,
     ThemeToggle,

@@ -15,6 +15,9 @@ dist
 **/tsconfig.tsbuildinfo
 out
 .vite
+.expo
+android
+ios
 apps/clawhostgo/resources/node
 *.sh
 *.pem

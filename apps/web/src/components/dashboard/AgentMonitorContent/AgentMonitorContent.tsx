@@ -13,15 +13,17 @@ import { Skeleton } from '@/components/ui'
 import { PanelPlaceholder, LiveBadge } from '@/components/shared'
 import { useAgentMetrics } from '@/hooks'
 import { demoMetrics } from '@/data'
-import MetricCard from '@/components/dashboard/AgentMonitorContent/MetricCard'
-import UsageBar from '@/components/dashboard/AgentMonitorContent/UsageBar'
-import MonitorChart from '@/components/dashboard/AgentMonitorContent/MonitorChart'
-import MonitorNetworkCard from '@/components/dashboard/AgentMonitorContent/MonitorNetworkCard'
-import MonitorLoadAvgChart from '@/components/dashboard/AgentMonitorContent/MonitorLoadAvgChart'
-import MonitorProcessTable from '@/components/dashboard/AgentMonitorContent/MonitorProcessTable'
-import useMetricsHistory from '@/components/dashboard/AgentMonitorContent/useMetricsHistory'
-import formatBytes from '@/components/dashboard/AgentMonitorContent/formatBytes'
-import getUsageColor from '@/components/dashboard/AgentMonitorContent/getUsageColor'
+import {
+    MetricCard,
+    UsageBar,
+    MonitorChart,
+    MonitorNetworkCard,
+    MonitorLoadAvgChart,
+    MonitorProcessTable,
+    useMetricsHistory,
+    formatBytes,
+    getUsageColor
+} from '@/components/dashboard/AgentMonitorContent'
 
 const AgentMonitorContent: FC<AgentMonitorContentProps> = ({
     agentId,

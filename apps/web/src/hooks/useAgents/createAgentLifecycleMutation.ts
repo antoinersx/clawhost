@@ -1,7 +1,7 @@
 import type { Agent } from '@/ts/Interfaces'
 
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import updateAgentInCaches from '@/hooks/useAgents/updateAgentInCaches'
+import { updateAgentInCaches } from '@/hooks/useAgents'
 
 const createAgentLifecycleMutation = (
     apiFn: (id: string) => Promise<Agent>

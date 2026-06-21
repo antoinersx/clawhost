@@ -10,7 +10,7 @@ import { inputValidation } from '@openclaw/shared'
 import { t } from '@openclaw/i18n'
 import { ok, fail } from '@/lib/response'
 import { getClientIp, clearRateLimit } from '@/controllers/auth/rateLimit'
-import withErrorHandler from '@/lib/withErrorHandler'
+import { withErrorHandler } from '@/lib'
 
 const hashCode = (code: string): string => {
     return crypto.createHash('sha256').update(code).digest('hex')

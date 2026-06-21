@@ -1,6 +1,6 @@
 import { db } from '@/db'
 import { rateLimits } from '@/db/schema'
-import memoryCache from '@/controllers/auth/rateLimit/memoryCache'
+import { memoryCache } from '@/controllers/auth/rateLimit'
 
 const setRateLimit = async (...keys: string[]): Promise<void> => {
     const now = new Date()

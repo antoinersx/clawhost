@@ -4,11 +4,13 @@ import { eq } from 'drizzle-orm'
 import { agentStatus } from '@openclaw/shared'
 import { db } from '@/db'
 import { agents } from '@/db/schema'
-import executeSSH from '@/services/ssh'
+import { executeSSH } from '@/services'
 import { getAgentConfig } from '@/controllers/agents/helpers'
 import { t } from '@openclaw/i18n'
 import { ok, fail } from '@/lib/response'
-import { gatewayDefaults } from '@/lib/constants'
+import { gatewayDefaults, gatewayMarkers } from '@/lib/constants'
+
+const REPAIR_SUCCESS_MARKER = 'CLAWHOST_REPAIR_OK'
 
 const repairAgent = async (c: AuthenticatedContext) => {
     try {
@@ -27,7 +29,6 @@ const repairAgent = async (c: AuthenticatedContext) => {
         const agentConfig = getAgentConfig(agent[0].agentType)
         const isHermes = !agentConfig.configFile
         const serviceFile = `/etc/systemd/system/${agentConfig.serviceName}.service`
-        const successMarker = 'CLAWHOST_REPAIR_OK'
 
         const sshFixes = [
             "sed -i 's/^#*PasswordAuthentication.*/PasswordAuthentication yes/' /etc/ssh/sshd_config",
@@ -52,12 +53,12 @@ const repairAgent = async (c: AuthenticatedContext) => {
         const openClawHealthCheck = [
             `systemctl restart ${agentConfig.serviceName}`,
             'sleep 10',
-            `curl -sf -o /dev/null --max-time 5 ${gatewayDefaults.BASE_URL} && echo "${successMarker}" || echo "GATEWAY_FAILED"`
+            `curl -sf -o /dev/null --max-time 5 ${gatewayDefaults.BASE_URL} && echo "${REPAIR_SUCCESS_MARKER}" || echo "${gatewayMarkers.FAILED}"`
         ]
 
         const hermesHealthCheck = [
             `systemctl restart ${agentConfig.serviceName} 2>/dev/null || su - ${agentConfig.user} -c 'systemctl --user restart ${agentConfig.serviceName}' 2>/dev/null || true`,
-            `su - ${agentConfig.user} -c '${agentConfig.versionCommand}' >/dev/null 2>&1 && echo "${successMarker}" || echo "AGENT_FAILED"`
+            `su - ${agentConfig.user} -c '${agentConfig.versionCommand}' >/dev/null 2>&1 && echo "${REPAIR_SUCCESS_MARKER}" || echo "AGENT_FAILED"`
         ]
 
         const repairCommands = [
@@ -73,7 +74,7 @@ const repairAgent = async (c: AuthenticatedContext) => {
             repairCommands,
             30000
         )
-        const success = output.includes(successMarker)
+        const success = output.includes(REPAIR_SUCCESS_MARKER)
 
         if (success && agent[0].status === agentStatus.configuring) {
             await db

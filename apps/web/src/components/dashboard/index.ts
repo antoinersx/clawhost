@@ -1,5 +1,12 @@
+import AgentCardDialogs from '@/components/dashboard/AgentCardDialogs'
 import AgentCardDialogsBundle from '@/components/dashboard/AgentCardDialogsBundle'
+import AgentCredentialsDialog from '@/components/dashboard/AgentCredentialsDialog'
+import AgentDiagnosticsContent from '@/components/dashboard/AgentDiagnosticsContent'
+import AgentDiagnosticsDialog from '@/components/dashboard/AgentDiagnosticsDialog'
+import AgentLogsDialog from '@/components/dashboard/AgentLogsDialog'
 import AgentBillingContent from '@/components/dashboard/AgentBillingContent'
+import AgentBillingHistory from '@/components/dashboard/AgentBillingHistory'
+import AgentBillingSubscription from '@/components/dashboard/AgentBillingSubscription'
 import AgentDetailHeader from '@/components/dashboard/AgentDetailHeader'
 import AgentPendingView from '@/components/dashboard/AgentPendingView'
 import AgentPreviewContent from '@/components/dashboard/AgentPreviewContent'
@@ -9,7 +16,7 @@ import AgentDetailTabBar from '@/components/dashboard/AgentDetailTabBar'
 import AgentLogsContent from '@/components/dashboard/AgentLogsContent'
 import AgentOverviewContent from '@/components/dashboard/AgentOverviewContent'
 import AgentVolumesContent from '@/components/dashboard/AgentVolumesContent'
-import AgentSecurityContent from '@/components/dashboard/AgentSecurityContent'
+import { AgentSecurityContent } from '@/components/dashboard/AgentSecurityContent'
 import AgentServerContent from '@/components/dashboard/AgentServerContent'
 import HeaderActionButton from '@/components/dashboard/HeaderActionButton'
 import { EmojiColorPicker } from '@/components/dashboard/EmojiColorPicker'
@@ -27,7 +34,14 @@ import UpdateAvailableBanner from '@/components/dashboard/UpdateAvailableBanner'
 
 export {
     AgentBillingContent,
+    AgentBillingHistory,
+    AgentBillingSubscription,
+    AgentCardDialogs,
     AgentCardDialogsBundle,
+    AgentCredentialsDialog,
+    AgentDiagnosticsContent,
+    AgentDiagnosticsDialog,
+    AgentLogsDialog,
     AgentDetailHeader,
     AgentPendingView,
     AgentPreviewContent,

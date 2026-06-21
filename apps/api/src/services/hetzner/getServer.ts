@@ -1,7 +1,6 @@
 import type { HetznerServerResponse, ServerStatus } from '@/ts/Interfaces'
 
-import getClient from '@/services/hetzner/hetznerClient'
-import mapStatus from '@/services/hetzner/mapStatus'
+import { getClient, mapStatus } from '@/services/hetzner'
 
 const getServer = async (serverId: string): Promise<ServerStatus> => {
     const data = await getClient().get<HetznerServerResponse>(

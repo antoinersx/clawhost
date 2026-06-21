@@ -1,8 +1,8 @@
 import type { RotatePasswordMutationParams } from '@/ts/Interfaces'
 
 import { api } from '@/lib'
-import createApiMutation from '@/hooks/createApiMutation'
-import AGENTS_QUERY_KEY from '@/hooks/useAgents/AGENTS_QUERY_KEY'
+import { createApiMutation } from '@/hooks'
+import { AGENTS_QUERY_KEY } from '@/hooks/useAgents'
 
 const useRotatePassword = createApiMutation(
     ({ id, password, signal }: RotatePasswordMutationParams) =>

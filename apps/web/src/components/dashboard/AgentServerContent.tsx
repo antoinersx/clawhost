@@ -1,4 +1,5 @@
 import type { FC, ReactNode } from 'react'
+import type { CopiedFieldType } from '@/ts/Types'
 import type { AgentServerContentProps } from '@/ts/Interfaces'
 
 import { useState, useEffect, useCallback } from 'react'
@@ -22,7 +23,7 @@ import {
     locationFlags,
     locationNames
 } from '@/lib/agent-utils'
-import { TOAST_TYPE } from '@/lib/constants'
+import { COPIED_FIELD_TYPE, TOAST_TYPE } from '@/lib/constants'
 import { useUIStore } from '@/lib/store'
 
 const AgentServerContent: FC<AgentServerContentProps> = ({
@@ -38,7 +39,7 @@ const AgentServerContent: FC<AgentServerContentProps> = ({
     const [loading, setLoading] = useState(true)
     const [rootPassword, setRootPassword] = useState<string | null>(null)
     const [showSsh, setShowSsh] = useState(false)
-    const [copiedField, setCopiedField] = useState<string | null>(null)
+    const [copiedField, setCopiedField] = useState<CopiedFieldType>(null)
     const [showReinstallModal, setShowReinstallModal] = useState(false)
 
     const plan = plans.find((p) => p.id === agent.planId)
@@ -71,7 +72,7 @@ const AgentServerContent: FC<AgentServerContentProps> = ({
         : `ssh root@${agent.ip}`
 
     const handleCopy = useCallback(
-        async (value: string, field: string) => {
+        async (value: string, field: CopiedFieldType) => {
             await copyToClipboard(value)
             setCopiedField(field)
             toast.success(t('common.copied'))
@@ -172,10 +173,12 @@ const AgentServerContent: FC<AgentServerContentProps> = ({
                             )}
                         </button>
                         <button
-                            onClick={() => handleCopy(sshCommand, 'ssh')}
+                            onClick={() =>
+                                handleCopy(sshCommand, COPIED_FIELD_TYPE.SSH)
+                            }
                             className='text-muted-foreground hover:text-foreground rounded-md p-1 transition-colors'
                         >
-                            {copiedField === 'ssh' ? (
+                            {copiedField === COPIED_FIELD_TYPE.SSH ? (
                                 <CheckIcon className='h-3.5 w-3.5 text-green-500' />
                             ) : (
                                 <CopyIcon className='h-3.5 w-3.5' />

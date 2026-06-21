@@ -1,7 +1,7 @@
 import type { PolarSubscription } from '@/ts/Interfaces'
 
-import getPolarClient from '@/lib/polar/getPolarClient'
-import mapSubscription from '@/lib/polar/subscriptions/mapSubscription'
+import { getPolarClient } from '@/lib/polar'
+import { mapSubscription } from '@/lib/polar/subscriptions'
 
 const cancel = async (
     subscriptionId: string

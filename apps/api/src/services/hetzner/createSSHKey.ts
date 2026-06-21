@@ -1,6 +1,6 @@
 import type { CreateSSHKeyResult, HetznerSSHKeyResponse } from '@/ts/Interfaces'
 
-import getClient from '@/services/hetzner/hetznerClient'
+import { getClient } from '@/services/hetzner'
 
 const createSSHKey = async (
     name: string,

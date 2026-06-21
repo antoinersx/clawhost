@@ -8,7 +8,7 @@ import type {
 import { agentType, externalUrls } from '@openclaw/shared'
 import { ok } from '@/lib/response'
 import { t } from '@openclaw/i18n'
-import withErrorHandler from '@/lib/withErrorHandler'
+import { withErrorHandler } from '@/lib'
 
 const STARS_CACHE_TTL = 60 * 60 * 1000
 

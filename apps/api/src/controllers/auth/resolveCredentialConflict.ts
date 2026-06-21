@@ -8,7 +8,12 @@ import type {
 
 import crypto from 'crypto'
 import { eq, and, gt, sql } from 'drizzle-orm'
-import { authMethod, externalUrls, inputValidation } from '@openclaw/shared'
+import {
+    authMethod,
+    externalUrls,
+    inputValidation,
+    providerId as oauthProviderId
+} from '@openclaw/shared'
 import { auth } from '@/services/firebase'
 import { db } from '@/db'
 import { users, otpCodes } from '@/db/schema'
@@ -19,7 +24,7 @@ import {
     checkRateLimit,
     setRateLimit
 } from '@/controllers/auth/rateLimit'
-import withErrorHandler from '@/lib/withErrorHandler'
+import { withErrorHandler } from '@/lib'
 
 const hashCode = (code: string): string => {
     return crypto.createHash('sha256').update(code).digest('hex')
@@ -128,7 +133,9 @@ const resolveCredentialConflict = withErrorHandler('resolveCredentialConflict')(
         await db.delete(otpCodes).where(eq(otpCodes.id, otpRecord.id))
 
         const verifier =
-            providerId === 'github.com' ? verifyGithubToken : verifyGoogleToken
+            providerId === oauthProviderId.github
+                ? verifyGithubToken
+                : verifyGoogleToken
         const verified = await verifier(accessToken)
 
         if (!verified?.email) return fail(c, t('api.invalidCredentials'), 401)
@@ -146,7 +153,9 @@ const resolveCredentialConflict = withErrorHandler('resolveCredentialConflict')(
         if (!existingUser) return fail(c, t('api.userNotFound'), 404)
 
         const method =
-            providerId === 'google.com' ? authMethod.google : authMethod.github
+            providerId === oauthProviderId.google
+                ? authMethod.google
+                : authMethod.github
         await Promise.all([
             auth()
                 .updateUser(existingUser.id, {

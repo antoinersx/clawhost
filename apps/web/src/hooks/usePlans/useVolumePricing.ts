@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { api } from '@/lib'
-import VOLUME_PRICING_QUERY_KEY from '@/hooks/usePlans/VOLUME_PRICING_QUERY_KEY'
+import { VOLUME_PRICING_QUERY_KEY } from '@/hooks/usePlans'
 
 const useVolumePricing = () => {
     return useQuery({

@@ -1,10 +1,12 @@
 import type { FC, ReactNode } from 'react'
+import type { CopiedFieldType } from '@/ts/Types'
 import type { AgentCredentialsDialogProps } from '@/ts/Interfaces'
 
 import { useState, useEffect } from 'react'
 import { t } from '@openclaw/i18n'
 import { useToast } from '@/hooks'
 import { copyToClipboard } from '@/lib'
+import { COPIED_FIELD_TYPE } from '@/lib/constants'
 import {
     CheckIcon,
     CopyIcon,
@@ -30,7 +32,7 @@ const AgentCredentialsDialog: FC<AgentCredentialsDialogProps> = ({
     const toast = useToast()
     const [showPassword, setShowPassword] = useState(false)
     const [showSsh, setShowSsh] = useState(false)
-    const [copiedField, setCopiedField] = useState<string | null>(null)
+    const [copiedField, setCopiedField] = useState<CopiedFieldType>(null)
 
     const sshCommand = rootPassword
         ? `sshpass -p '${rootPassword}' ssh -o StrictHostKeyChecking=no root@${agentIp}`
@@ -44,7 +46,7 @@ const AgentCredentialsDialog: FC<AgentCredentialsDialogProps> = ({
         }
     }, [open])
 
-    const handleCopy = async (value: string, field: string) => {
+    const handleCopy = async (value: string, field: CopiedFieldType) => {
         await copyToClipboard(value)
         setCopiedField(field)
         toast.success(t('common.copied'))
@@ -82,11 +84,14 @@ const AgentCredentialsDialog: FC<AgentCredentialsDialogProps> = ({
                                 </button>
                                 <button
                                     onClick={() =>
-                                        handleCopy(sshCommand, 'ssh')
+                                        handleCopy(
+                                            sshCommand,
+                                            COPIED_FIELD_TYPE.SSH
+                                        )
                                     }
                                     className='text-muted-foreground hover:text-foreground rounded-md p-1 transition-colors'
                                 >
-                                    {copiedField === 'ssh' ? (
+                                    {copiedField === COPIED_FIELD_TYPE.SSH ? (
                                         <CheckIcon className='h-3.5 w-3.5 text-green-500' />
                                     ) : (
                                         <CopyIcon className='h-3.5 w-3.5' />
@@ -124,11 +129,15 @@ const AgentCredentialsDialog: FC<AgentCredentialsDialogProps> = ({
                                     </button>
                                     <button
                                         onClick={() =>
-                                            handleCopy(rootPassword, 'password')
+                                            handleCopy(
+                                                rootPassword,
+                                                COPIED_FIELD_TYPE.PASSWORD
+                                            )
                                         }
                                         className='text-muted-foreground hover:text-foreground rounded-md p-1 transition-colors'
                                     >
-                                        {copiedField === 'password' ? (
+                                        {copiedField ===
+                                        COPIED_FIELD_TYPE.PASSWORD ? (
                                             <CheckIcon className='h-3.5 w-3.5 text-green-500' />
                                         ) : (
                                             <CopyIcon className='h-3.5 w-3.5' />

@@ -4,4 +4,4 @@ const authMethod = {
     github: 'github'
 } as const
 
-export default authMethod
+export { authMethod }

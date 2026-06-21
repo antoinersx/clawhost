@@ -2,6 +2,7 @@ import type { FC, ReactNode } from 'react'
 import type { AdminUserFiltersProps } from '@/ts/Interfaces'
 
 import { t } from '@openclaw/i18n'
+import { HAS_AGENTS_FILTER, SORT_ORDER } from '@/lib/constants'
 import {
     Input,
     Select,
@@ -35,16 +36,16 @@ const AdminUserFilters: FC<AdminUserFiltersProps> = ({
                 <SelectTrigger
                     className='h-10 w-full sm:w-40'
                     placeholder={
-                        sortOrder === 'newest'
+                        sortOrder === SORT_ORDER.NEWEST
                             ? t('admin.sortNewest')
                             : t('admin.sortOldest')
                     }
                 />
                 <SelectContent>
-                    <SelectItem value='newest'>
+                    <SelectItem value={SORT_ORDER.NEWEST}>
                         {t('admin.sortNewest')}
                     </SelectItem>
-                    <SelectItem value='oldest'>
+                    <SelectItem value={SORT_ORDER.OLDEST}>
                         {t('admin.sortOldest')}
                     </SelectItem>
                 </SelectContent>
@@ -53,19 +54,21 @@ const AdminUserFilters: FC<AdminUserFiltersProps> = ({
                 <SelectTrigger
                     className='h-10 w-full sm:w-40'
                     placeholder={
-                        hasAgents === 'all'
+                        hasAgents === HAS_AGENTS_FILTER.ALL
                             ? t('admin.filterAll')
-                            : hasAgents === 'true'
+                            : hasAgents === HAS_AGENTS_FILTER.WITH
                               ? t('admin.filterWithClaws')
                               : t('admin.filterWithoutClaws')
                     }
                 />
                 <SelectContent>
-                    <SelectItem value='all'>{t('admin.filterAll')}</SelectItem>
-                    <SelectItem value='true'>
+                    <SelectItem value={HAS_AGENTS_FILTER.ALL}>
+                        {t('admin.filterAll')}
+                    </SelectItem>
+                    <SelectItem value={HAS_AGENTS_FILTER.WITH}>
                         {t('admin.filterWithClaws')}
                     </SelectItem>
-                    <SelectItem value='false'>
+                    <SelectItem value={HAS_AGENTS_FILTER.WITHOUT}>
                         {t('admin.filterWithoutClaws')}
                     </SelectItem>
                 </SelectContent>

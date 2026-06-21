@@ -1,0 +1,14 @@
+{
+    "extends": "expo/tsconfig.base",
+    "compilerOptions": {
+        "strict": true,
+        "skipLibCheck": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"],
+            "#i18n/*": ["../../packages/i18n/src/*"],
+            "#shared/*": ["../../packages/shared/src/*"]
+        }
+    },
+    "include": ["index.ts", "App.tsx", "src"]
+}

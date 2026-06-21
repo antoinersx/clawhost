@@ -15,6 +15,7 @@ import type {
 import type {
     AFFILIATE_PERIOD,
     CHANGELOG_FEATURE_TYPE,
+    CHECK_STATUS,
     AGENT_AVATAR_SIZE,
     AGENT_DETAIL_TABS,
     COMPARE_FEATURE_STATUS,
@@ -36,6 +37,8 @@ import type {
 export type AgentType = (typeof agentType)[keyof typeof agentType]
 
 export type ToastType = (typeof TOAST_TYPE)[keyof typeof TOAST_TYPE]
+
+export type CheckStatus = (typeof CHECK_STATUS)[keyof typeof CHECK_STATUS]
 
 export type AgentStatus = (typeof agentStatus)[keyof typeof agentStatus]
 

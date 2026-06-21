@@ -86,6 +86,7 @@ const ar: Translations = {
         heroTitle1: 'انشر OpenClaw.',
         heroTitle2: 'محلياً. فوراً.',
         badge: 'OpenClaw وHermes محلياً',
+        tutorialBadge: 'كيفية البدء على Go',
         description:
             'تطبيق سطح مكتب خفيف لإدارة مثيلات OpenClaw الخاصة بك. انشر وراقب وتحكم في claws الخاصة بك — مباشرة من جهازك.',
         features: 'الميزات',
@@ -207,6 +208,8 @@ const ar: Translations = {
         failedToFetchLatestVersion: 'فشل في جلب أحدث إصدار !'
     },
     footer: {
+        downloadAndroid: 'احصل عليه من Google Play',
+        downloadIos: 'حمّله من App Store',
         website: 'الموقع',
         copyrightName: 'ClawHost',
         copyrightRights: 'جميع الحقوق محفوظة.',
@@ -239,6 +242,8 @@ const ar: Translations = {
     },
     errors: {
         somethingWentWrong: 'حدث خطأ ما !',
+        connectionFailed:
+            'حدث خطأ ما أثناء الاتصال بالخادم. يرجى التحقق من اتصالك والمحاولة مرة أخرى !',
         couldNotLoadData: 'لم نتمكن من تحميل البيانات. يرجى المحاولة مجدداً !',
         notFound: 'الصفحة غير موجودة !',
         pageNotFoundDescription:
@@ -263,6 +268,7 @@ const ar: Translations = {
         noPasswordAvailable: 'لا توجد كلمة مرور متاحة لهذا الـ Claw !'
     },
     api: {
+        githubExchangeFailed: 'فشل تسجيل الدخول عبر GitHub!',
         missingRequiredFields: 'الحقول المطلوبة مفقودة !',
         agentNotFound: 'لم يتم العثور على Agent !',
         agentRenamed: 'تمت إعادة تسمية Agent بنجاح.',
@@ -587,6 +593,33 @@ const ar: Translations = {
                     'أعد تثبيت بيئة تشغيل OpenClaw على خادمك الحالي بنقرة واحدة. خادمك يبقى كما هو — فقط OpenClaw يحصل على تثبيت نظيف.',
                 cta: 'اعرف المزيد'
             },
+            hermesAgentLaunch: {
+                subject: 'وكيل Hermes متاح الآن',
+                preview: 'انشر وكلاء Hermes مباشرة على ClawHost.',
+                tag: 'وكيل Hermes',
+                heading: 'وكلاء Hermes، الآن على ClawHost',
+                description:
+                    'وكيل Hermes مدعوم الآن على ClawHost. أنشئ claw مدعومًا بـ Hermes في دقائق، وقم بتكوين مزودي النماذج من علامة التبويب الملفات، وتحدث معه من الطرفية المدمجة. لا إعداد إضافي، ولا كود ربط.',
+                cta: 'نشر Hermes'
+            },
+            clawHostGoLaunch: {
+                subject: 'ClawHost Go متاح الآن',
+                preview: 'تطبيق سطح مكتب أصلي لتشغيل OpenClaw محليًا على جهازك.',
+                tag: 'ClawHost Go',
+                heading: 'مخالبك، على مكتبك',
+                description:
+                    'ClawHost Go هو تطبيق سطح مكتب أصلي لنظامي macOS و Windows. انشر وأدر مثيلات OpenClaw مباشرة على جهازك — لا حوسبة سحابية، ولا اشتراك، فقط ترخيص لمرة واحدة. يأتي مع طرفية مدمجة، ومحرر ملفات، ومدير إصدارات، و DNS محلي بدون تكوين.',
+                cta: 'تنزيل ClawHost Go'
+            },
+            productHuntLaunch: {
+                subject: 'ساعدنا في إطلاقنا على Product Hunt',
+                preview: 'لقد أطلقنا للتو على Product Hunt. صوتك يهمنا.',
+                tag: 'إطلاق على Product Hunt',
+                heading: 'نحن مباشر على Product Hunt',
+                description:
+                    'أطلقنا اليوم ClawHost على Product Hunt. إذا ساعدناك على الشحن أسرع، فإن تصويتك يعني لنا الكثير. كشكر لك، استخدم رمز PH10 للحصول على خصم 10% على طلبك الأول.',
+                cta: 'صوّت على Product Hunt'
+            },
             yearlyPlans: {
                 subject: 'هل تعلم؟ وفّر مع الخطط السنوية',
                 preview: 'بدّل إلى الفوترة السنوية وادفع أقل',
@@ -679,6 +712,10 @@ const ar: Translations = {
             'عند التفعيل، تُفتح الروابط الخارجية داخل التطبيق بدلاً من متصفح النظام.'
     },
     billing: {
+        billingHistory: 'سجل الفواتير',
+        billingDescription: 'اعرض سجل مدفوعاتك وفواتيرك واشتراكاتك.',
+        noBillingHistory: 'لا يوجد سجل فواتير',
+        noBillingHistoryDescription: 'ستظهر مدفوعاتك وفواتيرك هنا.',
         date: 'التاريخ',
         product: 'المنتج',
         amount: 'المبلغ',
@@ -923,7 +960,47 @@ const ar: Translations = {
         },
         tabNotAvailableForAgent: 'غير متاح لهذا النوع من الوكيل'
     },
+    mobile: {
+        versions: 'الإصدارات',
+        currentVersion: 'الإصدار الحالي',
+        latestVersion: 'أحدث إصدار',
+        install: 'تثبيت',
+        terminal: 'الطرفية',
+        reinstall: 'إعادة التثبيت',
+        fileSaved: 'تم حفظ الملف.',
+        terminalDisconnected: 'تم قطع الاتصال',
+        terminalPlaceholder: 'اكتب أمرًا...',
+        manage: 'إدارة',
+        sync: 'مزامنة',
+        rename: 'إعادة تسمية',
+        newName: 'الاسم الجديد',
+        credentials: 'بيانات الاعتماد',
+        showCredentials: 'إظهار بيانات الاعتماد',
+        rotatePassword: 'تدوير كلمة المرور',
+        rotateGatewayToken: 'تدوير رمز البوابة',
+        syncSuccess: 'تمت المزامنة بنجاح.',
+        signIn: 'تسجيل الدخول',
+        signInDescription: 'سجّل الدخول لإدارة وكلائك ونشرهم.',
+        enterEmail: 'البريد الإلكتروني',
+        emailPlaceholder: 'example@clawhost.cloud',
+        continueWithEmail: 'المتابعة بالبريد الإلكتروني',
+        otpDescription: 'سنرسل لك رمزًا لتسجيل الدخول. لا حاجة لكلمة مرور.',
+        sending: 'جارٍ الإرسال...',
+        checkYourEmail: 'تحقق من بريدك الإلكتروني',
+        codeSentTo: 'أرسلنا رمزًا من 6 أرقام إلى',
+        resendCode: 'إعادة إرسال الرمز',
+        resendIn: 'إعادة الإرسال خلال {{seconds}} ث',
+        changeEmail: 'تغيير البريد الإلكتروني',
+        invalidCode: 'رمز غير صالح !',
+        signingIn: 'جارٍ تسجيل الدخول...',
+        signOut: 'تسجيل الخروج',
+        loadMore: 'تحميل المزيد',
+        deployClaw: 'نشر وكيل',
+        deployYourFirstClaw: 'انشر وكيلك الأول',
+    },
     createClaw: {
+        provider: 'المزود',
+        providerAtCapacity: 'بلغ السعة القصوى',
         title: 'نشر OpenClaw',
         description: 'قم بتهيئة خادمك وابدأ البناء مع الذكاء الاصطناعي.',
         clawName: 'الاسم',
@@ -1042,7 +1119,7 @@ const ar: Translations = {
         description:
             'انشر OpenClaw على خادم VPS الخاص بك بنقرة واحدة. استضافة سحابية ذاتية مع وصول كامل للجذر ومواقع عالمية وأسعار شفافة.',
         badge: 'OpenClaw وHermes في السحابة',
-        tutorialBadge: 'شاهد. انشر.',
+        tutorialBadge: 'كيفية البدء على السحابة',
         tutorialVideoThumbnail: 'صورة مصغرة لفيديو شرح ClawHost',
         clawhostGoLogoAlt: 'ClawHost Go',
         trustMrrBadgeAlt: 'TrustMRR verified revenue badge',
@@ -1782,9 +1859,9 @@ const ar: Translations = {
         contactTitle: '12. معلومات الاتصال',
         contactText: 'إذا كانت لديك أسئلة حول هذه الشروط، يرجى التواصل معنا على'
     },
-    hermesBanner: {
-        title: 'Hermes Agent',
-        message: 'أصبح وكلاء Hermes مدعومين الآن للنشر على ClawHost.'
+    acquiredBanner: {
+        title: 'تم الاستحواذ عليها من قِبل GetOpenClaw.ai',
+        message: 'أصبح ClawHost الآن جزءًا من GetOpenClaw.ai — يمكن الوصول إلى جميع بياناتك من هناك فقط.'
     },
     compare: {
         title: 'مقارنة',

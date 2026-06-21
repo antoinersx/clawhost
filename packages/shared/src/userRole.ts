@@ -3,4 +3,4 @@ const userRole = {
     admin: 'admin'
 } as const
 
-export default userRole
+export { userRole }

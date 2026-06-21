@@ -1,11 +1,10 @@
 import type { FC, ReactNode } from 'react'
 import type { SimplePlanCardProps } from '@/ts/Interfaces'
 
-import { Link } from 'react-router-dom'
 import { t } from '@openclaw/i18n'
 import { Button, Badge } from '@/components/ui'
 import { useAuth } from '@/lib/auth'
-import { ROUTES } from '@/lib'
+import { GETOPENCLAW_CLOUD_URL } from '@/lib/links'
 import { CheckIcon, XIcon } from '@phosphor-icons/react'
 
 const SimplePlanCard: FC<SimplePlanCardProps> = ({
@@ -13,7 +12,6 @@ const SimplePlanCard: FC<SimplePlanCardProps> = ({
     description,
     price,
     yearlyPerMonth,
-    planId,
     popular,
     features
 }): ReactNode => {
@@ -77,15 +75,9 @@ const SimplePlanCard: FC<SimplePlanCardProps> = ({
                 className={`mt-auto w-full gap-2 ${popular ? 'border-0 bg-gradient-to-r from-[#ef5350] to-[#c62828] text-white hover:opacity-90' : 'bg-foreground/10 text-foreground hover:bg-foreground/20 border-0'}`}
                 asChild
             >
-                <Link
-                    to={
-                        user
-                            ? `${ROUTES.AGENTS}?plan=${planId}`
-                            : `${ROUTES.LOGIN}?plan=${planId}`
-                    }
-                >
+                <a href={GETOPENCLAW_CLOUD_URL}>
                     {user ? t('landing.deploy') : t('landing.choosePlan')}
-                </Link>
+                </a>
             </Button>
         </div>
     )

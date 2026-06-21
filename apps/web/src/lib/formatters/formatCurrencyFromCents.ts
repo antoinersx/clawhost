@@ -1,4 +1,4 @@
-import getLocale from '@/lib/getLocale'
+import { getLocale } from '@/lib'
 
 const formatCurrencyFromCents = (
     amount: number,

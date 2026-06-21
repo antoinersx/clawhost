@@ -1,3 +1,4 @@
+import mapOrder from '@/lib/polar/orders/mapOrder'
 import listByCustomer from '@/lib/polar/orders/listByCustomer'
 import listAll from '@/lib/polar/orders/listAll'
 import get from '@/lib/polar/orders/get'
@@ -11,3 +12,4 @@ const orders = {
 }
 
 export default orders
+export { mapOrder }

@@ -4,8 +4,7 @@ import type {
     CreateCheckoutParams
 } from '@/ts/Interfaces'
 
-import getPolarClient from '@/lib/polar/getPolarClient'
-import getPolarConfig from '@/lib/polar/getPolarConfig'
+import { getPolarClient, getPolarConfig } from '@/lib/polar'
 
 const CHECKOUT_CACHE_TTL = 30_000
 const checkoutCache = new Map<string, CacheEntry<CheckoutSession>>()

@@ -4,7 +4,7 @@ import type { TranslationKey } from '@openclaw/i18n'
 
 import { t } from '@openclaw/i18n'
 import { fail } from '@/lib/response'
-import findUserAgent from '@/controllers/agents/helpers/findUserAgent'
+import { findUserAgent } from '@/controllers/agents/helpers'
 
 const withAgent = (options: WithAgentOptions = {}) => {
     return <R>(

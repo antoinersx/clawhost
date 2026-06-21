@@ -1,6 +1,6 @@
 import { useInfiniteQuery } from '@tanstack/react-query'
 import { api } from '@/lib'
-import ADMIN_BILLING_QUERY_KEY from '@/hooks/useAdmin/ADMIN_BILLING_QUERY_KEY'
+import { ADMIN_BILLING_QUERY_KEY } from '@/hooks/useAdmin'
 
 const useAdminBillingList = (limit: number = 20) => {
     return useInfiniteQuery({

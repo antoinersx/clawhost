@@ -6,9 +6,11 @@ import { t } from '@openclaw/i18n'
 import { getLocale } from '@/lib'
 import { DialogHeader, DialogTitle, Button } from '@/components/ui'
 import { DatabaseIcon } from '@phosphor-icons/react'
-import AdminDetailField from '@/components/admin/AdminDetailField'
-import AdminOwnerLink from '@/components/admin/AdminOwnerLink'
-import AdminStatusBadge from '@/components/admin/AdminStatusBadge'
+import {
+    AdminDetailField,
+    AdminOwnerLink,
+    AdminStatusBadge
+} from '@/components/admin'
 
 const AdminVolumeDetailView: FC<AdminVolumeDetailViewProps> = ({
     volume,

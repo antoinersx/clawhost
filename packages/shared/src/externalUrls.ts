@@ -1,7 +1,7 @@
 const DOMAIN = 'clawhost.cloud'
 const LINKS = `https://l.${DOMAIN}`
 
-const EXTERNAL_URLS = {
+const externalUrls = {
     CLAWHOST: {
         DOMAIN,
         BASE: `https://${DOMAIN}`,
@@ -25,6 +25,13 @@ const EXTERNAL_URLS = {
         API: 'https://api.github.com',
         USER: 'https://api.github.com/user',
         USER_EMAILS: 'https://api.github.com/user/emails',
+        OAUTH_AUTHORIZE: 'https://github.com/login/oauth/authorize',
+        OAUTH_TOKEN: 'https://github.com/login/oauth/access_token',
+        CLAWHOST_REPO: 'antoinersx/clawhost',
+        HERMES_AGENT_REPO: 'NousResearch/hermes-agent',
+        REPO_INFO: (slug: string) => `https://api.github.com/repos/${slug}`,
+        RELEASE_TAG: (slug: string, version: string) =>
+            `https://github.com/${slug}/releases/tag/v${version}`,
         repo: (owner: string, repo: string) => ({
             CONTENTS: (path: string, ref?: string) =>
                 `https://api.github.com/repos/${owner}/${repo}/contents/${path}${ref ? `?ref=${ref}` : ''}`,
@@ -39,7 +46,8 @@ const EXTERNAL_URLS = {
         })
     },
     GOOGLE: {
-        USERINFO: 'https://www.googleapis.com/oauth2/v3/userinfo'
+        USERINFO: 'https://www.googleapis.com/oauth2/v3/userinfo',
+        GENERATE_204: 'https://clients3.google.com/generate_204'
     },
     HETZNER: {
         API: 'https://api.hetzner.cloud/v1'
@@ -47,7 +55,20 @@ const EXTERNAL_URLS = {
     NPM: {
         REGISTRY: (pkg: string) => `https://registry.npmjs.org/${pkg}`,
         DOWNLOADS: (pkg: string) =>
-            `https://api.npmjs.org/versions/${pkg}/last-week`
+            `https://api.npmjs.org/versions/${pkg}/last-week`,
+        PACKAGE_VERSION: (pkg: string, version: string) =>
+            `https://www.npmjs.com/package/${pkg}/v/${version}`
+    },
+    YOUTUBE: {
+        THUMBNAIL: (videoId: string) =>
+            `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
+    },
+    TRUSTMRR: {
+        STARTUP: 'https://trustmrr.com/startup/clawhost',
+        EMBED_LIGHT:
+            'https://trustmrr.com/api/embed/clawhost?format=svg&theme=light',
+        EMBED_DARK:
+            'https://trustmrr.com/api/embed/clawhost?format=svg&theme=dark'
     },
     AGENT_DOCS: {
         OPENCLAW: 'https://openclaw.com/docs',
@@ -63,8 +84,10 @@ const EXTERNAL_URLS = {
         TIKTOK: `${LINKS}/tiktok`,
         GITHUB: `${LINKS}/github`,
         TUTORIAL: `${LINKS}/tutorial`,
+        TUTORIAL_GO: `${LINKS}/tutorial-go`,
+        GETOPENCLAW_CLOUD: 'https://cloud.getopenclaw.ai',
         SUPPORT_EMAIL: `support@${DOMAIN}`
     }
 }
 
-export default EXTERNAL_URLS
+export { externalUrls }

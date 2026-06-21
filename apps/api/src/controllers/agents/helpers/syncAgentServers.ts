@@ -6,8 +6,8 @@ import { agentStatus } from '@openclaw/shared'
 import { db } from '@/db'
 import { agents } from '@/db/schema'
 import { getProvider } from '@/services/provider'
-import cloudflare from '@/services/cloudflare'
-import checkAgentReady from '@/controllers/agents/helpers/checkAgentReady'
+import { cloudflare } from '@/services'
+import { checkAgentReady } from '@/controllers/agents/helpers'
 import { decrypt } from '@/lib/encryption'
 
 const transitionCompletedBy: Record<string, string[]> = {

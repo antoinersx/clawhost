@@ -2,7 +2,7 @@ import type { AdminAnalyticsRange } from '@/ts/Types'
 
 import { useQuery } from '@tanstack/react-query'
 import { api } from '@/lib'
-import ADMIN_ANALYTICS_QUERY_KEY from '@/hooks/useAdmin/ADMIN_ANALYTICS_QUERY_KEY'
+import { ADMIN_ANALYTICS_QUERY_KEY } from '@/hooks/useAdmin'
 
 const useAdminAnalytics = (range: AdminAnalyticsRange) => {
     return useQuery({

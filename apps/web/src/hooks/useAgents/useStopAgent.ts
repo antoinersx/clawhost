@@ -1,5 +1,5 @@
 import { api } from '@/lib'
-import createAgentLifecycleMutation from '@/hooks/useAgents/createAgentLifecycleMutation'
+import { createAgentLifecycleMutation } from '@/hooks/useAgents'
 
 const useStopAgent = createAgentLifecycleMutation((id) => api.stopAgent(id))
 

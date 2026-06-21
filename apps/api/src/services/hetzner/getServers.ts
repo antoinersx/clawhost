@@ -1,7 +1,6 @@
 import type { HetznerServersResponse, ServerStatus } from '@/ts/Interfaces'
 
-import getClient from '@/services/hetzner/hetznerClient'
-import mapStatus from '@/services/hetzner/mapStatus'
+import { getClient, mapStatus } from '@/services/hetzner'
 
 const getServers = async (): Promise<Map<string, ServerStatus>> => {
     const result = new Map<string, ServerStatus>()

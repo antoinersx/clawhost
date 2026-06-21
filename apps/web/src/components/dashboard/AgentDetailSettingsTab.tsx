@@ -2,7 +2,12 @@ import type { FC, ReactNode } from 'react'
 import type { AgentDetailSettingsTabProps } from '@/ts/Interfaces'
 
 import { t } from '@openclaw/i18n'
-import { agentType, inputValidation, userRole } from '@openclaw/shared'
+import {
+    agentType,
+    inputValidation,
+    subscriptionStatus,
+    userRole
+} from '@openclaw/shared'
 import {
     CircleNotchIcon,
     TrashIcon,
@@ -264,7 +269,8 @@ const AgentDetailSettingsTab: FC<AgentDetailSettingsTabProps> = ({
                                     )}
                                     {isLocal ||
                                     agent.id.startsWith('pending-') ||
-                                    agent.subscriptionStatus === 'canceled'
+                                    agent.subscriptionStatus ===
+                                        subscriptionStatus.canceled
                                         ? t('common.delete')
                                         : t('dashboard.scheduleDeletion')}
                                 </button>

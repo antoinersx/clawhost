@@ -4,6 +4,7 @@ import type { UseFileEditorParams, UseFileEditorReturn } from '@/ts/Interfaces'
 import { useState, useCallback } from 'react'
 import { useQueryClient } from '@tanstack/react-query'
 import { t } from '@openclaw/i18n'
+import { agentFileType } from '@openclaw/shared'
 import {
     useAgentFile,
     useUpdateAgentFile,
@@ -29,9 +30,10 @@ const useFileEditor = ({
     const [jsonError, setJsonError] = useState(false)
 
     const selectedFile = files?.find((f) => f.path === selectedPath)
-    const fileType: AgentFileType = selectedFile?.fileType ?? 'unknown'
+    const fileType: AgentFileType =
+        selectedFile?.fileType ?? agentFileType.unknown
     const isEditable = !readOnly
-    const isJson = fileType === 'json'
+    const isJson = fileType === agentFileType.json
 
     const liveFileContent = useAgentFile(
         agentId,
@@ -62,7 +64,7 @@ const useFileEditor = ({
 
     const formatContent = useCallback(
         (content: string, type: AgentFileType): string => {
-            if (type === 'json') {
+            if (type === agentFileType.json) {
                 try {
                     const parsed = JSON.parse(content)
                     return JSON.stringify(parsed, null, 4)

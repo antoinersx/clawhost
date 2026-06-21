@@ -11,14 +11,16 @@ import type {
 } from '@/ts/Interfaces'
 
 import { Dialog, DialogContent } from '@/components/ui'
-import AdminAgentDetailView from '@/components/admin/AdminAgentDetailView'
-import AdminSSHKeyDetailView from '@/components/admin/AdminSSHKeyDetailView'
-import AdminVolumeDetailView from '@/components/admin/AdminVolumeDetailView'
-import AdminPendingAgentDetailView from '@/components/admin/AdminPendingAgentDetailView'
-import AdminReferralDetailView from '@/components/admin/AdminReferralDetailView'
-import AdminEmailDetailView from '@/components/admin/AdminEmailDetailView'
-import AdminBillingDetailView from '@/components/admin/AdminBillingDetailView'
-import AdminUserDetailView from '@/components/admin/AdminUserDetailView'
+import {
+    AdminAgentDetailView,
+    AdminSSHKeyDetailView,
+    AdminVolumeDetailView,
+    AdminPendingAgentDetailView,
+    AdminReferralDetailView,
+    AdminEmailDetailView,
+    AdminBillingDetailView,
+    AdminUserDetailView
+} from '@/components/admin'
 
 const AdminDetailModal: FC<AdminDetailModalProps> = ({
     entity,

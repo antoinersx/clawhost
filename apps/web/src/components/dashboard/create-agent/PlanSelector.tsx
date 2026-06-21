@@ -4,6 +4,7 @@ import type { PlanSelectorProps, Plan } from '@/ts/Interfaces'
 import { Fragment, useState } from 'react'
 import { t } from '@openclaw/i18n'
 import { billingInterval } from '@openclaw/shared'
+import { PLAN_TIERS } from '@/lib/constants'
 import { Button } from '@/components/ui'
 import {
     Label,
@@ -134,9 +135,12 @@ const PlanSelector: FC<PlanSelectorProps> = ({
                                 !!unavailableForLocation
 
                             const tierStarts: Record<string, string> = {
-                                cx23: t('landing.tierShared'),
-                                cax11: t('landing.tierArm'),
-                                ccx13: t('landing.tierDedicated')
+                                [PLAN_TIERS.SHARED_START]:
+                                    t('landing.tierShared'),
+                                [PLAN_TIERS.ARM_START]: t('landing.tierArm'),
+                                [PLAN_TIERS.DEDICATED_START]: t(
+                                    'landing.tierDedicated'
+                                )
                             }
                             const providerTiers = tierStarts
                             const tierLabel = providerTiers?.[plan.id]

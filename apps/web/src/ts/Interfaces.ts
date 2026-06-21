@@ -256,7 +256,6 @@ export interface UIState {
     toast: ToastData | null
     showToast: (message: string, type?: ToastType, duration?: number) => void
     hideToast: () => void
-    hermesBannerVisible: boolean
 }
 
 export interface PreferencesState {
@@ -385,6 +384,10 @@ export interface FooterRouteLink {
 
 export interface LogoProps {
     to?: string
+}
+
+export interface LogoSvgProps {
+    className?: string
 }
 
 export interface IconProps {
@@ -1432,9 +1435,10 @@ export interface StatsRowProps {
 }
 
 export interface HeroBadgeProps {
-    label: string
+    label?: string
     tutorialBadge?: boolean
-    onTutorialClick?: () => void
+    tutorialLabel?: string
+    tutorialHref?: string
 }
 
 export interface HeroTitleProps {
@@ -1623,6 +1627,18 @@ export interface UseScrollToBottomOptions {
 
 export interface ElectronWindow {
     electronAPI?: ElectronAPI
+}
+
+export interface UAHighEntropyValues {
+    architecture?: string
+}
+
+export interface UADataLike {
+    getHighEntropyValues?: (keys: string[]) => Promise<UAHighEntropyValues>
+}
+
+export interface NavigatorWithUAData {
+    userAgentData?: UADataLike
 }
 
 export interface OAuthWindowResult {

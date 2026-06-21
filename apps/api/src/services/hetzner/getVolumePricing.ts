@@ -3,7 +3,7 @@ import type {
     VolumePricingResult
 } from '@/ts/Interfaces'
 
-import getClient from '@/services/hetzner/hetznerClient'
+import { getClient } from '@/services/hetzner'
 
 const getVolumePricing = async (): Promise<VolumePricingResult> => {
     const data = await getClient().get<HetznerPricingResponse>('/pricing')

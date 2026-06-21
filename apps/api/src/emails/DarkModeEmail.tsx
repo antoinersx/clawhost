@@ -1,6 +1,6 @@
 import type { FC, ReactNode } from 'react'
 
-import CDN_ASSETS from '@/lib/cdn'
+import { CDN_ASSETS } from '@/lib'
 
 import { t } from '@openclaw/i18n'
 import { Button, Img, Section, Text } from '@react-email/components'

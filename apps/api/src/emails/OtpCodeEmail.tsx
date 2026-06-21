@@ -13,7 +13,7 @@ import {
     Text
 } from '@react-email/components'
 
-import CDN_ASSETS from '@/lib/cdn'
+import { CDN_ASSETS } from '@/lib'
 import {
     main,
     container,

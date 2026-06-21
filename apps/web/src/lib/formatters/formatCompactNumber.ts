@@ -1,4 +1,4 @@
-import getLocale from '@/lib/getLocale'
+import { getLocale } from '@/lib'
 
 const formatCompactNumber = (value: number): string => {
     return new Intl.NumberFormat(getLocale(), {

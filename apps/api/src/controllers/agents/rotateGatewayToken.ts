@@ -6,7 +6,7 @@ import { inputValidation } from '@openclaw/shared'
 import { db } from '@/db'
 import { agents } from '@/db/schema'
 import { ok, fail } from '@/lib/response'
-import executeSSH from '@/services/ssh'
+import { executeSSH } from '@/services'
 import { encrypt } from '@/lib/encryption'
 import {
     withAgent,

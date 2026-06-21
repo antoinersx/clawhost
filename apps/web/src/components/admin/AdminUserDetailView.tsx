@@ -21,11 +21,13 @@ import {
     FloppyDiskIcon
 } from '@phosphor-icons/react'
 import { userRole } from '@openclaw/shared'
-import AdminDetailField from '@/components/admin/AdminDetailField'
-import AdminUserAgentsSection from '@/components/admin/AdminUserAgentsSection'
-import AdminUserSSHKeysSection from '@/components/admin/AdminUserSSHKeysSection'
-import AdminUserVolumesSection from '@/components/admin/AdminUserVolumesSection'
-import AdminUserBillingSection from '@/components/admin/AdminUserBillingSection'
+import {
+    AdminDetailField,
+    AdminUserAgentsSection,
+    AdminUserSSHKeysSection,
+    AdminUserVolumesSection,
+    AdminUserBillingSection
+} from '@/components/admin'
 
 const AdminUserDetailView: FC<AdminUserDetailViewProps> = ({
     userId,

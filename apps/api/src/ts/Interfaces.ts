@@ -413,6 +413,16 @@ export interface ResolveCredentialConflictBody {
     code: string
 }
 
+export interface GithubExchangeBody {
+    code: string
+    redirectUri?: string
+}
+
+export interface GithubTokenResponse {
+    access_token?: string
+    error?: string
+}
+
 export interface OtpCodeEmailProps {
     code: string
 }

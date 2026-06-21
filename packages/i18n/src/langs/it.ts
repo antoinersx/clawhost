@@ -86,6 +86,7 @@ const it: Translations = {
         heroTitle1: 'Distribuisci OpenClaw.',
         heroTitle2: 'Localmente. Istantaneamente.',
         badge: 'OpenClaw e Hermes in locale',
+        tutorialBadge: 'Come iniziare su Go',
         description:
             'Un client desktop leggero per gestire le tue istanze OpenClaw. Distribuisci, monitora e controlla i tuoi claw — direttamente dal tuo computer.',
         features: 'Funzionalit\u00e0',
@@ -217,6 +218,8 @@ const it: Translations = {
         failedToFetchLatestVersion: "Impossibile recuperare l'ultima versione!"
     },
     footer: {
+        downloadAndroid: 'Scarica su Google Play',
+        downloadIos: "Scarica sull'App Store",
         website: 'Sito web',
         copyrightName: 'ClawHost',
         copyrightRights: 'Tutti i diritti riservati.',
@@ -249,6 +252,8 @@ const it: Translations = {
     },
     errors: {
         somethingWentWrong: 'Qualcosa \u00e8 andato storto!',
+        connectionFailed:
+            'Qualcosa \u00e8 andato storto durante la connessione al server. Controlla la tua connessione e riprova!',
         couldNotLoadData: 'Impossibile caricare i dati. Riprova!',
         notFound: 'Pagina non trovata!',
         pageNotFoundDescription:
@@ -274,6 +279,7 @@ const it: Translations = {
         noPasswordAvailable: 'Nessuna password disponibile per questo claw!'
     },
     api: {
+        githubExchangeFailed: 'Accesso con GitHub non riuscito!',
         missingRequiredFields: 'Campi obbligatori mancanti!',
         agentNotFound: 'Agent non trovato!',
         agentRenamed: 'Agent rinominato con successo.',
@@ -629,6 +635,33 @@ const it: Translations = {
                     'Reinstalla il runtime OpenClaw sul tuo server esistente con un singolo clic. Il tuo server resta intatto — solo OpenClaw viene reinstallato da zero.',
                 cta: 'Scopri di Più'
             },
+            hermesAgentLaunch: {
+                subject: 'L\'agente Hermes è arrivato',
+                preview: 'Distribuisci agenti Hermes direttamente su ClawHost.',
+                tag: 'Agente Hermes',
+                heading: 'Agenti Hermes, ora su ClawHost',
+                description:
+                    'L\'agente Hermes è ora supportato su ClawHost. Avvia un claw alimentato da Hermes in pochi minuti, configura i provider di modelli dalla scheda File e chatta con esso dal terminale integrato. Nessuna configurazione extra, nessun codice di collegamento.',
+                cta: 'Distribuisci Hermes'
+            },
+            clawHostGoLaunch: {
+                subject: 'ClawHost Go è arrivato',
+                preview: 'Una desktop app nativa per eseguire OpenClaw localmente sul tuo computer.',
+                tag: 'ClawHost Go',
+                heading: 'I tuoi claws, sulla tua scrivania',
+                description:
+                    'ClawHost Go è una desktop app nativa per macOS e Windows. Distribuisci e gestisci istanze OpenClaw direttamente sul tuo computer — niente cloud, niente abbonamento, solo una licenza una tantum. Include terminale integrato, editor di file, gestore delle versioni e DNS locale senza configurazione.',
+                cta: 'Scarica ClawHost Go'
+            },
+            productHuntLaunch: {
+                subject: 'Aiutaci con il lancio su Product Hunt',
+                preview: 'Abbiamo appena lanciato su Product Hunt. Il tuo voto conta.',
+                tag: 'Lancio su Product Hunt',
+                heading: 'Siamo live su Product Hunt',
+                description:
+                    'Oggi lanciamo ClawHost su Product Hunt. Se ti abbiamo aiutato a spedire più velocemente, un upvote significherebbe il mondo. Come ringraziamento, usa il codice PH10 per il 10% di sconto sul tuo primo ordine.',
+                cta: 'Vota su Product Hunt'
+            },
             yearlyPlans: {
                 subject: 'Lo sapevi? Risparmia con i piani annuali',
                 preview: 'Passa alla fatturazione annuale e paga meno',
@@ -728,6 +761,10 @@ const it: Translations = {
             "Quando attivato, i link esterni si aprono all'interno dell'app invece che nel browser di sistema."
     },
     billing: {
+        billingHistory: 'Cronologia di fatturazione',
+        billingDescription: 'Visualizza la cronologia dei pagamenti, le fatture e gli abbonamenti.',
+        noBillingHistory: 'Nessuna cronologia di fatturazione',
+        noBillingHistoryDescription: 'I tuoi pagamenti e le tue fatture appariranno qui.',
         date: 'Data',
         product: 'Prodotto',
         amount: 'Importo',
@@ -984,7 +1021,47 @@ const it: Translations = {
         },
         tabNotAvailableForAgent: 'Non disponibile per questo tipo di agente'
     },
+    mobile: {
+        versions: 'Versioni',
+        currentVersion: 'Versione attuale',
+        latestVersion: 'Ultima versione',
+        install: 'Installa',
+        terminal: 'Terminale',
+        reinstall: 'Reinstalla',
+        fileSaved: 'File salvato.',
+        terminalDisconnected: 'Disconnesso',
+        terminalPlaceholder: 'Digita un comando...',
+        manage: 'Gestisci',
+        sync: 'Sincronizza',
+        rename: 'Rinomina',
+        newName: 'Nuovo nome',
+        credentials: 'Credenziali',
+        showCredentials: 'Mostra credenziali',
+        rotatePassword: 'Ruota password',
+        rotateGatewayToken: 'Ruota token gateway',
+        syncSuccess: 'Sincronizzato con successo.',
+        signIn: 'Autenticati',
+        signInDescription: 'Autenticati per gestire e distribuire i tuoi Agenti.',
+        enterEmail: 'Indirizzo email',
+        emailPlaceholder: 'example@clawhost.cloud',
+        continueWithEmail: "Continua con l'email",
+        otpDescription: 'Ti invieremo un codice per accedere. Nessuna password necessaria.',
+        sending: 'Invio in corso...',
+        checkYourEmail: 'Controlla la tua email',
+        codeSentTo: 'Abbiamo inviato un codice di 6 cifre a',
+        resendCode: 'Invia di nuovo il codice',
+        resendIn: 'Invia di nuovo tra {{seconds}}s',
+        changeEmail: 'Cambia email',
+        invalidCode: 'Codice non valido!',
+        signingIn: 'Accesso in corso...',
+        signOut: 'Esci',
+        loadMore: 'Carica altro',
+        deployClaw: 'Distribuisci Agente',
+        deployYourFirstClaw: 'Distribuisci il tuo primo Agente',
+    },
     createClaw: {
+        provider: 'Provider',
+        providerAtCapacity: 'Al completo',
         title: 'Distribuisci OpenClaw',
         description: "Configura il tuo server e inizia a costruire con l'AI.",
         clawName: 'Nome',
@@ -1110,7 +1187,7 @@ const it: Translations = {
         description:
             'Distribuisci OpenClaw sul tuo VPS con un clic. Hosting cloud self-hostable con accesso root completo, posizioni globali e prezzi trasparenti.',
         badge: 'OpenClaw e Hermes nel Cloud',
-        tutorialBadge: 'Guarda. Distribuisci.',
+        tutorialBadge: 'Come iniziare su Cloud',
         tutorialVideoThumbnail: 'Miniatura video tutorial ClawHost',
         clawhostGoLogoAlt: 'ClawHost Go',
         trustMrrBadgeAlt: 'TrustMRR verified revenue badge',
@@ -1898,10 +1975,9 @@ const it: Translations = {
         contactTitle: '12. Informazioni di Contatto',
         contactText: 'Se hai domande su questi Termini, contattaci a'
     },
-    hermesBanner: {
-        title: 'Hermes Agent',
-        message:
-            'Gli agenti Hermes sono ora supportati per il deployment su ClawHost.'
+    acquiredBanner: {
+        title: 'Acquisito da GetOpenClaw.ai',
+        message: 'ClawHost ora fa parte di GetOpenClaw.ai — tutti i tuoi dati sono accessibili solo lì.'
     },
     compare: {
         title: 'Confronto',

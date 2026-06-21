@@ -1,8 +1,9 @@
 import { readFileSync } from 'fs'
 import { resolve } from 'path'
 
+import { AUTH_DISABLED } from '@openclaw/shared'
 import app from '@/app'
-import terminalSocket from '@/services/terminalSocket'
+import { terminalSocket } from '@/services'
 
 const port = Number(process.env.PORT)
 const pkg = JSON.parse(
@@ -19,8 +20,10 @@ Bun.serve({
     hostname: '0.0.0.0',
     idleTimeout: 255,
     async fetch(req, server) {
-        const upgraded = await terminalSocket.handleUpgrade(req, server)
-        if (upgraded) return undefined as unknown as Response
+        if (!AUTH_DISABLED) {
+            const upgraded = await terminalSocket.handleUpgrade(req, server)
+            if (upgraded) return undefined as unknown as Response
+        }
 
         return app.fetch(req)
     },

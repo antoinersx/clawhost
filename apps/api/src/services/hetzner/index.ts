@@ -1,5 +1,7 @@
 import type { CloudProvider } from '@/ts/Interfaces'
 
+import getClient from '@/services/hetzner/hetznerClient'
+import mapStatus from '@/services/hetzner/mapStatus'
 import attachVolume from '@/services/hetzner/attachVolume'
 import createSSHKey from '@/services/hetzner/createSSHKey'
 import createServer from '@/services/hetzner/createServer'
@@ -43,3 +45,4 @@ const hetzner: CloudProvider = {
 }
 
 export default hetzner
+export { getClient, mapStatus }

@@ -86,6 +86,7 @@ const tr: Translations = {
         heroTitle1: 'OpenClaw Dağıt.',
         heroTitle2: 'Yerel. Anında.',
         badge: 'OpenClaw ve Hermes Yerel',
+        tutorialBadge: 'Go’da Nasıl Başlanır',
         description:
             "OpenClaw örneklerinizi yönetmek için hafif bir masaüstü istemcisi. Claw'larınızı doğrudan bilgisayarınızdan dağıtın, izleyin ve kontrol edin.",
         features: 'Özellikler',
@@ -210,6 +211,8 @@ const tr: Translations = {
         failedToFetchLatestVersion: 'En son sürüm alınamadı!'
     },
     footer: {
+        downloadAndroid: "Google Play'den İndirin",
+        downloadIos: "App Store'dan İndirin",
         website: 'Web Sitesi',
         copyrightName: 'ClawHost',
         copyrightRights: 'Tüm hakları saklıdır.',
@@ -242,6 +245,8 @@ const tr: Translations = {
     },
     errors: {
         somethingWentWrong: 'Bir şeyler ters gitti!',
+        connectionFailed:
+            'Sunucuya bağlanırken bir şeyler ters gitti. Bağlantınızı kontrol edip tekrar deneyin!',
         couldNotLoadData: 'Veriler yüklenemedi. Lütfen tekrar deneyin!',
         notFound: 'Sayfa bulunamadı!',
         pageNotFoundDescription: 'Aradığınız sayfa mevcut değil veya taşınmış.',
@@ -266,6 +271,7 @@ const tr: Translations = {
         noPasswordAvailable: 'Bu claw için şifre mevcut değil!'
     },
     api: {
+        githubExchangeFailed: 'GitHub ile oturum açma başarısız!',
         missingRequiredFields: 'Gerekli alanlar eksik!',
         agentNotFound: 'Agent bulunamadı!',
         agentRenamed: 'Agent başarıyla yeniden adlandırıldı.',
@@ -604,6 +610,33 @@ const tr: Translations = {
                     'Mevcut sunucunuzda OpenClaw çalışma zamanını tek tıkla yeniden yükleyin. Sunucunuz olduğu gibi kalır — sadece OpenClaw temiz bir kurulum alır.',
                 cta: 'Daha Fazla Bilgi'
             },
+            hermesAgentLaunch: {
+                subject: 'Hermes Agent burada',
+                preview: 'Hermes ajanlarını doğrudan ClawHost\'a dağıtın.',
+                tag: 'Hermes Ajanı',
+                heading: 'Hermes ajanları, artık ClawHost\'ta',
+                description:
+                    'Hermes Agent artık ClawHost\'ta destekleniyor. Birkaç dakikada Hermes destekli bir claw çalıştırın, model sağlayıcılarını Dosyalar sekmesinden yapılandırın ve yerleşik terminalden onunla sohbet edin. Ek kurulum yok, yapıştırıcı kod yok.',
+                cta: 'Hermes\'i dağıt'
+            },
+            clawHostGoLaunch: {
+                subject: 'ClawHost Go burada',
+                preview: 'OpenClaw\'u makinenizde yerel olarak çalıştırmak için yerel bir masaüstü uygulaması.',
+                tag: 'ClawHost Go',
+                heading: 'Claw\'larınız, masanızda',
+                description:
+                    'ClawHost Go, macOS ve Windows için yerel bir masaüstü uygulamasıdır. OpenClaw örneklerini doğrudan makinenizde dağıtın ve yönetin — bulut yok, abonelik yok, sadece tek seferlik lisans. Yerleşik terminal, dosya düzenleyici, sürüm yöneticisi ve sıfır yapılandırmalı yerel DNS ile birlikte gelir.',
+                cta: 'ClawHost Go\'yu indir'
+            },
+            productHuntLaunch: {
+                subject: 'Product Hunt\'taki lansmanımıza yardım edin',
+                preview: 'Product Hunt\'ta yayına yeni girdik. Oyunuz önemli.',
+                tag: 'Product Hunt Lansmanı',
+                heading: 'Product Hunt\'ta yayındayız',
+                description:
+                    'Bugün ClawHost\'u Product Hunt\'ta yayınlıyoruz. Daha hızlı kargo göndermenize yardımcı olduysak, bir oy bizim için çok şey ifade eder. Teşekkür olarak, ilk siparişinizde %10 indirim için PH10 kodunu kullanın.',
+                cta: 'Product Hunt\'ta oy ver'
+            },
             yearlyPlans: {
                 subject: 'Biliyor muydunuz? Yıllık planlarla tasarruf edin',
                 preview: 'Yıllık faturalamaya geçin ve daha az ödeyin',
@@ -701,6 +734,10 @@ const tr: Translations = {
             'Etkinleştirildiğinde, harici bağlantılar sistem tarayıcısı yerine uygulama içinde açılır.'
     },
     billing: {
+        billingHistory: 'Fatura Geçmişi',
+        billingDescription: 'Ödeme geçmişinizi, faturalarınızı ve aboneliklerinizi görüntüleyin.',
+        noBillingHistory: 'Fatura geçmişi yok',
+        noBillingHistoryDescription: 'Ödemeleriniz ve faturalarınız burada görünecek.',
         date: 'Tarih',
         product: 'Ürün',
         amount: 'Tutar',
@@ -954,7 +991,47 @@ const tr: Translations = {
         },
         tabNotAvailableForAgent: 'Bu ajan türü için mevcut değil'
     },
+    mobile: {
+        versions: 'Sürümler',
+        currentVersion: 'Geçerli sürüm',
+        latestVersion: 'En son sürüm',
+        install: 'Yükle',
+        terminal: 'Terminal',
+        reinstall: 'Yeniden yükle',
+        fileSaved: 'Dosya kaydedildi.',
+        terminalDisconnected: 'Bağlantı kesildi',
+        terminalPlaceholder: 'Bir komut yazın...',
+        manage: 'Yönet',
+        sync: 'Eşitle',
+        rename: 'Yeniden adlandır',
+        newName: 'Yeni ad',
+        credentials: 'Kimlik bilgileri',
+        showCredentials: 'Kimlik bilgilerini göster',
+        rotatePassword: 'Parolayı değiştir',
+        rotateGatewayToken: 'Ağ geçidi belirtecini değiştir',
+        syncSuccess: 'Başarıyla eşitlendi.',
+        signIn: 'Kimlik Doğrula',
+        signInDescription: 'Ajanlarınızı yönetmek ve dağıtmak için kimliğinizi doğrulayın.',
+        enterEmail: 'E-posta Adresi',
+        emailPlaceholder: 'example@clawhost.cloud',
+        continueWithEmail: 'E-posta ile Devam Et',
+        otpDescription: "Giriş yapmanız için size bir kod göndereceğiz. Şifre gerekmez.",
+        sending: 'Gönderiliyor...',
+        checkYourEmail: 'E-postanızı kontrol edin',
+        codeSentTo: '6 haneli bir kod gönderdik:',
+        resendCode: 'Kodu yeniden gönder',
+        resendIn: '{{seconds}} sn içinde yeniden gönder',
+        changeEmail: 'E-postayı değiştir',
+        invalidCode: 'Geçersiz kod!',
+        signingIn: 'Giriş yapılıyor...',
+        signOut: 'Çıkış Yap',
+        loadMore: 'Daha Fazla Yükle',
+        deployClaw: 'Ajan Dağıt',
+        deployYourFirstClaw: 'İlk Ajanınızı dağıtın',
+    },
     createClaw: {
+        provider: 'Sağlayıcı',
+        providerAtCapacity: 'Kapasite dolu',
         title: 'OpenClaw Dağıt',
         description:
             'Sunucunuzu yapılandırın ve yapay zeka ile inşa etmeye başlayın.',
@@ -1077,7 +1154,7 @@ const tr: Translations = {
         description:
             "OpenClaw'u tek tıkla kendi VPS'inize dağıtın. Tam root erişimi, küresel konumlar ve şeffaf fiyatlandırma ile kendi kendine barındırılabilir bulut barındırma.",
         badge: 'OpenClaw ve Hermes Bulutta',
-        tutorialBadge: 'İzle. Dağıt.',
+        tutorialBadge: 'Cloud’da Nasıl Başlanır',
         tutorialVideoThumbnail: 'ClawHost eğitim videosu küçük resmi',
         clawhostGoLogoAlt: 'ClawHost Go',
         trustMrrBadgeAlt: 'TrustMRR verified revenue badge',
@@ -1856,10 +1933,9 @@ const tr: Translations = {
         contactText:
             'Bu Şartlar hakkında sorularınız varsa, lütfen şu adresten bize ulaşın:'
     },
-    hermesBanner: {
-        title: 'Hermes Agent',
-        message:
-            'Hermes ajanları artık ClawHost üzerinde dağıtım için desteklenmektedir.'
+    acquiredBanner: {
+        title: 'GetOpenClaw.ai tarafından satın alındı',
+        message: 'ClawHost artık GetOpenClaw.ai bünyesinde — tüm verilerinize yalnızca oradan erişebilirsiniz.'
     },
     compare: {
         title: 'Karşılaştırma',

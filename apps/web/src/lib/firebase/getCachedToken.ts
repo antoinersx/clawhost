@@ -1,6 +1,4 @@
-import auth from '@/lib/firebase/auth'
-import authReady from '@/lib/firebase/authReady'
-import tokenState from '@/lib/firebase/tokenState'
+import { auth, authReady, tokenState } from '@/lib/firebase'
 
 const getCachedToken = async (
     forceRefresh?: boolean

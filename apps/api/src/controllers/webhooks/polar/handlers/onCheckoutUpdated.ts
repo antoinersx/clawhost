@@ -5,12 +5,13 @@ import { eq } from 'drizzle-orm'
 import { db } from '@/db'
 import { users } from '@/db/schema'
 import { getEnvironment, PROD } from '@/lib/environment'
-import trackReferral from '@/controllers/webhooks/polar/trackReferral'
+import { checkoutStatus, metadataType } from '@/lib/constants'
+import { trackReferral } from '@/controllers/webhooks/polar'
 
 const onCheckoutUpdated = async (data: CheckoutWebhookData, c: Context) => {
-    if (data.status !== 'succeeded') return
+    if (data.status !== checkoutStatus.succeeded) return
 
-    if (data.metadata?.type === 'license' && data.metadata?.userId) {
+    if (data.metadata?.type === metadataType.license && data.metadata?.userId) {
         const currentEnv = getEnvironment(c)
         const eventEnv = data.metadata?.environment || PROD
 

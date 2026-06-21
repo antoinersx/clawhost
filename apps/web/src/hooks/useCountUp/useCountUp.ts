@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { COUNT_UP_DURATION, COUNT_UP_DELAY } from '@/hooks/useCountUp/constants'
-import interpolate from '@/hooks/useCountUp/interpolate'
+import { interpolate } from '@/hooks/useCountUp'
 
 const useCountUp = (target: number): number => {
     const [value, setValue] = useState(0)

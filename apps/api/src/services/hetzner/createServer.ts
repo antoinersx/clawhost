@@ -3,7 +3,7 @@ import type {
     HetznerCreateServerResponse
 } from '@/ts/Interfaces'
 
-import getClient from '@/services/hetzner/hetznerClient'
+import { getClient } from '@/services/hetzner'
 
 const createServer = async (
     name: string,

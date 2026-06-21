@@ -3,7 +3,7 @@ import type { MonitorProcessTableProps } from '@/ts/Interfaces'
 
 import { t } from '@openclaw/i18n'
 import { CpuIcon } from '@phosphor-icons/react'
-import MetricCard from '@/components/dashboard/AgentMonitorContent/MetricCard'
+import { MetricCard } from '@/components/dashboard/AgentMonitorContent'
 
 const MonitorProcessTable: FC<MonitorProcessTableProps> = ({
     processes

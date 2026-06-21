@@ -2,7 +2,7 @@ import type { UpdateAgentSubdomainMutationParams } from '@/ts/Interfaces'
 
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { api } from '@/lib'
-import updateAgentInCaches from '@/hooks/useAgents/updateAgentInCaches'
+import { updateAgentInCaches } from '@/hooks/useAgents'
 
 const useUpdateAgentSubdomain = () => {
     const queryClient = useQueryClient()

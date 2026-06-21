@@ -1,8 +1,8 @@
 import type { UpdateProfileData } from '@/ts/Interfaces'
 
 import { api } from '@/lib'
-import createApiMutation from '@/hooks/createApiMutation'
-import PROFILE_QUERY_KEY from '@/hooks/useUser/PROFILE_QUERY_KEY'
+import { createApiMutation } from '@/hooks'
+import { PROFILE_QUERY_KEY } from '@/hooks/useUser'
 
 const useUpdateProfile = createApiMutation(
     (data: UpdateProfileData) => api.updateProfile(data),

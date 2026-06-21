@@ -6,7 +6,7 @@ import { db } from '@/db'
 import { agents } from '@/db/schema'
 import { t } from '@openclaw/i18n'
 import { ok, fail } from '@/lib/response'
-import withErrorHandler from '@/lib/withErrorHandler'
+import { withErrorHandler } from '@/lib'
 
 const checkSubdomainAvailability = withErrorHandler(
     'checkSubdomainAvailability'

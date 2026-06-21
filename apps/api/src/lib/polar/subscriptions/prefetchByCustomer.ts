@@ -1,5 +1,5 @@
 import { SUB_CACHE_TTL, subCache } from '@/lib/polar/subscriptions/cache'
-import listByCustomer from '@/lib/polar/subscriptions/listByCustomer'
+import { listByCustomer } from '@/lib/polar/subscriptions'
 
 const prefetchByCustomer = async (customerId: string): Promise<void> => {
     const subs = await listByCustomer(customerId)

@@ -7,7 +7,7 @@ import { agents } from '@/db/schema'
 import { getEnvironment, PROD } from '@/lib/environment'
 import { provisionAgent } from '@/controllers/agents'
 import { subscriptions } from '@/lib/polar'
-import trackReferral from '@/controllers/webhooks/polar/trackReferral'
+import { trackReferral } from '@/controllers/webhooks/polar'
 
 const onSubscriptionActive = async (
     data: SubscriptionWebhookData,

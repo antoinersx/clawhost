@@ -86,6 +86,7 @@ const ja: Translations = {
         heroTitle1: 'OpenClawをデプロイ.',
         heroTitle2: 'ローカルで. 即座に.',
         badge: 'OpenClawとHermesをローカルで',
+        tutorialBadge: 'Goで始める方法',
         description:
             'OpenClawインスタンスを管理する軽量デスクトップクライアント。デプロイ、監視、制御をお手元のマシンから.',
         features: '機能',
@@ -212,6 +213,8 @@ const ja: Translations = {
         failedToFetchLatestVersion: '最新バージョンの取得に失敗しました!'
     },
     footer: {
+        downloadAndroid: 'Google Playで入手',
+        downloadIos: 'App Storeからダウンロード',
         website: 'ウェブサイト',
         copyrightName: 'ClawHost',
         copyrightRights: '全著作権所有.',
@@ -244,6 +247,8 @@ const ja: Translations = {
     },
     errors: {
         somethingWentWrong: '問題が発生しました!',
+        connectionFailed:
+            'サーバーへの接続中に問題が発生しました。接続を確認してもう一度お試しください!',
         couldNotLoadData:
             'データを読み込めませんでした。もう一度お試しください!',
         notFound: 'ページが見つかりません!',
@@ -272,6 +277,7 @@ const ja: Translations = {
         noPasswordAvailable: 'このClawで利用可能なパスワードがありません!'
     },
     api: {
+        githubExchangeFailed: 'GitHub サインインに失敗しました！',
         missingRequiredFields: '必須フィールドが不足しています!',
         agentNotFound: 'Agentが見つかりません!',
         agentRenamed: 'Agentの名前を変更しました.',
@@ -606,6 +612,33 @@ const ja: Translations = {
                     '既存のサーバーにワンクリックでOpenClawランタイムを再インストール。サーバーはそのまま — OpenClawだけがクリーンインストール。',
                 cta: '詳細を見る'
             },
+            hermesAgentLaunch: {
+                subject: 'Hermes Agent が登場',
+                preview: 'Hermes エージェントを ClawHost に直接デプロイ。',
+                tag: 'Hermes Agent',
+                heading: 'Hermes エージェント、ClawHost で利用可能に',
+                description:
+                    'Hermes Agent が ClawHost でサポートされるようになりました。数分で Hermes 駆動の claw を起動し、Files タブからモデルプロバイダーを設定し、組み込みターミナルからチャットできます。追加のセットアップやグルーコードは不要です。',
+                cta: 'Hermes をデプロイ'
+            },
+            clawHostGoLaunch: {
+                subject: 'ClawHost Go が登場',
+                preview: 'OpenClaw をローカルマシンで実行するネイティブデスクトップアプリ。',
+                tag: 'ClawHost Go',
+                heading: 'あなたの claws を、デスクトップで',
+                description:
+                    'ClawHost Go は macOS と Windows 向けのネイティブデスクトップアプリです。OpenClaw インスタンスをマシン上で直接デプロイ・管理できます — クラウド不要、サブスクなし、一度きりのライセンスのみ。組み込みターミナル、ファイルエディタ、バージョンマネージャ、ゼロコンフィグのローカル DNS を備えています。',
+                cta: 'ClawHost Go をダウンロード'
+            },
+            productHuntLaunch: {
+                subject: 'Product Huntでのローンチを応援してください',
+                preview: 'Product Huntでローンチしました。あなたの一票が重要です。',
+                tag: 'Product Huntローンチ',
+                heading: 'Product Huntで公開中です',
+                description:
+                    '本日、ClawHostをProduct Huntでローンチしました。私たちが出荷を速めるお手伝いができたなら、応援していただけると幸いです。お礼として、初回注文10%オフのコードPH10をご利用ください。',
+                cta: 'Product Huntで応援する'
+            },
             yearlyPlans: {
                 subject: 'ご存知ですか？年間プランでお得に',
                 preview: '年間契約に切り替えて節約',
@@ -701,6 +734,10 @@ const ja: Translations = {
             '有効にすると、外部リンクがシステムブラウザではなくアプリ内で開きます。'
     },
     billing: {
+        billingHistory: '請求履歴',
+        billingDescription: 'お支払い履歴、請求書、サブスクリプションを確認できます。',
+        noBillingHistory: '請求履歴はありません',
+        noBillingHistoryDescription: 'お支払いと請求書はこちらに表示されます。',
         date: '日付',
         product: '製品',
         amount: '金額',
@@ -954,7 +991,47 @@ const ja: Translations = {
         },
         tabNotAvailableForAgent: 'このエージェントタイプでは利用できません'
     },
+    mobile: {
+        versions: 'バージョン',
+        currentVersion: '現在のバージョン',
+        latestVersion: '最新バージョン',
+        install: 'インストール',
+        terminal: 'ターミナル',
+        reinstall: '再インストール',
+        fileSaved: 'ファイルを保存しました。',
+        terminalDisconnected: '切断されました',
+        terminalPlaceholder: 'コマンドを入力...',
+        manage: '管理',
+        sync: '同期',
+        rename: '名前を変更',
+        newName: '新しい名前',
+        credentials: '認証情報',
+        showCredentials: '認証情報を表示',
+        rotatePassword: 'パスワードを更新',
+        rotateGatewayToken: 'ゲートウェイトークンを更新',
+        syncSuccess: '同期に成功しました。',
+        signIn: '認証',
+        signInDescription: 'エージェントの管理とデプロイには認証が必要です。',
+        enterEmail: 'メールアドレス',
+        emailPlaceholder: 'example@clawhost.cloud',
+        continueWithEmail: 'メールで続行',
+        otpDescription: 'サインイン用のコードをお送りします。パスワードは不要です。',
+        sending: '送信中...',
+        checkYourEmail: 'メールをご確認ください',
+        codeSentTo: '6桁のコードを次の宛先に送信しました',
+        resendCode: 'コードを再送信',
+        resendIn: '{{seconds}}秒後に再送信',
+        changeEmail: 'メールを変更',
+        invalidCode: '無効なコードです！',
+        signingIn: 'サインイン中...',
+        signOut: 'サインアウト',
+        loadMore: 'さらに読み込む',
+        deployClaw: 'エージェントをデプロイ',
+        deployYourFirstClaw: '最初のエージェントをデプロイ',
+    },
     createClaw: {
+        provider: 'プロバイダー',
+        providerAtCapacity: '満杯',
         title: 'OpenClawをデプロイ',
         description: 'サーバーを設定してAIで構築を開始。',
         clawName: '名前',
@@ -1074,7 +1151,7 @@ const ja: Translations = {
         description:
             'ワンクリックで自分のVPSにOpenClawをデプロイ。フルルートアクセス、グローバルロケーション、透明な料金のセルフホスト型クラウドホスティング。',
         badge: 'OpenClawとHermesをクラウドで',
-        tutorialBadge: '見て。デプロイ。',
+        tutorialBadge: 'クラウドで始める方法',
         tutorialVideoThumbnail: 'ClawHostチュートリアル動画サムネイル',
         clawhostGoLogoAlt: 'ClawHost Go',
         trustMrrBadgeAlt: 'TrustMRR verified revenue badge',
@@ -1833,9 +1910,9 @@ const ja: Translations = {
         contactText:
             'これらの規約に関するご質問がある場合は、以下までお問い合わせください'
     },
-    hermesBanner: {
-        title: 'Hermes Agent',
-        message: 'HermesエージェントがClawHostでのデプロイに対応しました。'
+    acquiredBanner: {
+        title: 'GetOpenClaw.ai が買収',
+        message: 'ClawHost は GetOpenClaw.ai の一部になりました — すべてのデータはそちらからのみアクセスできます。'
     },
     compare: {
         title: '比較',

@@ -6,11 +6,11 @@ import { eq, sql } from 'drizzle-orm'
 import { db } from '@/db'
 import { users, emails } from '@/db/schema'
 import { getResend, FROM_EMAIL } from '@/services/resend'
-import FEATURE_EMAILS from '@/lib/featureEmails'
+import { FEATURE_EMAILS } from '@/lib'
 import { ok, fail } from '@/lib/response'
 import { t } from '@openclaw/i18n'
 
-const BATCH_SIZE = 5
+const BATCH_SIZE = 4
 const BATCH_DELAY_MS = 200
 const FEATURE_COUNT = FEATURE_EMAILS.length
 

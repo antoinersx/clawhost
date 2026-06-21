@@ -4,8 +4,8 @@ import type {
     PolarPaginatedResult
 } from '@/ts/Interfaces'
 
-import getPolarClient from '@/lib/polar/getPolarClient'
-import mapOrder from '@/lib/polar/orders/mapOrder'
+import { getPolarClient } from '@/lib/polar'
+import { mapOrder } from '@/lib/polar/orders'
 
 const listByCustomer = async (
     customerId: string,

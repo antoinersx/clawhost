@@ -1,6 +1,6 @@
 import type { ErrorWithBody } from '@/ts/Interfaces'
 
-import getPolarClient from '@/lib/polar/getPolarClient'
+import { getPolarClient } from '@/lib/polar'
 
 const revoke = async (subscriptionId: string): Promise<void> => {
     const polar = getPolarClient()

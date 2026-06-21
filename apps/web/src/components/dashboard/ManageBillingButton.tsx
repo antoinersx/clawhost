@@ -2,6 +2,7 @@ import type { FC, ReactNode } from 'react'
 import type { ManageBillingButtonProps } from '@/ts/Interfaces'
 
 import { t } from '@openclaw/i18n'
+import { subscriptionStatus } from '@openclaw/shared'
 import { CreditCardIcon, CircleNotchIcon } from '@phosphor-icons/react'
 import { useCustomerPortal } from '@/hooks'
 import { Button } from '@/components/ui'
@@ -13,7 +14,7 @@ const ManageBillingButton: FC<ManageBillingButtonProps> = ({
 
     if (!agent.polarSubscriptionId) return null
 
-    const isPastDue = agent.subscriptionStatus === 'past_due'
+    const isPastDue = agent.subscriptionStatus === subscriptionStatus.pastDue
 
     return (
         <Button

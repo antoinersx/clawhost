@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { api } from '@/lib'
-import SSH_KEYS_QUERY_KEY from '@/hooks/useSSHKeys/SSH_KEYS_QUERY_KEY'
+import { SSH_KEYS_QUERY_KEY } from '@/hooks/useSSHKeys'
 
 const useSSHKeys = () => {
     return useQuery({

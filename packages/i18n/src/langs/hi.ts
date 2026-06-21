@@ -86,6 +86,7 @@ const hi: Translations = {
         heroTitle1: 'OpenClaw डिप्लॉय करें.',
         heroTitle2: 'स्थानीय रूप से. तुरंत.',
         badge: 'OpenClaw और Hermes स्थानीय रूप से',
+        tutorialBadge: 'Go पर शुरुआत कैसे करें',
         description:
             'अपने OpenClaw इंस्टेंस प्रबंधित करने के लिए एक हल्का डेस्कटॉप क्लाइंट. अपनी मशीन से ही डिप्लॉय, मॉनिटर और नियंत्रित करें.',
         features: 'विशेषताएँ',
@@ -213,6 +214,8 @@ const hi: Translations = {
         failedToFetchLatestVersion: 'नवीनतम संस्करण प्राप्त करने में विफल!'
     },
     footer: {
+        downloadAndroid: 'Google Play पर प्राप्त करें',
+        downloadIos: 'App Store पर डाउनलोड करें',
         website: 'वेबसाइट',
         copyrightName: 'ClawHost',
         copyrightRights: 'सर्वाधिकार सुरक्षित.',
@@ -245,6 +248,8 @@ const hi: Translations = {
     },
     errors: {
         somethingWentWrong: 'कुछ गलत हो गया!',
+        connectionFailed:
+            'सर्वर से कनेक्ट करते समय कुछ गलत हो गया। कृपया अपना कनेक्शन जांचें और पुनः प्रयास करें!',
         couldNotLoadData: 'हम डेटा लोड नहीं कर सके. कृपया पुनः प्रयास करें!',
         notFound: 'पृष्ठ नहीं मिला!',
         pageNotFoundDescription:
@@ -271,6 +276,7 @@ const hi: Translations = {
         noPasswordAvailable: 'इस क्लॉ के लिए कोई पासवर्ड उपलब्ध नहीं!'
     },
     api: {
+        githubExchangeFailed: 'GitHub साइन-इन विफल!',
         missingRequiredFields: 'आवश्यक फ़ील्ड गायब हैं!',
         agentNotFound: 'एजेंट नहीं मिला!',
         agentRenamed: 'एजेंट का नाम सफलतापूर्वक बदला गया.',
@@ -611,6 +617,33 @@ const hi: Translations = {
                     'एक क्लिक में अपने मौजूदा सर्वर पर OpenClaw रनटाइम पुनः इंस्टॉल करें. आपका सर्वर बरकरार रहता है — केवल OpenClaw को क्लीन इंस्टॉलेशन मिलता है.',
                 cta: 'और जानें'
             },
+            hermesAgentLaunch: {
+                subject: 'Hermes Agent आ गया है',
+                preview: 'Hermes एजेंट सीधे ClawHost पर तैनात करें।',
+                tag: 'Hermes Agent',
+                heading: 'Hermes एजेंट, अब ClawHost पर',
+                description:
+                    'Hermes Agent अब ClawHost पर समर्थित है। मिनटों में Hermes-संचालित claw चालू करें, Files टैब से मॉडल प्रदाताओं को कॉन्फ़िगर करें, और बिल्ट-इन टर्मिनल से इसके साथ चैट करें। कोई अतिरिक्त सेटअप नहीं, कोई ग्लू कोड नहीं।',
+                cta: 'Hermes तैनात करें'
+            },
+            clawHostGoLaunch: {
+                subject: 'ClawHost Go आ गया है',
+                preview: 'अपनी मशीन पर स्थानीय रूप से OpenClaw चलाने के लिए एक नेटिव डेस्कटॉप ऐप।',
+                tag: 'ClawHost Go',
+                heading: 'आपके claws, आपकी डेस्क पर',
+                description:
+                    'ClawHost Go macOS और Windows के लिए एक नेटिव डेस्कटॉप ऐप है। अपनी मशीन पर सीधे OpenClaw इंस्टेंस तैनात और प्रबंधित करें — कोई क्लाउड नहीं, कोई सब्सक्रिप्शन नहीं, बस एक बार का लाइसेंस। इसमें बिल्ट-इन टर्मिनल, फ़ाइल एडिटर, वर्शन मैनेजर और ज़ीरो-कॉन्फिग लोकल DNS शामिल है।',
+                cta: 'ClawHost Go डाउनलोड करें'
+            },
+            productHuntLaunch: {
+                subject: 'Product Hunt पर हमारे लॉन्च में मदद करें',
+                preview: 'हमने अभी Product Hunt पर लॉन्च किया है। आपका वोट मायने रखता है।',
+                tag: 'Product Hunt लॉन्च',
+                heading: 'हम Product Hunt पर लाइव हैं',
+                description:
+                    'आज हमने Product Hunt पर ClawHost लॉन्च किया है। अगर हमने आपको तेज़ी से शिप करने में मदद की है, तो एक अपवोट बहुत मायने रखेगा। धन्यवाद स्वरूप, अपने पहले ऑर्डर पर 10% छूट के लिए PH10 कोड का उपयोग करें।',
+                cta: 'Product Hunt पर अपवोट करें'
+            },
             yearlyPlans: {
                 subject: 'क्या आप जानते हैं? वार्षिक प्लान से बचत करें',
                 preview: 'वार्षिक बिलिंग पर स्विच करें और कम भुगतान करें',
@@ -707,6 +740,10 @@ const hi: Translations = {
             'सक्षम होने पर, बाहरी लिंक सिस्टम ब्राउज़र के बजाय ऐप के अंदर खुलते हैं.'
     },
     billing: {
+        billingHistory: 'बिलिंग इतिहास',
+        billingDescription: 'अपना भुगतान इतिहास, चालान और सदस्यताएँ देखें.',
+        noBillingHistory: 'कोई बिलिंग इतिहास नहीं',
+        noBillingHistoryDescription: 'आपके भुगतान और चालान यहाँ दिखाई देंगे.',
         date: 'दिनांक',
         product: 'उत्पाद',
         amount: 'राशि',
@@ -959,7 +996,47 @@ const hi: Translations = {
         },
         tabNotAvailableForAgent: 'इस एजेंट प्रकार के लिए उपलब्ध नहीं'
     },
+    mobile: {
+        versions: 'संस्करण',
+        currentVersion: 'वर्तमान संस्करण',
+        latestVersion: 'नवीनतम संस्करण',
+        install: 'इंस्टॉल करें',
+        terminal: 'टर्मिनल',
+        reinstall: 'फिर से इंस्टॉल करें',
+        fileSaved: 'फ़ाइल सहेजी गई।',
+        terminalDisconnected: 'डिस्कनेक्ट हो गया',
+        terminalPlaceholder: 'कमांड लिखें...',
+        manage: 'प्रबंधित करें',
+        sync: 'सिंक करें',
+        rename: 'नाम बदलें',
+        newName: 'नया नाम',
+        credentials: 'क्रेडेंशियल',
+        showCredentials: 'क्रेडेंशियल दिखाएं',
+        rotatePassword: 'पासवर्ड बदलें',
+        rotateGatewayToken: 'गेटवे टोकन बदलें',
+        syncSuccess: 'सफलतापूर्वक सिंक हो गया।',
+        signIn: 'प्रमाणित करें',
+        signInDescription: 'अपने एजेंट प्रबंधित और डिप्लॉय करने के लिए प्रमाणित करें.',
+        enterEmail: 'ईमेल पता',
+        emailPlaceholder: 'example@clawhost.cloud',
+        continueWithEmail: 'ईमेल के साथ जारी रखें',
+        otpDescription: 'हम आपको साइन इन करने के लिए एक कोड भेजेंगे. किसी पासवर्ड की आवश्यकता नहीं.',
+        sending: 'भेजा जा रहा है...',
+        checkYourEmail: 'अपना ईमेल जाँचें',
+        codeSentTo: 'हमने 6 अंकों का एक कोड भेजा है',
+        resendCode: 'कोड पुनः भेजें',
+        resendIn: '{{seconds}} सेकंड में पुनः भेजें',
+        changeEmail: 'ईमेल बदलें',
+        invalidCode: 'अमान्य कोड!',
+        signingIn: 'साइन इन हो रहा है...',
+        signOut: 'साइन आउट',
+        loadMore: 'और लोड करें',
+        deployClaw: 'एजेंट डिप्लॉय करें',
+        deployYourFirstClaw: 'अपना पहला एजेंट डिप्लॉय करें',
+    },
     createClaw: {
+        provider: 'प्रदाता',
+        providerAtCapacity: 'क्षमता पूर्ण',
         title: 'OpenClaw डिप्लॉय करें',
         description:
             'अपना सर्वर कॉन्फ़िगर करें और AI के साथ निर्माण शुरू करें.',
@@ -1081,7 +1158,7 @@ const hi: Translations = {
         description:
             'एक क्लिक में अपने VPS पर OpenClaw डिप्लॉय करें. पूर्ण रूट एक्सेस, वैश्विक स्थान और पारदर्शी मूल्य निर्धारण के साथ सेल्फ-होस्टेबल क्लाउड होस्टिंग.',
         badge: 'OpenClaw और Hermes क्लाउड पर',
-        tutorialBadge: 'देखें. डिप्लॉय करें.',
+        tutorialBadge: 'Cloud पर शुरुआत कैसे करें',
         tutorialVideoThumbnail: 'ClawHost ट्यूटोरियल वीडियो थंबनेल',
         clawhostGoLogoAlt: 'ClawHost Go',
         trustMrrBadgeAlt: 'TrustMRR verified revenue badge',
@@ -1845,9 +1922,9 @@ const hi: Translations = {
         contactText:
             'यदि इन शर्तों के बारे में आपके कोई प्रश्न हैं, तो कृपया हमसे संपर्क करें'
     },
-    hermesBanner: {
-        title: 'Hermes Agent',
-        message: 'Hermes एजेंट अब ClawHost पर डिप्लॉयमेंट के लिए समर्थित हैं।'
+    acquiredBanner: {
+        title: 'GetOpenClaw.ai द्वारा अधिग्रहित',
+        message: 'ClawHost अब GetOpenClaw.ai का हिस्सा है — आपका सारा डेटा केवल वहीं से एक्सेस किया जा सकता है.'
     },
     compare: {
         title: 'तुलना',

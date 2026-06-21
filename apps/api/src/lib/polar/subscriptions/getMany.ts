@@ -1,6 +1,6 @@
 import type { PolarSubscription } from '@/ts/Interfaces'
 
-import get from '@/lib/polar/subscriptions/get'
+import { get } from '@/lib/polar/subscriptions'
 
 const getMany = async (
     ids: string[]

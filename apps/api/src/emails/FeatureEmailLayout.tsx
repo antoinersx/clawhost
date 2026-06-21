@@ -25,7 +25,7 @@ import {
     logo
 } from '@/lib/emailStyles'
 
-import CDN_ASSETS from '@/lib/cdn'
+import { CDN_ASSETS } from '@/lib'
 
 const FeatureEmailLayout: FC<FeatureEmailLayoutProps> = ({
     preview,

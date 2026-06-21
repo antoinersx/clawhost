@@ -10,7 +10,8 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { t } from '@openclaw/i18n'
 import {
     agentType as agentTypeConst,
-    isVersionSupported
+    isVersionSupported,
+    externalUrls
 } from '@openclaw/shared'
 import {
     CircleNotchIcon,
@@ -20,7 +21,11 @@ import {
     InfoIcon,
     XIcon
 } from '@phosphor-icons/react'
-import { AgentMascot, AgentTypeMascot, PanelPlaceholder } from '@/components/shared'
+import {
+    AgentMascot,
+    AgentTypeMascot,
+    PanelPlaceholder
+} from '@/components/shared'
 import {
     Button,
     Dialog,
@@ -40,10 +45,14 @@ import { TOAST_TYPE } from '@/lib/constants'
 import { AGENT_VERSIONS_QUERY_KEY, AGENT_VERSION_QUERY_KEY } from '@/hooks'
 import { demoVersions } from '@/data'
 
-const CHANGELOG_URLS: Record<string, string> = {
-    [agentTypeConst.OPENCLAW]: 'https://www.npmjs.com/package/openclaw/v/',
-    [agentTypeConst.HERMES]:
-        'https://github.com/NousResearch/hermes-agent/releases/tag/v'
+const CHANGELOG_URLS: Record<string, (version: string) => string> = {
+    [agentTypeConst.OPENCLAW]: (version) =>
+        externalUrls.NPM.PACKAGE_VERSION(agentTypeConst.OPENCLAW, version),
+    [agentTypeConst.HERMES]: (version) =>
+        externalUrls.GITHUB.RELEASE_TAG(
+            externalUrls.GITHUB.HERMES_AGENT_REPO,
+            version
+        )
 }
 
 const AgentVersionsContent: FC<AgentVersionsContentProps> = ({
@@ -51,7 +60,7 @@ const AgentVersionsContent: FC<AgentVersionsContentProps> = ({
     agentType,
     readOnly
 }): ReactNode => {
-    const changelogBaseUrl =
+    const getChangelogUrl =
         CHANGELOG_URLS[agentType] || CHANGELOG_URLS[agentTypeConst.OPENCLAW]
     const showDownloads = agentType !== agentTypeConst.HERMES
     const [search, setSearch] = useState('')
@@ -289,7 +298,9 @@ const AgentVersionsContent: FC<AgentVersionsContentProps> = ({
                                                         ·
                                                     </span>
                                                     <a
-                                                        href={`${changelogBaseUrl}${entry.version}`}
+                                                        href={getChangelogUrl(
+                                                            entry.version
+                                                        )}
                                                         target='_blank'
                                                         rel='noopener noreferrer'
                                                         onClick={(e) =>

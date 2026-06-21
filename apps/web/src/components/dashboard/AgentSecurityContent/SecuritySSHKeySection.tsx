@@ -14,7 +14,9 @@ import {
 import { useUpdateAgentSSHKey, useToast, useAbortController } from '@/hooks'
 import { useUIStore } from '@/lib/store'
 import { PATHS, handleAbortToast } from '@/lib'
-import SecuritySection from '@/components/dashboard/AgentSecurityContent/SecuritySection'
+import { SecuritySection } from '@/components/dashboard/AgentSecurityContent'
+
+const NO_KEY_VALUE = 'none'
 
 const SecuritySSHKeySection: FC<SecuritySSHKeySectionProps> = ({
     agentId,
@@ -27,18 +29,18 @@ const SecuritySSHKeySection: FC<SecuritySSHKeySectionProps> = ({
     const { showToast } = useUIStore()
     const getSignal = useAbortController()
     const [selectedKeyId, setSelectedKeyId] = useState<string>(
-        sshKeyId || 'none'
+        sshKeyId || NO_KEY_VALUE
     )
 
-    const hasChanged = selectedKeyId !== (sshKeyId || 'none')
+    const hasChanged = selectedKeyId !== (sshKeyId || NO_KEY_VALUE)
 
     const selectedKey =
-        selectedKeyId !== 'none'
+        selectedKeyId !== NO_KEY_VALUE
             ? sshKeys.find((k) => k.id === selectedKeyId)
             : null
 
     const handleSave = () => {
-        const newKeyId = selectedKeyId === 'none' ? null : selectedKeyId
+        const newKeyId = selectedKeyId === NO_KEY_VALUE ? null : selectedKeyId
         updateSSHKey.mutate(
             { id: agentId, sshKeyId: newKeyId, signal: getSignal() },
             {
@@ -80,7 +82,7 @@ const SecuritySSHKeySection: FC<SecuritySSHKeySectionProps> = ({
                                 }
                             />
                             <SelectContent>
-                                <SelectItem value='none'>
+                                <SelectItem value={NO_KEY_VALUE}>
                                     {t('common.none')}
                                 </SelectItem>
                                 {sshKeys.map((key) => (

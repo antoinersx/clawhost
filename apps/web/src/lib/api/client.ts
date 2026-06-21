@@ -1,4 +1,5 @@
 import { RequestClient } from '@openclaw/shared'
+import { t } from '@openclaw/i18n'
 import { signOut } from 'firebase/auth'
 import { auth, clearTokenCache, getCachedToken } from '@/lib/firebase'
 import Envs from '@/lib/Envs'
@@ -21,11 +22,13 @@ const client = new RequestClient({
             return false
         }
         return true
-    }
+    },
+    getNetworkErrorMessage: () => t('errors.connectionFailed')
 })
 
 const publicClient = new RequestClient({
-    baseUrl: BASE_URL
+    baseUrl: BASE_URL,
+    getNetworkErrorMessage: () => t('errors.connectionFailed')
 })
 
 export { client, publicClient, BASE_URL }

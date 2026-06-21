@@ -1,22 +1,21 @@
+import type { NavigatorWithUAData } from '@/ts/Interfaces'
 import type { DetectedMacArch } from '@/ts/Types'
 
 import { useEffect, useState } from 'react'
 import { DETECTION_UNKNOWN, MAC_ARCH } from '@/lib/constants'
 
-interface UADataLike {
-    getHighEntropyValues?: (
-        keys: string[]
-    ) => Promise<{ architecture?: string }>
-}
+const UA_ARCH = {
+    ARM: 'arm',
+    X86: 'x86'
+} as const
 
 const fromUserAgentData = async (): Promise<DetectedMacArch> => {
-    const uaData = (navigator as unknown as { userAgentData?: UADataLike })
-        .userAgentData
+    const uaData = (navigator as unknown as NavigatorWithUAData).userAgentData
     if (!uaData?.getHighEntropyValues) return DETECTION_UNKNOWN
     try {
         const data = await uaData.getHighEntropyValues(['architecture'])
-        if (data.architecture === 'arm') return MAC_ARCH.ARM64
-        if (data.architecture === 'x86') return MAC_ARCH.X64
+        if (data.architecture === UA_ARCH.ARM) return MAC_ARCH.ARM64
+        if (data.architecture === UA_ARCH.X86) return MAC_ARCH.X64
     } catch (error) {
         console.error('fromUserAgentData', error)
     }

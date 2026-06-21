@@ -3,7 +3,7 @@ import type {
     ServerTypeInfo
 } from '@/ts/Interfaces'
 
-import getClient from '@/services/hetzner/hetznerClient'
+import { getClient } from '@/services/hetzner'
 
 const getServerTypes = async (): Promise<ServerTypeInfo[]> => {
     const data =

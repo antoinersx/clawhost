@@ -1,4 +1,4 @@
-import getPolarClient from '@/lib/polar/getPolarClient'
+import { getPolarClient } from '@/lib/polar'
 
 const getInvoiceUrl = async (orderId: string): Promise<string> => {
     const polar = getPolarClient()

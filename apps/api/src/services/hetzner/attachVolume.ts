@@ -1,4 +1,4 @@
-import getClient from '@/services/hetzner/hetznerClient'
+import { getClient } from '@/services/hetzner'
 
 const attachVolume = async (
     volumeId: number,

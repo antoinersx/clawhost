@@ -2,7 +2,7 @@ import type { Agent } from '@/ts/Interfaces'
 
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { api } from '@/lib'
-import AGENTS_QUERY_KEY from '@/hooks/useAgents/AGENTS_QUERY_KEY'
+import { AGENTS_QUERY_KEY } from '@/hooks/useAgents'
 
 const useCancelPendingAgent = () => {
     const queryClient = useQueryClient()

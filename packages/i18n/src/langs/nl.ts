@@ -86,6 +86,7 @@ const nl: Translations = {
         heroTitle1: 'Implementeer OpenClaw.',
         heroTitle2: 'Lokaal. Direct.',
         badge: 'OpenClaw & Hermes lokaal',
+        tutorialBadge: 'Aan de slag op Go',
         description:
             'Een lichte desktopclient om je OpenClaw-instanties te beheren. Deploy, monitor en beheer je claws — rechtstreeks vanaf je computer.',
         features: 'Functies',
@@ -214,6 +215,8 @@ const nl: Translations = {
         failedToFetchLatestVersion: 'Kan de nieuwste versie niet ophalen!'
     },
     footer: {
+        downloadAndroid: 'Downloaden op Google Play',
+        downloadIos: 'Downloaden in de App Store',
         website: 'Website',
         copyrightName: 'ClawHost',
         copyrightRights: 'Alle rechten voorbehouden.',
@@ -246,6 +249,8 @@ const nl: Translations = {
     },
     errors: {
         somethingWentWrong: 'Er is iets misgegaan!',
+        connectionFailed:
+            'Er is iets misgegaan bij het verbinden met de server. Controleer je verbinding en probeer het opnieuw!',
         couldNotLoadData:
             'We konden de gegevens niet laden. Probeer het opnieuw!',
         notFound: 'Pagina niet gevonden!',
@@ -272,6 +277,7 @@ const nl: Translations = {
         noPasswordAvailable: 'Geen wachtwoord beschikbaar voor deze claw!'
     },
     api: {
+        githubExchangeFailed: 'GitHub-aanmelding mislukt!',
         missingRequiredFields: 'Verplichte velden ontbreken!',
         agentNotFound: 'Agent niet gevonden!',
         agentRenamed: 'Agent succesvol hernoemd.',
@@ -612,6 +618,33 @@ const nl: Translations = {
                     'Herinstalleer de OpenClaw-runtime op je bestaande server met \u00e9\u00e9n klik. Je server blijft intact \u2014 alleen OpenClaw krijgt een schone installatie.',
                 cta: 'Meer informatie'
             },
+            hermesAgentLaunch: {
+                subject: 'Hermes Agent is er',
+                preview: 'Deploy Hermes-agents direct op ClawHost.',
+                tag: 'Hermes Agent',
+                heading: 'Hermes-agents, nu op ClawHost',
+                description:
+                    'Hermes Agent wordt nu ondersteund op ClawHost. Start binnen enkele minuten een Hermes-aangedreven claw, configureer modelaanbieders vanuit het tabblad Bestanden en chat ermee vanuit de ingebouwde terminal. Geen extra setup, geen lijmcode.',
+                cta: 'Hermes deployen'
+            },
+            clawHostGoLaunch: {
+                subject: 'ClawHost Go is er',
+                preview: 'Een native desktop-app om OpenClaw lokaal op je machine te draaien.',
+                tag: 'ClawHost Go',
+                heading: 'Je claws, op je bureau',
+                description:
+                    'ClawHost Go is een native desktop-app voor macOS en Windows. Deploy en beheer OpenClaw-instances direct op je machine — geen cloud, geen abonnement, alleen een eenmalige licentie. Met ingebouwde terminal, bestandseditor, versiebeheer en zero-config lokale DNS.',
+                cta: 'Download ClawHost Go'
+            },
+            productHuntLaunch: {
+                subject: 'Help ons lanceren op Product Hunt',
+                preview: 'We zijn net gelanceerd op Product Hunt. Jouw stem telt.',
+                tag: 'Product Hunt Lancering',
+                heading: 'We zijn live op Product Hunt',
+                description:
+                    'Vandaag lanceren we ClawHost op Product Hunt. Als we je hebben geholpen sneller te verschepen, zou een upvote de wereld betekenen. Als dank: code PH10 voor 10% korting op je eerste bestelling.',
+                cta: 'Stem op Product Hunt'
+            },
             yearlyPlans: {
                 subject: 'Wist je dat? Bespaar met jaarplannen',
                 preview:
@@ -711,6 +744,10 @@ const nl: Translations = {
             'Wanneer ingeschakeld, openen externe links binnen de app in plaats van de systeembrowser.'
     },
     billing: {
+        billingHistory: 'Factuurgeschiedenis',
+        billingDescription: 'Bekijk je betalingsgeschiedenis, facturen en abonnementen.',
+        noBillingHistory: 'Geen factuurgeschiedenis',
+        noBillingHistoryDescription: 'Je betalingen en facturen verschijnen hier.',
         date: 'Datum',
         product: 'Product',
         amount: 'Bedrag',
@@ -967,7 +1004,47 @@ const nl: Translations = {
         },
         tabNotAvailableForAgent: 'Niet beschikbaar voor dit agenttype'
     },
+    mobile: {
+        versions: 'Versies',
+        currentVersion: 'Huidige versie',
+        latestVersion: 'Nieuwste versie',
+        install: 'Installeren',
+        terminal: 'Terminal',
+        reinstall: 'Opnieuw installeren',
+        fileSaved: 'Bestand opgeslagen.',
+        terminalDisconnected: 'Verbinding verbroken',
+        terminalPlaceholder: 'Typ een opdracht...',
+        manage: 'Beheren',
+        sync: 'Synchroniseren',
+        rename: 'Naam wijzigen',
+        newName: 'Nieuwe naam',
+        credentials: 'Inloggegevens',
+        showCredentials: 'Inloggegevens tonen',
+        rotatePassword: 'Wachtwoord roteren',
+        rotateGatewayToken: 'Gateway-token roteren',
+        syncSuccess: 'Succesvol gesynchroniseerd.',
+        signIn: 'Authenticeren',
+        signInDescription: 'Authenticeer om je Agents te beheren en te deployen.',
+        enterEmail: 'E-mailadres',
+        emailPlaceholder: 'example@clawhost.cloud',
+        continueWithEmail: 'Doorgaan met e-mail',
+        otpDescription: 'We sturen je een code om in te loggen. Geen wachtwoord nodig.',
+        sending: 'Verzenden...',
+        checkYourEmail: 'Controleer je e-mail',
+        codeSentTo: 'We hebben een 6-cijferige code gestuurd naar',
+        resendCode: 'Code opnieuw versturen',
+        resendIn: 'Opnieuw versturen over {{seconds}}s',
+        changeEmail: 'E-mail wijzigen',
+        invalidCode: 'Ongeldige code!',
+        signingIn: 'Inloggen...',
+        signOut: 'Uitloggen',
+        loadMore: 'Meer laden',
+        deployClaw: 'Agent deployen',
+        deployYourFirstClaw: 'Deploy je eerste Agent',
+    },
     createClaw: {
+        provider: 'Provider',
+        providerAtCapacity: 'Geen capaciteit',
         title: 'OpenClaw deployen',
         description: 'Configureer je server en begin met bouwen met AI.',
         clawName: 'Naam',
@@ -1092,7 +1169,7 @@ const nl: Translations = {
         description:
             'Deploy OpenClaw op je eigen VPS met \u00e9\u00e9n klik. Zelfhostbare cloudhosting met volledige root-toegang, wereldwijde locaties en transparante prijzen.',
         badge: 'OpenClaw & Hermes in de cloud',
-        tutorialBadge: 'Bekijk. Deploy.',
+        tutorialBadge: 'Aan de slag op Cloud',
         tutorialVideoThumbnail: 'ClawHost handleiding videominiatuur',
         clawhostGoLogoAlt: 'ClawHost Go',
         trustMrrBadgeAlt: 'TrustMRR verified revenue badge',
@@ -1873,10 +1950,9 @@ const nl: Translations = {
         contactText:
             'Als je vragen hebt over deze Voorwaarden, neem dan contact met ons op via'
     },
-    hermesBanner: {
-        title: 'Hermes Agent',
-        message:
-            'Hermes-agenten worden nu ondersteund voor deployment op ClawHost.'
+    acquiredBanner: {
+        title: 'Overgenomen door GetOpenClaw.ai',
+        message: 'ClawHost maakt nu deel uit van GetOpenClaw.ai — al je gegevens zijn alleen daar toegankelijk.'
     },
     compare: {
         title: 'Vergelijking',

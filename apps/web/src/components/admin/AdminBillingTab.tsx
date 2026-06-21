@@ -19,15 +19,23 @@ import {
 } from '@/components/ui'
 import { EmptyState, ErrorState } from '@/components'
 import { CreditCardIcon } from '@phosphor-icons/react'
-import AdminStatusBadge from '@/components/admin/AdminStatusBadge'
+import { AdminStatusBadge } from '@/components/admin'
 import AdminUserSkeleton from '@/pages/AdminUserSkeleton'
 
 const PAGE_SIZE = 20
 
+const BILLING_FILTER = {
+    ALL: 'all',
+    SERVICE: 'service',
+    LICENSE: 'license'
+} as const
+
 const AdminBillingTab: FC<AdminResourceTabProps> = ({
     onSelectEntity
 }): ReactNode => {
-    const [billingFilter, setBillingFilter] = useState('all')
+    const [billingFilter, setBillingFilter] = useState<string>(
+        BILLING_FILTER.ALL
+    )
 
     const {
         data,
@@ -50,8 +58,8 @@ const AdminBillingTab: FC<AdminResourceTabProps> = ({
     })
 
     const filteredItems = useMemo(() => {
-        if (billingFilter === 'all') return allItems
-        if (billingFilter === 'service')
+        if (billingFilter === BILLING_FILTER.ALL) return allItems
+        if (billingFilter === BILLING_FILTER.SERVICE)
             return allItems.filter((item: BillingOrder) => item.subscriptionId)
         return allItems.filter((item: BillingOrder) => !item.subscriptionId)
     }, [allItems, billingFilter])
@@ -68,13 +76,13 @@ const AdminBillingTab: FC<AdminResourceTabProps> = ({
                         placeholder={t('admin.billingFilterAll')}
                     />
                     <SelectContent>
-                        <SelectItem value='all'>
+                        <SelectItem value={BILLING_FILTER.ALL}>
                             {t('admin.billingFilterAll')}
                         </SelectItem>
-                        <SelectItem value='service'>
+                        <SelectItem value={BILLING_FILTER.SERVICE}>
                             {t('admin.billingFilterService')}
                         </SelectItem>
-                        <SelectItem value='license'>
+                        <SelectItem value={BILLING_FILTER.LICENSE}>
                             {t('admin.billingFilterLicense')}
                         </SelectItem>
                     </SelectContent>

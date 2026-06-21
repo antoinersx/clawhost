@@ -17,7 +17,7 @@ import { encrypt } from '@/lib/encryption'
 import { t } from '@openclaw/i18n'
 import { ok, fail } from '@/lib/response'
 import { getEnvironment } from '@/lib/environment'
-import withErrorHandler from '@/lib/withErrorHandler'
+import { withErrorHandler } from '@/lib'
 
 let lastPendingCleanup = 0
 const CLEANUP_INTERVAL = 60 * 60 * 1000

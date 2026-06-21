@@ -9,7 +9,7 @@ import { sshKeys } from '@/db/schema'
 import { getProvider } from '@/services/provider'
 import { ok, fail } from '@/lib/response'
 import { t } from '@openclaw/i18n'
-import withErrorHandler from '@/lib/withErrorHandler'
+import { withErrorHandler } from '@/lib'
 
 const createSSHKey = withErrorHandler(
     'createSSHKey',

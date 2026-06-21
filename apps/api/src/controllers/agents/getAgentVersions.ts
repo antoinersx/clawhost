@@ -7,7 +7,7 @@ import type {
     VersionsCacheData
 } from '@/ts/Interfaces'
 
-import { externalUrls } from '@openclaw/shared'
+import { externalUrls, UNKNOWN_VERSION } from '@openclaw/shared'
 import {
     findUserAgent,
     fetchAgentVersion,
@@ -17,6 +17,8 @@ import { t } from '@openclaw/i18n'
 import { ok, fail } from '@/lib/response'
 
 const VERSIONS_CACHE_TTL = 30 * 60 * 1000
+const NPM_REGISTRY_ERROR = 'npm_registry_error'
+const GITHUB_REGISTRY_ERROR = 'github_registry_error'
 
 const versionsCaches: Record<string, CacheEntry<VersionsCacheData> | null> = {}
 
@@ -37,7 +39,7 @@ const fetchNpmVersions = async (
         fetch(downloadsUrl).catch(() => null)
     ])
 
-    if (!registryResponse.ok) throw new Error('npm_registry_error')
+    if (!registryResponse.ok) throw new Error(NPM_REGISTRY_ERROR)
 
     const registry =
         (await registryResponse.json()) as NpmRegistryVersionsResponse
@@ -49,7 +51,7 @@ const fetchNpmVersions = async (
         downloadCounts = downloadsData.downloads || {}
     }
 
-    const latestVersion = registry['dist-tags']?.latest || 'unknown'
+    const latestVersion = registry['dist-tags']?.latest || UNKNOWN_VERSION
     const timeEntries = registry.time || {}
 
     const versions = Object.entries(timeEntries)
@@ -82,7 +84,7 @@ const fetchGitHubVersions = async (
         { headers: { Accept: 'application/vnd.github+json' } }
     )
 
-    if (!response.ok) throw new Error('github_registry_error')
+    if (!response.ok) throw new Error(GITHUB_REGISTRY_ERROR)
 
     const releases = (await response.json()) as GitHubRelease[]
 
@@ -90,7 +92,7 @@ const fetchGitHubVersions = async (
 
     const latestVersion = stableReleases[0]
         ? stableReleases[0].tag_name.replace(/^v/, '')
-        : 'unknown'
+        : UNKNOWN_VERSION
 
     const versions = stableReleases.map((r) => ({
         version: r.tag_name.replace(/^v/, ''),
@@ -137,9 +139,9 @@ const getAgentVersions = async (c: AuthenticatedContext) => {
         })
     } catch (error) {
         console.error('getAgentVersions', error)
-        if (error instanceof Error && error.message === 'npm_registry_error')
+        if (error instanceof Error && error.message === NPM_REGISTRY_ERROR)
             return fail(c, t('api.failedToGetVersions'), 502)
-        if (error instanceof Error && error.message === 'github_registry_error')
+        if (error instanceof Error && error.message === GITHUB_REGISTRY_ERROR)
             return fail(c, t('api.failedToGetVersions'), 502)
         return fail(c, t('api.failedToGetVersions'), 500)
     }

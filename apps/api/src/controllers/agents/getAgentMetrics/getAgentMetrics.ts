@@ -1,8 +1,8 @@
 import { withAgent } from '@/controllers/agents/helpers'
 import { t } from '@openclaw/i18n'
 import { ok, fail } from '@/lib/response'
-import executeSSH from '@/services/ssh'
-import parseMetricsOutput from '@/controllers/agents/getAgentMetrics/parsers'
+import { executeSSH } from '@/services'
+import { parseMetricsOutput } from '@/controllers/agents/getAgentMetrics'
 
 const SEPARATOR = '---CLAWHOST_METRICS_SEP---'
 

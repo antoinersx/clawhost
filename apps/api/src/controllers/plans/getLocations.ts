@@ -3,7 +3,7 @@ import type { Context } from 'hono'
 import { getProvider } from '@/services/provider'
 import { ok } from '@/lib/response'
 import { t } from '@openclaw/i18n'
-import withErrorHandler from '@/lib/withErrorHandler'
+import { withErrorHandler } from '@/lib'
 
 const getLocations = withErrorHandler(
     'getLocations',

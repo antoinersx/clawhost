@@ -1,6 +1,6 @@
 import type { CacheEntry } from '@/ts/Interfaces'
 
-import DOMAIN from '@/controllers/agents/helpers/constants'
+import { DOMAIN } from '@/controllers/agents/helpers'
 import { gatewayDefaults } from '@/lib/constants'
 
 const READY_CACHE_TTL = 5_000

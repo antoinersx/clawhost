@@ -85,6 +85,7 @@ const en = {
         heroTitle1: 'Deploy OpenClaw.',
         heroTitle2: 'Locally. Instantly.',
         badge: 'OpenClaw & Hermes Locally',
+        tutorialBadge: 'How to Get Started on Go',
         description:
             'A lightweight desktop client to manage your OpenClaw instances. Deploy, monitor, and control your claws — right from your machine.',
         features: 'Features',
@@ -209,6 +210,8 @@ const en = {
         failedToFetchLatestVersion: 'Failed to fetch the latest version!'
     },
     footer: {
+        downloadAndroid: 'Get it on Google Play',
+        downloadIos: 'Download on the App Store',
         website: 'Website',
         copyrightName: 'ClawHost',
         copyrightRights: 'All rights reserved.',
@@ -241,6 +244,8 @@ const en = {
     },
     errors: {
         somethingWentWrong: 'Something went wrong!',
+        connectionFailed:
+            'Something went wrong while connecting to the server. Please check your connection and try again!',
         couldNotLoadData: "We couldn't load the data. Please try again!",
         notFound: 'Page not found!',
         pageNotFoundDescription:
@@ -265,6 +270,7 @@ const en = {
         noPasswordAvailable: 'No password available for this claw!'
     },
     api: {
+        githubExchangeFailed: 'GitHub sign-in failed!',
         missingRequiredFields: 'Missing required fields!',
         agentNotFound: 'Agent not found!',
         agentRenamed: 'Agent renamed successfully.',
@@ -596,6 +602,33 @@ const en = {
                     'Reinstall wipes the OpenClaw runtime and gives you a clean slate. Your server, IP, and keys stay the same.',
                 cta: 'Learn More'
             },
+            hermesAgentLaunch: {
+                subject: 'Hermes Agent is here',
+                preview: 'Deploy Hermes agents directly on ClawHost.',
+                tag: 'Hermes Agent',
+                heading: 'Hermes agents, now on ClawHost',
+                description:
+                    'Hermes Agent is now supported on ClawHost. Spin up a Hermes-powered claw in minutes, configure model providers from the Files tab, and chat with it from the built-in terminal. No extra setup, no glue code.',
+                cta: 'Deploy Hermes'
+            },
+            clawHostGoLaunch: {
+                subject: 'ClawHost Go is here',
+                preview: 'A native desktop app to run OpenClaw locally on your machine.',
+                tag: 'ClawHost Go',
+                heading: 'Your claws, on your desk',
+                description:
+                    'ClawHost Go is a native desktop app for macOS and Windows. Deploy and manage OpenClaw instances directly on your machine — no cloud, no subscription, just a one-time license. It comes with a built-in terminal, file editor, version manager, and zero-config local DNS.',
+                cta: 'Download ClawHost Go'
+            },
+            productHuntLaunch: {
+                subject: 'Help us launch on Product Hunt',
+                preview: 'We just launched on Product Hunt. Your upvote matters.',
+                tag: 'Product Hunt Launch',
+                heading: 'We\'re live on Product Hunt',
+                description:
+                    'Today we launched ClawHost on Product Hunt. If we have helped you ship faster, an upvote would mean the world. As a thank you, use code PH10 for 10% off your first order.',
+                cta: 'Upvote on Product Hunt'
+            },
             yearlyPlans: {
                 subject: 'Save with yearly billing',
                 preview: 'Same service, lower price',
@@ -692,6 +725,12 @@ const en = {
             'When enabled, external links open inside the app instead of the system browser.'
     },
     billing: {
+        billingHistory: 'Billing History',
+        billingDescription:
+            'View your payment history, invoices, and subscriptions.',
+        noBillingHistory: 'No billing history',
+        noBillingHistoryDescription:
+            'Your payments and invoices will appear here.',
         date: 'Date',
         product: 'Product',
         amount: 'Amount',
@@ -943,7 +982,48 @@ const en = {
         },
         tabNotAvailableForAgent: 'Not available for this agent type'
     },
+    mobile: {
+        versions: 'Versions',
+        currentVersion: 'Current version',
+        latestVersion: 'Latest version',
+        install: 'Install',
+        terminal: 'Terminal',
+        reinstall: 'Reinstall',
+        fileSaved: 'File saved.',
+        terminalDisconnected: 'Disconnected',
+        terminalPlaceholder: 'Type a command...',
+        manage: 'Manage',
+        sync: 'Sync',
+        rename: 'Rename',
+        newName: 'New name',
+        credentials: 'Credentials',
+        showCredentials: 'Show credentials',
+        rotatePassword: 'Rotate password',
+        rotateGatewayToken: 'Rotate gateway token',
+        syncSuccess: 'Synced successfully.',
+        signIn: 'Authenticate',
+        signInDescription: 'Authenticate to manage and deploy your agents.',
+        enterEmail: 'Email Address',
+        emailPlaceholder: 'example@clawhost.cloud',
+        continueWithEmail: 'Continue with Email',
+        otpDescription:
+            "We'll send you a code to sign in. No password needed.",
+        sending: 'Sending...',
+        checkYourEmail: 'Check your email',
+        codeSentTo: 'We sent a 6-digit code to',
+        resendCode: 'Resend code',
+        resendIn: 'Resend in {{seconds}}s',
+        changeEmail: 'Change email',
+        invalidCode: 'Invalid code!',
+        signingIn: 'Signing in...',
+        signOut: 'Sign Out',
+        loadMore: 'Load More',
+        deployClaw: 'Deploy Agent',
+        deployYourFirstClaw: 'Deploy your first Agent',
+    },
     createClaw: {
+        provider: 'Provider',
+        providerAtCapacity: 'At capacity',
         title: 'Deploy Agent',
         description: 'Configure your server and start building with AI.',
         clawName: 'Name',
@@ -1063,7 +1143,7 @@ const en = {
         description:
             'Deploy OpenClaw on your own VPS with one click. Self-hostable cloud hosting with full root access, global locations, and transparent pricing.',
         badge: 'OpenClaw & Hermes on the Cloud',
-        tutorialBadge: 'Watch. Deploy.',
+        tutorialBadge: 'How to Get Started on Cloud',
         tutorialVideoThumbnail: 'ClawHost tutorial video thumbnail',
         clawhostGoLogoAlt: 'ClawHost Go',
         trustMrrBadgeAlt: 'TrustMRR verified revenue badge',
@@ -1831,9 +1911,9 @@ const en = {
         contactText:
             'If you have any questions about these Terms, please contact us at'
     },
-    hermesBanner: {
-        title: 'Hermes Agent',
-        message: 'Hermes agents are now supported for deployment on ClawHost.'
+    acquiredBanner: {
+        title: 'Acquired by GetOpenClaw.ai',
+        message: 'ClawHost is now part of GetOpenClaw.ai — all your data is accessible only there.'
     },
     compare: {
         title: 'Comparison',

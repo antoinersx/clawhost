@@ -1,8 +1,8 @@
 import { withAgent, getAgentConfig } from '@/controllers/agents/helpers'
 import { t } from '@openclaw/i18n'
 import { ok, fail } from '@/lib/response'
-import executeSSH from '@/services/ssh'
-import parseOverviewOutput from '@/controllers/agents/getAgentOverview/parsers'
+import { executeSSH } from '@/services'
+import { parseOverviewOutput } from '@/controllers/agents/getAgentOverview'
 import { gatewayDefaults } from '@/lib/constants'
 
 const SEPARATOR = '---CLAWHOST_OVERVIEW_SEP---'

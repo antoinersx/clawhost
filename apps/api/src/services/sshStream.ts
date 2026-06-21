@@ -1,5 +1,5 @@
 import { Client } from 'ssh2'
-import hostKeyStore from '@/services/hostKeyStore'
+import { hostKeyStore } from '@/services'
 import { sshDefaults } from '@/lib/constants'
 
 const sshStream = (

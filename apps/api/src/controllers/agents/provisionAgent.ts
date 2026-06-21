@@ -10,7 +10,7 @@ import { db } from '@/db'
 import { subscriptionStatus } from '@openclaw/shared'
 import { agents, pendingAgents, sshKeys, volumes } from '@/db/schema'
 import { getProvider } from '@/services/provider'
-import cloudflare from '@/services/cloudflare'
+import { cloudflare } from '@/services'
 import {
     generateSlug,
     generateServerName,

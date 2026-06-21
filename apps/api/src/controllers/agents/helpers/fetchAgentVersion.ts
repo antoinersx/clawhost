@@ -1,12 +1,12 @@
-import executeSSH from '@/services/ssh'
-import getAgentConfig from '@/controllers/agents/helpers/getAgentConfig'
-import versionCache from '@/controllers/agents/helpers/versionCache'
+import { UNKNOWN_VERSION } from '@openclaw/shared'
+import { executeSSH } from '@/services'
+import { getAgentConfig, versionCache } from '@/controllers/agents/helpers'
 
 const VERSION_CACHE_TTL = 60 * 1000
 
 const cleanVersionOutput = (raw: string): string => {
     const trimmed = raw.trim()
-    if (!trimmed) return 'unknown'
+    if (!trimmed) return UNKNOWN_VERSION
 
     const semverMatch = trimmed.match(/v?\d+(?:\.\d+)+(?:[-_][\w.]+)?/)
     if (semverMatch) return semverMatch[0]
@@ -15,7 +15,7 @@ const cleanVersionOutput = (raw: string): string => {
         .replace(/\s*\([a-f0-9]+\)\s*$/, '')
         .replace(/^(OpenClaw|Hermes|Agent)\s*/i, '')
         .trim()
-    return cleaned || 'unknown'
+    return cleaned || UNKNOWN_VERSION
 }
 
 const fetchAgentVersion = async (

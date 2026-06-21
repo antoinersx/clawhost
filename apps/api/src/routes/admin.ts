@@ -16,7 +16,7 @@ import {
     getAdminVolumes,
     updateAdminUser
 } from '@/controllers/admin'
-import adminOnly from '@/middleware/adminOnly'
+import { adminOnly } from '@/middleware'
 
 const app = new Hono<HonoEnv>()
 

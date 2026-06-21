@@ -7,7 +7,7 @@ import type {
 import { t } from '@openclaw/i18n'
 import { Card, CardContent } from '@/components/ui'
 import { HardDrivesIcon } from '@phosphor-icons/react'
-import AdminStatusBadge from '@/components/admin/AdminStatusBadge'
+import { AdminStatusBadge } from '@/components/admin'
 
 const AdminUserAgentsSection: FC<AdminUserAgentsSectionProps> = ({
     agents

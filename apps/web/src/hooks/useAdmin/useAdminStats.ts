@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { api } from '@/lib'
-import ADMIN_STATS_QUERY_KEY from '@/hooks/useAdmin/ADMIN_STATS_QUERY_KEY'
+import { ADMIN_STATS_QUERY_KEY } from '@/hooks/useAdmin'
 
 const useAdminStats = () => {
     return useQuery({

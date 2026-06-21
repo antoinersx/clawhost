@@ -20,7 +20,6 @@ import {
     ComparisonTable,
     FaqSection,
     LandingCTA,
-    VideoModal,
     JsonLd
 } from '@/components'
 import { getBaseDomain, SCROLL_SECTIONS } from '@/lib'
@@ -29,12 +28,11 @@ import {
     FACEBOOK_URL,
     INSTAGRAM_URL,
     YOUTUBE_URL,
-    TIKTOK_URL,
-    TUTORIAL_URL
+    TIKTOK_URL
 } from '@/lib/links'
 import { GITHUB_REPO_URL } from '@/hooks'
 import { usePreferencesStore } from '@/lib/store'
-import { PRODUCT } from '@/lib/constants'
+import { PRODUCT, SCROLL_SPY } from '@/lib/constants'
 import {
     ShieldCheckIcon,
     GlobeIcon,
@@ -91,8 +89,6 @@ const Landing: FC = (): ReactNode => {
     useEffect(() => {
         setProduct(PRODUCT.CLOUD)
     }, [setProduct])
-    const showTutorialBadge = true
-    const [videoOpen, setVideoOpen] = useState(false)
     const hetznerPlans = PLANS
 
     const plans = hetznerPlans
@@ -119,14 +115,17 @@ const Landing: FC = (): ReactNode => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY < 200) {
+            if (window.scrollY < SCROLL_SPY.TOP_THRESHOLD) {
                 setActiveSection('')
                 return
             }
             const sections = SCROLL_SECTIONS
             for (const section of sections) {
                 const el = document.getElementById(section)
-                if (el && window.scrollY >= el.offsetTop - 100) {
+                if (
+                    el &&
+                    window.scrollY >= el.offsetTop - SCROLL_SPY.SECTION_OFFSET
+                ) {
                     setActiveSection(section)
                     break
                 }
@@ -208,11 +207,7 @@ const Landing: FC = (): ReactNode => {
 
                     <div className='animate-hero-fade-in relative mx-auto max-w-6xl'>
                         <div className='flex flex-col items-center text-center'>
-                            <HeroBadge
-                                label={t('landing.badge')}
-                                tutorialBadge={showTutorialBadge}
-                                onTutorialClick={() => setVideoOpen(true)}
-                            />
+                            <HeroBadge label={t('landing.badge')} />
 
                             <HeroTitle
                                 line1={t('landing.heroTitle1')}
@@ -413,12 +408,6 @@ const Landing: FC = (): ReactNode => {
             </main>
 
             <LandingFooter />
-
-            <VideoModal
-                open={videoOpen}
-                onClose={() => setVideoOpen(false)}
-                videoUrl={TUTORIAL_URL}
-            />
         </div>
     )
 }

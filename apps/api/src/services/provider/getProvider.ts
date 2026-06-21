@@ -1,7 +1,7 @@
 import type { CloudProvider } from '@/ts/Interfaces'
 
-import hetzner from '@/services/hetzner'
-import cache from '@/services/provider/cache'
+import { hetzner } from '@/services'
+import { cache } from '@/services/provider'
 
 const CACHE_TTL = 5 * 60 * 1000
 const SERVERS_CACHE_TTL = 10 * 1000

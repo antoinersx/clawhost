@@ -10,4 +10,4 @@ const agentFileType = {
     unknown: 'unknown'
 } as const
 
-export default agentFileType
+export { agentFileType }

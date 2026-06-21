@@ -1,6 +1,6 @@
 import { useInfiniteQuery } from '@tanstack/react-query'
 import { api } from '@/lib'
-import ADMIN_REFERRALS_QUERY_KEY from '@/hooks/useAdmin/ADMIN_REFERRALS_QUERY_KEY'
+import { ADMIN_REFERRALS_QUERY_KEY } from '@/hooks/useAdmin'
 
 const useAdminReferralsList = (limit: number = 20, sort?: string) => {
     return useInfiniteQuery({

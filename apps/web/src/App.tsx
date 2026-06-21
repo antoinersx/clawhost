@@ -1,7 +1,8 @@
 import type { FC, ReactNode } from 'react'
 
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, Fragment } from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { AUTH_DISABLED } from '@openclaw/shared'
 import { AuthProvider } from '@/lib/auth'
 import { ScrollToTop, Toast, ProtectedRoute } from '@/components'
 import { TooltipProvider } from '@/components/ui'
@@ -46,7 +47,6 @@ const App: FC = (): ReactNode => {
                     <Routes>
                         <Route path={ROUTES.HOME} element={<Landing />} />
                         <Route path={ROUTES.GO} element={<Go />} />
-                        <Route path={ROUTES.LOGIN} element={<Login />} />
                         <Route path={ROUTES.TERMS} element={<Terms />} />
                         <Route path={ROUTES.PRIVACY} element={<Privacy />} />
                         <Route
@@ -59,54 +59,62 @@ const App: FC = (): ReactNode => {
                             element={<AffiliateProgram />}
                         />
                         <Route path={ROUTES.COMPARE} element={<Compare />} />
-                        <Route
-                            path={ROUTES.AGENTS}
-                            element={
-                                <ProtectedRoute>
-                                    <Dashboard />
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route
-                            path={ROUTES.SSH_KEYS}
-                            element={
-                                <ProtectedRoute>
-                                    <SSHKeys />
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route
-                            path={ROUTES.ACCOUNT}
-                            element={
-                                <ProtectedRoute>
-                                    <Account />
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route
-                            path={ROUTES.AFFILIATE}
-                            element={
-                                <ProtectedRoute>
-                                    <Affiliate />
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route
-                            path={ROUTES.ADMIN}
-                            element={
-                                <ProtectedRoute>
-                                    <Admin />
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route
-                            path={ROUTES.LICENSE}
-                            element={
-                                <ProtectedRoute>
-                                    <License />
-                                </ProtectedRoute>
-                            }
-                        />
+                        {!AUTH_DISABLED && (
+                            <Fragment>
+                                <Route
+                                    path={ROUTES.LOGIN}
+                                    element={<Login />}
+                                />
+                                <Route
+                                    path={ROUTES.AGENTS}
+                                    element={
+                                        <ProtectedRoute>
+                                            <Dashboard />
+                                        </ProtectedRoute>
+                                    }
+                                />
+                                <Route
+                                    path={ROUTES.SSH_KEYS}
+                                    element={
+                                        <ProtectedRoute>
+                                            <SSHKeys />
+                                        </ProtectedRoute>
+                                    }
+                                />
+                                <Route
+                                    path={ROUTES.ACCOUNT}
+                                    element={
+                                        <ProtectedRoute>
+                                            <Account />
+                                        </ProtectedRoute>
+                                    }
+                                />
+                                <Route
+                                    path={ROUTES.AFFILIATE}
+                                    element={
+                                        <ProtectedRoute>
+                                            <Affiliate />
+                                        </ProtectedRoute>
+                                    }
+                                />
+                                <Route
+                                    path={ROUTES.ADMIN}
+                                    element={
+                                        <ProtectedRoute>
+                                            <Admin />
+                                        </ProtectedRoute>
+                                    }
+                                />
+                                <Route
+                                    path={ROUTES.LICENSE}
+                                    element={
+                                        <ProtectedRoute>
+                                            <License />
+                                        </ProtectedRoute>
+                                    }
+                                />
+                            </Fragment>
+                        )}
                         <Route path='*' element={<NotFound />} />
                     </Routes>
                 </Suspense>

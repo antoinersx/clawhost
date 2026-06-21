@@ -6,22 +6,30 @@ import { users, referrals, referralPayments } from '@/db/schema'
 import { ok, fail } from '@/lib/response'
 import { t } from '@openclaw/i18n'
 
-const VALID_PERIODS = ['today', 'week', 'month', 'year', 'all']
+const affiliatePeriod = {
+    TODAY: 'today',
+    WEEK: 'week',
+    MONTH: 'month',
+    YEAR: 'year',
+    ALL: 'all'
+} as const
+
+const VALID_PERIODS = Object.values(affiliatePeriod)
 
 const getCutoffDate = (period: string): Date | null => {
-    if (period === 'all') return null
+    if (period === affiliatePeriod.ALL) return null
     const now = new Date()
-    if (period === 'today') now.setHours(0, 0, 0, 0)
-    if (period === 'week') now.setDate(now.getDate() - 7)
-    if (period === 'month') now.setMonth(now.getMonth() - 1)
-    if (period === 'year') now.setFullYear(now.getFullYear() - 1)
+    if (period === affiliatePeriod.TODAY) now.setHours(0, 0, 0, 0)
+    if (period === affiliatePeriod.WEEK) now.setDate(now.getDate() - 7)
+    if (period === affiliatePeriod.MONTH) now.setMonth(now.getMonth() - 1)
+    if (period === affiliatePeriod.YEAR) now.setFullYear(now.getFullYear() - 1)
     return now
 }
 
 const getAffiliate = async (c: AuthenticatedContext) => {
     try {
         const userId = c.get('userId')
-        const period = c.req.query('period') ?? 'all'
+        const period = c.req.query('period') ?? affiliatePeriod.ALL
 
         if (!VALID_PERIODS.includes(period as (typeof VALID_PERIODS)[number])) {
             return fail(c, t('api.invalidPeriod'), 400)

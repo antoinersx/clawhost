@@ -7,6 +7,7 @@ export interface RequestConfig {
     baseUrl: string
     getHeaders?: () => Promise<Record<string, string>> | Record<string, string>
     onUnauthorized?: () => Promise<boolean>
+    getNetworkErrorMessage?: () => string
 }
 
 export interface ApiEnvelope<T = unknown> {

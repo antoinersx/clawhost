@@ -3,7 +3,7 @@ import type { ChatSidebarTreeViewProps } from '@/ts/Interfaces'
 
 import { Fragment, useMemo } from 'react'
 import { getStatusConfig } from '@/lib/agent-utils'
-import ChatSidebarAgentHeader from '@/components/chat/ChatSidebarAgentHeader'
+import { ChatSidebarAgentHeader } from '@/components/chat'
 
 const ChatSidebarTreeView: FC<ChatSidebarTreeViewProps> = ({
     agents,

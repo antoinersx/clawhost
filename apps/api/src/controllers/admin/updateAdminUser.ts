@@ -6,7 +6,7 @@ import { db } from '@/db'
 import { users } from '@/db/schema'
 import { ok, fail } from '@/lib/response'
 import { t } from '@openclaw/i18n'
-import withErrorHandler from '@/lib/withErrorHandler'
+import { withErrorHandler } from '@/lib'
 
 const updateAdminUser = withErrorHandler(
     'updateAdminUser',

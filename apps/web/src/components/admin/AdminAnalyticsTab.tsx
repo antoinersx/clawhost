@@ -28,7 +28,7 @@ import {
     ChartLineUpIcon,
     FunnelIcon
 } from '@phosphor-icons/react'
-import AdminAnalyticsChart from '@/components/admin/AdminAnalyticsChart'
+import { AdminAnalyticsChart } from '@/components/admin'
 
 const RANGES = [
     { key: 'day' as AdminAnalyticsRange, label: 'admin.analyticsDay' as const },
