@@ -1,6 +1,6 @@
 {
     "name": "api",
-    "version": "0.0.309",
+    "version": "0.0.310",
     "private": true,
     "type": "module",
     "scripts": {
@@ -13,7 +13,6 @@
         "db:generate": "drizzle-kit generate",
         "db:migrate": "drizzle-kit migrate",
         "db:studio": "drizzle-kit studio",
-        "export:emails": "bun scripts/export-emails.ts",
         "email:dev": "bunx email dev -p 3333 --dir src/emails",
         "test": "vitest run",
         "test:watch": "vitest"
